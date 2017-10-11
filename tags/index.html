@@ -37,7 +37,7 @@
     
     <title>
         
-            友情链接 | 
+            标签云 | 
         
         Zhang Hong
     </title>
@@ -226,7 +226,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="友情链接 | Zhang Hong">
+    <meta property="og:title" content="标签云 | Zhang Hong">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="人生苦短，我学前端">
     
@@ -234,7 +234,7 @@
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="友情链接 | Zhang Hong">
+    <meta name="twitter:title" content="标签云 | Zhang Hong">
     <meta name="twitter:description" content="人生苦短，我学前端">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -242,7 +242,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/links/index.html" />
+        <link rel="canonical" href="http://yoursite.com/tags/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -287,106 +287,51 @@
 
 <!-- Layouts -->
 
-    <!-- Single Links Page -->
+    <!-- Tags Cloud -->
     <style>
-    .md-links {
-        min-height: calc(100% - 120px - 5pc - 6em);
-        text-align: center;
-        overflow: auto;
-        padding: 0;
-        margin: 0 auto;
-        max-width: 320px;
-    }
-
-    @media screen and (min-width: 680px) {
-        .md-links {
-            max-width: 640px;
-        }
-    }
-
-    @media screen and (min-width: 1000px) {
-        .md-links {
-            max-width: 960px;
-        }
-    }
-
-    @media screen and (min-width: 1320px) {
-        .md-links {
-            max-width: 1280px;
-        }
-    }
-
-    @media screen and (min-width: 1640px) {
-        .md-links {
-            max-width: 1600px;
-        }
-    }
-
-    @media screen and (max-width: 480px) {
-        .md-links {
-            min-height: calc(100% - 200px - 5pc - 6em);
-            margin-top: 6em;
-        }
-    }
-
-    .md-links-item {
-        background: #fff;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-        height: 72px;
-        line-height: 15px;
-        margin: 20px 10px;
-        padding: 0px 0px;
-        transition: box-shadow 0.25s;
-    }
-
-    .md-links a {
-        color: #333;
-        text-decoration: none;
-    }
-
-    .md-links li {
-        width: 300px;
-        float: left;
-        list-style: none;
-    }
-
-    .md-links-item img {
-        float: left;
-        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 11px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-    }
-
-    .md-links-item:hover {
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .md-links-item a:hover{
-        cursor: pointer;
-    }
-
-    .md-links-title {
-        font-size: 20px;
-        line-height: 50px;
-    }
-
-    #scheme-Paradox .mdl-mini-footer{
-        clear: left;
-    }
     #bottom{
         position: relative;
     }
+
+    @media screen and (max-width: 480px) {
+        .material-tagscloud{
+            margin: 6em 2em 0;
+        }
+    }
+
+    .material-tagscloud a{
+        text-decoration:none;
+        padding: 1px 9px;
+        margin: 9px 1px;
+        line-height: 40px;
+        white-space: nowrap;
+        transition: .6s;
+        opacity: .85;
+    }
+
+    .material-tagscloud a:hover{
+        transition: .6s;
+        opacity: 1;
+        background: #FAFAFA;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    }
 </style>
 
-<ul class="md-links">
-    
-</ul>
+<div class=" material-tagscloud">
+    <div class="material-post mdl-grid">
+        <a href="/tags/web前端/" style="font-size: 16px; color: #757575">web前端</a> <a href="/tags/我的第一个博客/" style="font-size: 16px; color: #757575">我的第一个博客</a>
+    </div>
+</div>
 
-<script type="text/ls-javascript" id="page-links-script">
+
+<script type="text/ls-javascript" id="page-tagcloud-script">
     var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() )<$(window).height() ) {
+        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
             var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
             $('#bottom').css('bottom', '-' + footerBottom + 'px');
         }
     };
+
     $(document).ready(function() {
         adjustFooter();
     });
@@ -508,9 +453,33 @@
         <li>
             <a href="/gallery/" title="相册">
                 
-                    <i class="material-icons sidebar-material-icons">person</i>
+                    <i class="material-icons sidebar-material-icons">photo</i>
                 
                 相册
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+        <li>
+            <a href="/tags/" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">book</i>
+                
+                标签云
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+        <li>
+            <a href="timeline" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时间轴
             </a>
         </li>
         
