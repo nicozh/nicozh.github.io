@@ -39,7 +39,7 @@
     
     <title>
         
-            HTTP入门 | 
+            HTML5标签详解（1） | 
         
         Zhang Hong
     </title>
@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Nico Zhang">
     <meta name="description" itemprop="description" content="人生苦短，我学前端">
-    <meta name="keywords" content=",HTTP">
+    <meta name="keywords" content=",HTML">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -228,18 +228,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="HTTP入门 | Zhang Hong">
+    <meta property="og:title" content="HTML5标签详解（1） | Zhang Hong">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="人生苦短，我学前端">
-    <meta property="og:article:tag" content="HTTP"> 
+    <meta property="og:article:tag" content="HTML"> 
 
     
-        <meta property="article:published_time" content="Fri Oct 13 2017 15:40:47 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Oct 13 2017 16:03:55 GMT+0800" />
+        <meta property="article:published_time" content="Thu Oct 19 2017 00:31:11 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Oct 20 2017 01:43:42 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="HTTP入门 | Zhang Hong">
+    <meta name="twitter:title" content="HTML5标签详解（1） | Zhang Hong">
     <meta name="twitter:description" content="人生苦短，我学前端">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/10/13/HTTP入门/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2017/10/19/草稿/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2017/10/13/HTTP入门/index.html",
-    "headline": "HTTP入门",
-    "datePublished": "Fri Oct 13 2017 15:40:47 GMT+0800",
-    "dateModified": "Fri Oct 13 2017 16:03:55 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2017/10/19/草稿/index.html",
+    "headline": "HTML5标签详解（1）",
+    "datePublished": "Thu Oct 19 2017 00:31:11 GMT+0800",
+    "dateModified": "Fri Oct 20 2017 01:43:42 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -280,7 +280,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",HTTP",
+    "keywords": ",HTML",
     "description": "人生苦短，我学前端",
 }
 </script>
@@ -346,7 +346,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTTP简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">HTTP简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#URN、URL、URI"><span class="post-toc-number">2.</span> <span class="post-toc-text">URN、URL、URI</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#URI"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">URI</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DNS"><span class="post-toc-number">3.</span> <span class="post-toc-text">DNS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#请求与响应"><span class="post-toc-number">4.</span> <span class="post-toc-text">请求与响应</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求格式"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">请求格式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求实列"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">请求实列</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#响应格式"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">响应格式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#响应实列"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">响应实列</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#lt-a-gt-标签"><span class="post-toc-number">1.</span> <span class="post-toc-text">< a > 标签</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#target属性"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">target属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#download-属性"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">download 属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#href属性"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">href属性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#lt-iframe-gt-标签"><span class="post-toc-number">2.</span> <span class="post-toc-text">< iframe > 标签</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#name属性"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">name属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#frameborder属性"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">frameborder属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#src属性"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">src属性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#lt-input-gt-标签"><span class="post-toc-number">3.</span> <span class="post-toc-text">< input > 标签</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#type属性"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">type属性</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#lt-select-gt-标签"><span class="post-toc-number">4.</span> <span class="post-toc-text">< select > 标签</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#autofocus"><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">autofocus</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#disabled"><span class="post-toc-number">4.0.2.</span> <span class="post-toc-text">disabled</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#form"><span class="post-toc-number">4.0.3.</span> <span class="post-toc-text">form</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#multiple"><span class="post-toc-number">4.0.4.</span> <span class="post-toc-text">multiple</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#name"><span class="post-toc-number">4.0.5.</span> <span class="post-toc-text">name</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#required"><span class="post-toc-number">4.0.6.</span> <span class="post-toc-text">required</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#size"><span class="post-toc-number">4.0.7.</span> <span class="post-toc-text">size</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#lt-textarea-gt-标签"><span class="post-toc-number">5.</span> <span class="post-toc-text">< textarea > 标签</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cols"><span class="post-toc-number">5.0.1.</span> <span class="post-toc-text">cols</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#resize-none"><span class="post-toc-number">5.0.2.</span> <span class="post-toc-text">resize:none</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#disabled-1"><span class="post-toc-number">5.0.3.</span> <span class="post-toc-text">disabled</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#form-1"><span class="post-toc-number">5.0.4.</span> <span class="post-toc-text">form</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#maxlength"><span class="post-toc-number">5.0.5.</span> <span class="post-toc-text">maxlength</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#minlength"><span class="post-toc-number">5.0.6.</span> <span class="post-toc-text">minlength</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#name-1"><span class="post-toc-number">5.0.7.</span> <span class="post-toc-text">name</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#placeholder"><span class="post-toc-number">5.0.8.</span> <span class="post-toc-text">placeholder</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#readonly"><span class="post-toc-number">5.0.9.</span> <span class="post-toc-text">readonly</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#required-1"><span class="post-toc-number">5.0.10.</span> <span class="post-toc-text">required</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#rows"><span class="post-toc-number">5.0.11.</span> <span class="post-toc-text">rows</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#autocomplete-HTML5"><span class="post-toc-number">5.0.12.</span> <span class="post-toc-text">autocomplete HTML5</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#lt-form-gt-标签"><span class="post-toc-number">6.</span> <span class="post-toc-text">< form > 标签</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#列子："><span class="post-toc-number">6.0.1.</span> <span class="post-toc-text">列子：</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -378,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                HTTP入门
+                HTML5标签详解（1）
             </p>
         </div>
 
@@ -397,7 +397,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Nico Zhang</strong>
-        <span>10月 13, 2017</span>
+        <span>10月 19, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -419,7 +419,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACY0lEQVR42u3aQW7DMAwEwPz/0+21QBFnSUpKHIxPRWNIGh9EguTj56ufBx4eHh4eHh4e3ofxHvHzdLk/vz57//87z3afnw0PDw/vDO/FVRtsnBzo2crXv5bPhoeHh3eQd33o/IrvrdwLIXh4eHh34SVHTNLx3r54eHh4d+QlKe/1pZ+shoeHh/f5vEmhdh5Cqp8PDw8P7728vMl0/u+j/T08PDy8gFceaWqVdHthY8HQFR4eHt4GXq/xn5cJ8mAzH0TAw8PDO8m7XrpanN0dWl4URPDw8PCO8PIgUS2wVkcBqmfDw8PDO8/LDzdhTArH+efAw8PDO8PLt88v7uonWxuc8PDw8HbzXrwaj0nl6XJ1QKFcYsbDw8M7wssLtVFSGweSPPDk6T4eHh7ebl41hZ20uyaNt8LHxcPDwzvImzT4qwlxr90V7YWHh4e3mTc5aLWAu7bwUS7j4uHh4S3iVTF5q6y3ct4kw8PDw3sXLw8S1dJD3iSrlkJGM2V4eHh4S3nVKz5pg11f8dUmWbIaHh4e3m5e3mpamy5HB+0l63h4eHgHecml3DtWdUhrMkCAh4eHd57XGxqoNsaSvarpOB4eHt553oTdCyrJ+1UqHh4e3m5e9emNq+bFiOowKx4eHt55Xu9SnrT/e59pNFOGh4eHt4HXCwb5f/K2VjXFb/b38PDw8Bbx8gs6KRBMRgHyMjEeHh7eXXjVoYF8l2pRGA8PD+8uvDz9rSbuvWCAh4eH9y5eUoxY1QyblC0WDF3h4eHhjXm9EkDS/q+OT1XXxMPDwzvP+74HDw8PDw8PDw/vA55fEijOSgTDk2oAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACa0lEQVR42u3aQXLCMBAEQP7/6eSaC2RmZW8B1T5RhNhqHaT1ah4/X3098PDw8PDw8PDw3oz3iK/o1k9+//ebZ399/X0+Njw8PLwdXjLo5Jt2gl4/fTg2PDw8vEXeswG9/tz+Mtkkju6Ah4eH9/a8/D7nz8XDw8P7XF47EXkhfjI2PDw8vH1e8sKfDCUvuNsJur3XgoeHhxfz8ibs/ufV8z08PDy8gFdHmsryNz9IywMKRegKDw8P7wZevhC37HaDye/wT+AADw8P72be+dKfT8GsmE7GhoeHh7fJe70c5w+7qo07mwg8PDy8fV67PcyG1RbQSbu5eGPAw8PDu4iXP/KCBuuoBdyODQ8PD+9uXh4wbZu5yeaRwOrJwsPDw1vknUcB2jK9DXVd/MaAh4eHd/C2XhwvBQt324y46ugLDw8Pb4eXP75t+F7V/M3/Cw8PD2+HN1x841J4tp3kJfjF+x4eHh7eiDcro5PFvT1yuyB0hYeHh3cbbxYOeARXssTnpOHGgIeHh3cb73xZj472g4hAG2PFw8PD2+S1UaeTxmtejs+iBnh4eHibvFnRnCPbxu5JmBUPDw9vk3dyADZrcLTB1mi7wsPDw1vk5aVzG9Vq41b5/+Lh4eHt82aHXrN4QVJkz8KseHh4eJu82YLebg+zDWDY5sDDw8Nb4Z2X1O0SnzRqh2ECPDw8vEXe+QLdbiezpsY/mxMeHh7eR/GSwjoJB7SNYzw8PLxP4bXLfdvkTQJbw2QEHh4e3kW8k2jUbDoSwGoyAg8PDy/mXdACGB2JtZGCaIPBw8PDu5n3fRceHh4eHh4eHt4bXL8mCQw3TJ2a9AAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -433,7 +433,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/HTTP/">HTTP</a>
+        <a class="post_tag-link" href="/tags/HTML/">HTML</a>
     </ul>
     
 
@@ -451,7 +451,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=HTTP入门&url=http://yoursite.com/2017/10/13/HTTP入门/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=HTML5标签详解（1）&url=http://yoursite.com/2017/10/19/草稿/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -460,7 +460,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=HTTP入门&url=http://yoursite.com/2017/10/13/HTTP入门/index.html&via=Nico Zhang" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=HTML5标签详解（1）&url=http://yoursite.com/2017/10/19/草稿/index.html&via=Nico Zhang" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -469,7 +469,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/13/HTTP入门/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/19/草稿/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -478,7 +478,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/13/HTTP入门/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/19/草稿/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -502,66 +502,104 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>超文本传输协议（HyperText Transfer Protocol，缩写：HTTP）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP是万维网的数据通信的基础。设计HTTP最初的目的是为了提供一种发布和接收HTML页面的方法。通过HTTP或者HTTPS协议请求的资源由统一资源标识符（Uniform Resource Identifiers，URI）来标识。</p>
-<h2 id="URN、URL、URI"><a href="#URN、URL、URI" class="headerlink" title="URN、URL、URI"></a>URN、URL、URI</h2><ul>
-<li>URL：统一资源定位符</li>
-<li>URI：统一资源标识符</li>
+        <h1 id="lt-a-gt-标签"><a href="#lt-a-gt-标签" class="headerlink" title="&lt; a &gt; 标签"></a><strong>&lt; a &gt;</strong> 标签</h1><p><strong>&lt; a &gt;</strong> 元素  (或锚元素) 创建一个到其他网页，文件，同一页面内的位置，电子邮件地址或任何其他URL的超链接。（发起HTTP GET请求）。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">a</span> href=<span class="string">"http://qq.com"</span>&gt;&lt;/a&gt;</div></pre></td></tr></table></figure>
+<h3 id="target属性"><a href="#target属性" class="headerlink" title="target属性"></a>target属性</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">a</span> href=<span class="string">"http://qq.com"</span> target=_blank&gt;QQ&lt;/a&gt;   &lt;!--在新窗口打开--&gt;</div><div class="line">&lt;<span class="selector-tag">a</span> href=<span class="string">"http://qq.com"</span> target=_self&gt;QQ&lt;/a&gt;      &lt;!--在当前窗口打开--&gt;</div><div class="line">&lt;<span class="selector-tag">a</span> href=<span class="string">"http://qq.com"</span> target=_parent&gt;QQ&lt;/a&gt;  &lt;!--在父级窗口打开--&gt;</div><div class="line">&lt;<span class="selector-tag">a</span> href=<span class="string">"http://qq.com"</span> target=_top&gt;QQ&lt;/a&gt;       &lt;!--在顶级窗口打开--&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>_ self:当前页面加载，此值是默认的，如果没有指定属性的话。</li>
+<li>_blank: 新窗口打开，即到一个新的未命名的窗口。</li>
+<li>_parent:加载响应到当前窗口的父级窗口。如果没有，此选项的行为方式相同_self。</li>
+<li>_top:加载响应到祖级窗口，如果没有，此选项的行为方式相同_self。<h3 id="download-属性"><a href="#download-属性" class="headerlink" title="download 属性"></a>download 属性</h3>此属性指示浏览器下载URL而不是解析URL，因此将提示用户将其保存为本地文件。<br>不用download属性的情况下，是否会下载由http响应决定，如果content-type:application/octet-stream,那么浏览器会以下载的形式接受请求。<h3 id="href属性"><a href="#href属性" class="headerlink" title="href属性"></a>href属性</h3></li>
 </ul>
-<p>通常来说，URL就是是使用浏览器等访问web页面的时候需要输入的网页地址，列如：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">www<span class="selector-class">.google</span><span class="selector-class">.com</span></div></pre></td></tr></table></figure></p>
-<p>URL组成： ==协议、域名、端口号、路径、查询字符串、锚点==</p>
-<h3 id="URI"><a href="#URI" class="headerlink" title="URI"></a>URI</h3><p>是更通用的资源标识符，URI由两个主要的子集构成</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">href=<span class="string">"qq.com"</span>     &lt;!--不会跳转，这是一个相对地址--&gt;</div><div class="line">href=<span class="string">"http://qq.com"</span>&lt;!--正确写法，会跳转打开qq主页--&gt;</div><div class="line">href=<span class="string">"//qq.com"</span>&lt;!--无协议绝对地址，自动继承协议，当前页面是什么协议就用什么协议--&gt;</div><div class="line">href=<span class="string">"#top"</span>     &lt;!--回到页面顶部--&gt;</div><div class="line">href=<span class="string">"#xxxx"</span>   &lt;!--锚点发起页面内的跳转，xxx为ID，不发起get请求--&gt;</div><div class="line">href=<span class="string">"?name=xxx"</span>&lt;!--会发起get请求--&gt;</div><div class="line">href=“javascript:alert(1);”   &lt;!--js伪协议，会直接执行js代码--&gt;</div><div class="line">href=“javascript:;”   &lt;!--无任何反应--&gt;</div><div class="line">href=<span class="string">""</span>  &lt;!--跳转自身，刷新页面--&gt;</div></pre></td></tr></table></figure>
+<p>href的值还可以是相对路径。URL不限于网页（HTTP）的文件。URL可能使用浏览器所支持的任何协议。例如，文件，FTP，大多数用户代理mailto工作。</p>
+<h1 id="lt-iframe-gt-标签"><a href="#lt-iframe-gt-标签" class="headerlink" title="&lt; iframe &gt; 标签"></a><strong>&lt; iframe &gt;</strong> 标签</h1><p>HTML内联框架元素 <frame 表示嵌套的浏览上下文，有效地将另一个html页面嵌入到当前页面中。="" 列如：="" <figure="" class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">iframe</span> src=<span class="string">"http://qq.com"</span> frameborder=<span class="string">"0"</span>&gt;&lt;/iframe&gt;</div></pre></td></tr></table></p>
+<p>这会在当前页面嵌入一个qq的主页，默认width：100；height：50。可用CSS改变。</p>
+<h3 id="name属性"><a href="#name属性" class="headerlink" title="name属性"></a>name属性</h3><p>嵌入的浏览上下文（框架）的名称。该名称可以用作<code>&lt;a&gt;</code>标签，<code>&lt;form&gt;</code>标签的target属性值，或<code>&lt;input&gt;</code>标签和<code>&lt;button&gt;</code>标签的formtaget属性值。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">iframe</span> name=xxx src=<span class="string">"#"</span> frameborder=<span class="string">"0"</span>&gt;&lt;/iframe&gt;</div><div class="line">&lt;<span class="selector-tag">a</span> target=xxx href=<span class="string">"http://qq.com"</span>&gt;点击QQ&lt;/a&gt;</div></pre></td></tr></table></figure>
+<p>这会在iframe窗口打开qq主页</p>
+<h3 id="frameborder属性"><a href="#frameborder属性" class="headerlink" title="frameborder属性"></a>frameborder属性</h3><p>iframe默认会有一个border（边框），当frameborder=0时，可以去掉边框。</p>
+<h3 id="src属性"><a href="#src属性" class="headerlink" title="src属性"></a>src属性</h3><p>嵌套页面的URL地址；也可以是相对路径。</p>
+<h1 id="lt-input-gt-标签"><a href="#lt-input-gt-标签" class="headerlink" title="&lt; input &gt; 标签"></a><strong>&lt; input &gt;</strong> 标签</h1><p>&lt; input &gt; 标签用于为基于Web的表单创建交互式控件，以便接受来自用户的数据。</p>
+<h3 id="type属性"><a href="#type属性" class="headerlink" title="type属性"></a>type属性</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">input</span> type=<span class="string">"button"</span> value=<span class="string">"button"</span>&gt;</div><div class="line">&lt;!--只是一个按钮，不能提交 --&gt;</div><div class="line"></div><div class="line">&lt;<span class="selector-tag">input</span> type=<span class="string">"checkbox"</span> name=<span class="string">"fruit"</span> value=<span class="string">"apple"</span>&gt;苹果</div><div class="line">&lt;!--复选框--&gt;</div><div class="line"></div><div class="line">&lt;<span class="selector-tag">input</span> type=<span class="string">"checkbox"</span> id=xxx&gt;&lt;<span class="selector-tag">label</span> <span class="keyword">for</span>=<span class="string">"xxx"</span>&gt;选我&lt;/label&gt;</div><div class="line">&lt;label&gt;&lt;<span class="selector-tag">input</span> type=<span class="string">"checkbox"</span>&gt;选我&lt;\label&gt;</div><div class="line">&lt;!--以上两种写法可以直接点击“选我”选中复选框 --&gt;</div><div class="line"></div><div class="line">&lt;<span class="selector-tag">input</span> type=<span class="string">"radio"</span> name=<span class="string">"fruit"</span> value=<span class="string">"apple"</span>&gt;苹果</div><div class="line">&lt;!--单选框，name值要相同才能实现单选--&gt;</div></pre></td></tr></table></figure>
+<p>1.button：无行为按钮。<br>2.checkbox： 复选框。必须使用 value 属性定义此控件被提交时的值。使用 checked 属性指示控件是否被选择。也可以使用 </p>
 <ol>
-<li>URL：通过描述资源的位置来描述资源</li>
-<li><p>URN：通过名字来识别资源，和位置无关</p>
-<p>URI 是 Uniform Resource Identifier 的缩写</p>
-</li>
+<li>color：HTML5 用于指定颜色的控件。</li>
+<li>date：HTML5 用于输入日期的控件（年，月，日，不包括时间）。</li>
+<li>datetime：HTML5 基于 UTC 时区的日期时间输入控件（时，分，秒及几分之一秒）。</li>
+<li>datetime-local：HTML5 用于输入日期时间控件，不包含时区。<br>7.email：HTML5 用于编辑 e-mail 的字段。 合适的时候可以使用 :valid 和 :invalid CSS 伪类。</li>
+<li>file：此控件可以让用户选择文件。使用 accept 属性可以定义控件可以选择的文件类型。</li>
+<li>hidden：不显示在页面上的控件，但它的值会被提交到服务器。</li>
+<li>image：图片提交按钮。必须使用 src 属性定义图片的来源及使用 alt 定义替代文本。还可以使用 height 和 width 属性以像素为单位定义图片的大小。</li>
+<li>month：HTML5 用于输入年月的控件，不带时区。</li>
+<li>number: HTML5 用于输入浮点数的控件。</li>
+<li>password：一个值被遮盖的单行文本字段。使用 maxlength 指定可以输入的值的最大长度 。</li>
+<li>radio：单选按钮。必须使用 value 属性定义此控件被提交时的值。使用checked 必须指示控件是否缺省被选择。在同一个”单选按钮组“中，所有单选按钮的 name 属性使用同一个值； 一个单选按钮组中是，同一时间只有一个单选按钮可以被选择。</li>
+<li>range：HTML5 用于输入不精确值控件。如果未指定相应的属性，控件使用如下缺省值：</li>
 </ol>
 <ul>
-<li>Uniform：规定统一的格式，可方便处理各种不同类型的资源，而不用根据上下文环境来识别资源指定的访问方式，加入新的协议方案(HTTP, HTTPS, FTP等)也更容易</li>
-<li><p>Resource：资源的定义是“可以标识的任何东西”，除了文档文件、图像或者服务（天气预报）等能够区别于其他类型的，劝都可以称为资源，另外资源不仅可以是单一的，也可以是多数的集合体</p>
-</li>
-<li><p>Identifier：表示可标识的对象，也成为标识符</p>
-</li>
+<li>min：0</li>
+<li>max：100</li>
+<li>value：min + (max-min)/2，或当 max 小于 min 时使用 min</li>
+<li>step：1</li>
 </ul>
-<p>综上所述，URI就是某个协议方案表示的资源的定位标识符，协议方案是指访问资源所使用的协议类型名称，采用HTTP协议的时候，协议方案就是http，除此之外还有ftp、mailto、file等。</p>
-<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><p>域名系统（Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。</p>
-<h2 id="请求与响应"><a href="#请求与响应" class="headerlink" title="请求与响应"></a>请求与响应</h2><ul>
-<li>浏览器负责发起请求</li>
-<li>服务器在 80 端口接收请求</li>
-<li>服务器负责返回内容（响应）</li>
-<li>浏览器负责下载响应内容</li>
-</ul>
-<p>HTTP 的作用就是指导浏览器和服务器如何进行沟通。（Server + Client + HTTP）</p>
-<h3 id="请求格式"><a href="#请求格式" class="headerlink" title="请求格式"></a>请求格式</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> 动词 路径 协议/版本</div><div class="line"><span class="number">2</span> Key1: value1</div><div class="line"><span class="number">2</span> Key2: value2</div><div class="line"><span class="number">2</span> Key3: value3</div><div class="line"><span class="number">2</span> Content-Type: application/x-www-form-urlencoded</div><div class="line"><span class="number">2</span> Host: www<span class="selector-class">.baidu</span><span class="selector-class">.com</span></div><div class="line"><span class="number">2</span> User-Agent: curl/<span class="number">7.54</span>.<span class="number">0</span></div><div class="line"><span class="number">3</span> </div><div class="line"><span class="number">4</span> 要上传的数据</div></pre></td></tr></table></figure>
 <ol>
-<li>请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空）</li>
-<li>第三部分永远都是一个回车（\n）</li>
-<li>动词有 GET POST PUT PATCH DELETE HEAD OPTIONS 等</li>
-<li>这里的路径包括「查询参数」，但不包括「锚点」</li>
-<li>如果你没有写路径，那么路径默认为 /</li>
-<li>第 2 部分中的 Content-Type 标注了第 4 部分的格式</li>
+<li>reset：用于将表单所内容设置为缺省值的按钮。</li>
+<li>search：HTML5用于输入搜索字符串的单行文本字段。换行会被从输入的值中自动移除。</li>
+<li>submit：用于提交表单的按钮。</li>
+<li>tel：HTML5 用于输入电话号码的控件。</li>
+<li>text：单行字段；换行会将自动从输入的值中移除。</li>
+<li>me：HTML5 用于输入不含时区的时间控件。</li>
+<li>url：HTML5 用于编辑URL的字段。 T</li>
+<li>week：HTML5 用于输入一个由星期-年组成的日期，日期不包括时区。</li>
 </ol>
-<h3 id="请求实列"><a href="#请求实列" class="headerlink" title="请求实列"></a>请求实列</h3><p>请求内容</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">POST / HTTP/<span class="number">1.1</span></div><div class="line">Host: www<span class="selector-class">.baidu</span><span class="selector-class">.com</span></div><div class="line">User-Agent: curl/<span class="number">7.54</span>.<span class="number">0</span></div><div class="line">Accept: *<span class="comment">/*</span></div><div class="line"><span class="comment">Frank: xxx</span></div><div class="line"><span class="comment">Content-Length: 10</span></div><div class="line"><span class="comment">Content-Type: application/x-www-form-urlencoded</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">1234567890</span></div></pre></td></tr></table></figure>
-<p>请求内容</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">GET / HTTP/<span class="number">1.1</span></div><div class="line">Host: www<span class="selector-class">.baidu</span><span class="selector-class">.com</span></div><div class="line">User-Agent: curl/<span class="number">7.54</span>.<span class="number">0</span></div><div class="line">Accept: *<span class="comment">/*</span></div><div class="line"><span class="comment">Frank: xxx</span></div></pre></td></tr></table></figure>
-<h3 id="响应格式"><a href="#响应格式" class="headerlink" title="响应格式"></a>响应格式</h3><p>请求了之后，应该都能得到一个响应，除非断网了，或者服务器宕机了。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span> 协议/版本号 状态码 状态解释</div><div class="line"><span class="number">2</span> Key1: value1</div><div class="line"><span class="number">2</span> Key2: value2</div><div class="line"><span class="number">2</span> Content-Length: <span class="number">17931</span></div><div class="line"><span class="number">2</span> Content-Type: text/html</div><div class="line"><span class="number">3</span></div><div class="line"><span class="number">4</span> 要下载的内容</div></pre></td></tr></table></figure>
-<ol>
-<li>状态码<ul>
-<li>1xx消息——请求已被服务器接收，继续处理</li>
-<li>2xx成功——请求已成功被服务器接收、理解、并接受</li>
-<li>3xx重定向——需要后续操作才能完成这一请求</li>
-<li>4xx请求错误——请求含有词法错误或者无法被执行</li>
-<li>5xx服务器错误——服务器在处理某个正确请求时发生错误</li>
+<h1 id="lt-select-gt-标签"><a href="#lt-select-gt-标签" class="headerlink" title="&lt; select &gt; 标签"></a><strong>&lt; select &gt;</strong> 标签</h1><p>下拉列表，是一种表单控件，可创建选项菜单。菜单内的选项为&lt; option &gt; , 可以由 &lt; optgroup &gt; 元素分组。选项可以被用户预先选择。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;select name=<span class="string">"group"</span> multiple&gt;&lt;!--multiple可以实现按shift多选--&gt;</div><div class="line">   &lt;option value=<span class="string">""</span>&gt;空&lt;/option&gt;&lt;!--value为空--&gt;</div><div class="line">   &lt;option value=<span class="string">"1"</span> disabled&gt;第一&lt;/option&gt;&lt;!--不可选--&gt;</div><div class="line">   &lt;option value=<span class="string">"2"</span>&gt;第二&lt;/option&gt;&lt;!----&gt;</div><div class="line">   &lt;option value=<span class="string">"3"</span> selected&gt;第三&lt;/option&gt;&lt;!--默认选中--&gt;</div><div class="line"> &lt;/select&gt;</div></pre></td></tr></table></figure>
+<p>包括下列全局属性：</p>
+<h3 id="autofocus"><a href="#autofocus" class="headerlink" title="autofocus"></a>autofocus</h3><p>这个属性能够让一个对象在页面加载的时候获得焦点. 在一个页面上下文中, 只有一个对象可以有这个属性，并且是布尔值(true 或者 false)。</p>
+<h3 id="disabled"><a href="#disabled" class="headerlink" title="disabled"></a>disabled</h3><p>这个布尔值的属性表明一个用户是否可以操控该表单对象. </p>
+<h3 id="form"><a href="#form" class="headerlink" title="form"></a>form</h3><p>select所关联的form表单 (它的”表单拥有者”). 如果这个属性被明确定义, 那么它的值一定是在同一个document中表单ID. 这样能够让你把select标签放在任何的位置, 不仅限于作为form表单的后代元素。</p>
+<h3 id="multiple"><a href="#multiple" class="headerlink" title="multiple"></a>multiple</h3><p>这个布尔值的属性标记select是否可以多选. 默认是单选。</p>
+<h3 id="name"><a href="#name" class="headerlink" title="name"></a>name</h3><p>控件名称。</p>
+<h3 id="required"><a href="#required" class="headerlink" title="required"></a>required</h3><p>规定select的值不能为空(布尔值)。</p>
+<h3 id="size"><a href="#size" class="headerlink" title="size"></a>size</h3><p>如果控件显示为滚动列表框，则此属性表示为控件中同时可见的行数。浏览器不需要将选择元素呈现为滚动列表框。默认值为0。</p>
+<h1 id="lt-textarea-gt-标签"><a href="#lt-textarea-gt-标签" class="headerlink" title="&lt; textarea &gt; 标签"></a>&lt; textarea &gt; 标签</h1><p>表示一个多行纯文本编辑控件,可用css改变可控制文本框的大小，设置style=”resize:none”可使文本框固定，不能随意拉动<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">textarea</span> name=<span class="string">"textarea"</span> rows=<span class="string">"10"</span> cols=<span class="string">"50"</span>&gt;Write something here&lt;/textarea&gt;</div></pre></td></tr></table></figure></p>
+<p>包含了全局属性：</p>
+<h3 id="cols"><a href="#cols" class="headerlink" title="cols"></a>cols</h3><p>文本域的可是宽度。必须为正数，默认为20 (HTML5)。</p>
+<h3 id="resize-none"><a href="#resize-none" class="headerlink" title="resize:none"></a>resize:none</h3><p>去掉文本域右下角的默认的灰色斜杠。</p>
+<h3 id="disabled-1"><a href="#disabled-1" class="headerlink" title="disabled"></a>disabled</h3><p>禁用文本域。默认为false。如果未指定，也可以从父级上如&lt; fieldset &gt;继承而来。</p>
+<h3 id="form-1"><a href="#form-1" class="headerlink" title="form"></a>form</h3><p>指定跟自身相关联的表单。值必须为本文档内的表单的ID，如果未指定，就是跟当前所在的表单元素相关联。这就允许你在文档的任意地方放置文本域元素。</p>
+<h3 id="maxlength"><a href="#maxlength" class="headerlink" title="maxlength"></a>maxlength</h3><p>允许用户输入的最大字符长度 (Unicode) 。未指定表示无限长度。</p>
+<h3 id="minlength"><a href="#minlength" class="headerlink" title="minlength"></a>minlength</h3><p>允许用户输入的最小字符长度(Unicode) </p>
+<h3 id="name-1"><a href="#name-1" class="headerlink" title="name"></a>name</h3><p>元素的名称。</p>
+<h3 id="placeholder"><a href="#placeholder" class="headerlink" title="placeholder"></a>placeholder</h3><p>占位符，用来提示用户进行内容输入。</p>
+<h3 id="readonly"><a href="#readonly" class="headerlink" title="readonly"></a>readonly</h3><p>不允许用户修改元素内文本。和 disabled 属性不同的是，这个能让用户点击和选择元素内的文本。如果在表单里，这个元素的值还是会跟随表单一起提交。</p>
+<h3 id="required-1"><a href="#required-1" class="headerlink" title="required"></a>required</h3><p>提示用户这个元素的内容必填。</p>
+<h3 id="rows"><a href="#rows" class="headerlink" title="rows"></a>rows</h3><p>元素的输入文本的行数（显示的高度）。</p>
+<h3 id="autocomplete-HTML5"><a href="#autocomplete-HTML5" class="headerlink" title="autocomplete HTML5"></a>autocomplete HTML5</h3><p>是否使用浏览器的记忆功能自动填充文本。可能的值有：</p>
+<ul>
+<li>off: 不使用浏览器的记忆自动填充，使用者必须输入他们想要输入的所有内容。或者网页提供了自己的自动填充方法。</li>
+<li>on: 浏览器根据用户之前输入的内容或者习惯，在用户输入的时候给出相应输入提示。</li>
 </ul>
-</li>
-<li>状态解释</li>
-<li>第 2 部分中的 Content-Type 标注了第 4 部分的格式</li>
-<li>第 2 部分中的 Content-Type 遵循 MIME 规范</li>
+<h1 id="lt-form-gt-标签"><a href="#lt-form-gt-标签" class="headerlink" title="&lt; form &gt; 标签"></a><strong>&lt; form &gt;</strong> 标签</h1><p>表示了文档中的一个区域，这个区域包含有交互控制元件，用来向web服务器提交信息。（发起HTTP POST请求）。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">form</span> action=<span class="string">""</span> method=<span class="string">"post"</span> target=<span class="string">""</span>&gt;</div><div class="line">        &lt;<span class="selector-tag">input</span> type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</div><div class="line">    &lt;/form&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li>如果form表单里面没有提交按钮就无法提交form,除非用js。</li>
+<li>method</li>
 </ol>
-<h3 id="响应实列"><a href="#响应实列" class="headerlink" title="响应实列"></a>响应实列</h3><p>响应内容</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">HTTP/<span class="number">1.1</span> <span class="number">302</span> Found</div><div class="line">Connection: Keep-Alive</div><div class="line">Content-Length: <span class="number">17931</span></div><div class="line">Content-Type: text/html</div><div class="line">Date: Tue, <span class="number">10</span> Oct <span class="number">2017</span> <span class="number">09</span>:<span class="number">19</span>:<span class="number">47</span> GMT</div><div class="line">Etag: <span class="string">"54d9749e-460b"</span></div><div class="line">Server: bfe/<span class="number">1.0</span>.<span class="number">8.18</span></div><div class="line"></div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta http-equiv=<span class="string">"content-type"</span> <span class="attribute">content</span>=<span class="string">"text/html;charset=utf-8"</span>&gt;</div><div class="line">......代码太多，省略</div></pre></td></tr></table></figure>
+<ul>
+<li><p>post: 指的是 HTTP POST 方法 ; 表单数据会包含在表单体内然后发送给服务器.(当URI action是以 ‘?’ 作为分隔符的查询参数时，会发起get请求)。</p>
+</li>
+<li><p>get: 指的是 HTTP GET 方法; 表单数据会附加在 URI action 属性中并以 ‘?’ 作为分隔符, 然后这样得到的 URI 再发送给服务器. （建议直接用&lt; a &gt;标签)</p>
+<ol>
+<li>当没有method属性时，默认为GET</li>
+<li>target属性与&lt; a &gt;标签类似<h3 id="列子："><a href="#列子：" class="headerlink" title="列子："></a>列子：</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 一个简单的表单，这个表单会发送一个 GET 请求 --&gt;</div><div class="line">&lt;<span class="selector-tag">form</span> action=<span class="string">""</span>&gt;</div><div class="line">  &lt;<span class="selector-tag">label</span> <span class="keyword">for</span>=<span class="string">"GET-name"</span>&gt;Name:&lt;/label&gt;</div><div class="line">  &lt;<span class="selector-tag">input</span> id=<span class="string">"GET-name"</span> type=<span class="string">"text"</span> name=<span class="string">"name"</span>&gt;&lt;!-- name的值会作为post请求的第四部分被提交 --&gt;</div><div class="line">  &lt;<span class="selector-tag">input</span> type=<span class="string">"submit"</span> value=<span class="string">"Save"</span>&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">&lt;!-- 一个简单的表单，发送 POST 请求 --&gt;</div><div class="line">&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;</div><div class="line">  &lt;label for=&quot;POST-name&quot;&gt;Name:&lt;/label&gt;</div><div class="line">  &lt;input id=&quot;POST-name&quot; type=&quot;text&quot; name=&quot;name&quot;&gt;</div><div class="line">  &lt;input type=&quot;submit&quot; value=&quot;Save&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table" target="_blank" rel="external">未完待续 &lt; table &gt;</a></p>
 
         
     
@@ -582,21 +620,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/10/15/HTML5标签/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/10/04/Hexo+GitHub搭建个人博客/" id="post_nav-older" class="next-content">
+        <a href="/2017/10/15/HTML5标签/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
