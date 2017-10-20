@@ -235,7 +235,7 @@
 
     
         <meta property="article:published_time" content="Thu Oct 19 2017 00:31:11 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Oct 20 2017 10:27:59 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Oct 20 2017 11:38:11 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2017/10/19/HTML标签详解1/index.html",
     "headline": "HTML5标签详解（1）",
     "datePublished": "Thu Oct 19 2017 00:31:11 GMT+0800",
-    "dateModified": "Fri Oct 20 2017 10:27:59 GMT+0800",
+    "dateModified": "Fri Oct 20 2017 11:38:11 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -585,20 +585,12 @@
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">form</span> action=<span class="string">""</span> method=<span class="string">"post"</span> target=<span class="string">""</span>&gt;</div><div class="line">        &lt;<span class="selector-tag">input</span> type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>&gt;</div><div class="line">    &lt;/form&gt;</div></pre></td></tr></table></figure>
 <ol>
 <li>如果form表单里面没有提交按钮就无法提交form,除非用js。</li>
-<li>method</li>
-</ol>
-<ul>
-<li><p>post: 指的是 HTTP POST 方法 ; 表单数据会包含在表单体内然后发送给服务器.(当URI action是以 ‘?’ 作为分隔符的查询参数时，会发起get请求)。</p>
-</li>
-<li><p>get: 指的是 HTTP GET 方法; 表单数据会附加在 URI action 属性中并以 ‘?’ 作为分隔符, 然后这样得到的 URI 再发送给服务器. （建议直接用&lt; a &gt;标签)</p>
-<ol>
+<li>method=post: 指的是 HTTP POST 方法 ; 表单数据会包含在表单体内然后发送给服务器.(当URI action是以 ‘?’ 作为分隔符的查询参数时，会发起get请求)。method=get: 指的是 HTTP GET 方法; 表单数据会附加在 URI action 属性中并以 ‘?’ 作为分隔符, 然后这样得到的 URI 再发送给服务器. （建议直接用&lt; a &gt;标签)</li>
 <li>当没有method属性时，默认为GET</li>
-<li>target属性与&lt; a &gt;标签类似<h3 id="列子："><a href="#列子：" class="headerlink" title="列子："></a>列子：</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 一个简单的表单，这个表单会发送一个 GET 请求 --&gt;</div><div class="line">&lt;<span class="selector-tag">form</span> action=<span class="string">""</span>&gt;</div><div class="line">  &lt;<span class="selector-tag">label</span> <span class="keyword">for</span>=<span class="string">"GET-name"</span>&gt;Name:&lt;/label&gt;</div><div class="line">  &lt;<span class="selector-tag">input</span> id=<span class="string">"GET-name"</span> type=<span class="string">"text"</span> name=<span class="string">"name"</span>&gt;&lt;!-- name的值会作为post请求的第四部分被提交 --&gt;</div><div class="line">  &lt;<span class="selector-tag">input</span> type=<span class="string">"submit"</span> value=<span class="string">"Save"</span>&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
-</li>
+<li>target属性与&lt; a &gt;标签类似<h3 id="列子："><a href="#列子：" class="headerlink" title="列子："></a>列子：</h3></li>
 </ol>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">&lt;!-- 一个简单的表单，发送 POST 请求 --&gt;</div><div class="line">&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;</div><div class="line">  &lt;label for=&quot;POST-name&quot;&gt;Name:&lt;/label&gt;</div><div class="line">  &lt;input id=&quot;POST-name&quot; type=&quot;text&quot; name=&quot;name&quot;&gt;</div><div class="line">  &lt;input type=&quot;submit&quot; value=&quot;Save&quot;&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 一个简单的表单，这个表单会发送一个 GET 请求 --&gt;</div><div class="line">&lt;<span class="selector-tag">form</span> action=<span class="string">""</span>&gt;</div><div class="line">  &lt;<span class="selector-tag">label</span> <span class="keyword">for</span>=<span class="string">"GET-name"</span>&gt;Name:&lt;/label&gt;</div><div class="line">  &lt;<span class="selector-tag">input</span> id=<span class="string">"GET-name"</span> type=<span class="string">"text"</span> name=<span class="string">"name"</span>&gt;&lt;!-- name的值会作为post请求的第四部分被提交 --&gt;</div><div class="line">  &lt;<span class="selector-tag">input</span> type=<span class="string">"submit"</span> value=<span class="string">"Save"</span>&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 一个简单的表单，发送 POST 请求 --&gt;</div><div class="line">&lt;<span class="selector-tag">form</span> action=<span class="string">""</span> method=<span class="string">"post"</span>&gt;</div><div class="line">  &lt;<span class="selector-tag">label</span> <span class="keyword">for</span>=<span class="string">"POST-name"</span>&gt;Name:&lt;/label&gt;</div><div class="line">  &lt;<span class="selector-tag">input</span> id=<span class="string">"POST-name"</span> type=<span class="string">"text"</span> name=<span class="string">"name"</span>&gt;</div><div class="line">  &lt;<span class="selector-tag">input</span> type=<span class="string">"submit"</span> value=<span class="string">"Save"</span>&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table" target="_blank" rel="external">未完待续 &lt; table &gt;</a></p>
 
         
