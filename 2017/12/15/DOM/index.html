@@ -39,7 +39,7 @@
     
     <title>
         
-            JavaScript原型与原型链 | 
+            DOM | 
         
         Zhang Hong
     </title>
@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Nico Zhang">
     <meta name="description" itemprop="description" content="ONE THE WAY">
-    <meta name="keywords" content=",JavaScript">
+    <meta name="keywords" content=",JavaScript,DOM">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -228,18 +228,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="JavaScript原型与原型链 | Zhang Hong">
+    <meta property="og:title" content="DOM | Zhang Hong">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="ONE THE WAY">
-    <meta property="og:article:tag" content="JavaScript"> 
+    <meta property="og:article:tag" content="JavaScript"> <meta property="og:article:tag" content="DOM"> 
 
     
-        <meta property="article:published_time" content="Wed Dec 13 2017 22:47:03 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Dec 15 2017 18:23:30 GMT+0800" />
+        <meta property="article:published_time" content="Fri Dec 15 2017 13:45:42 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Dec 15 2017 18:30:06 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="JavaScript原型与原型链 | Zhang Hong">
+    <meta name="twitter:title" content="DOM | Zhang Hong">
     <meta name="twitter:description" content="ONE THE WAY">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/12/13/JavaScript原型与原型链/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2017/12/15/DOM/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2017/12/13/JavaScript原型与原型链/index.html",
-    "headline": "JavaScript原型与原型链",
-    "datePublished": "Wed Dec 13 2017 22:47:03 GMT+0800",
-    "dateModified": "Fri Dec 15 2017 18:23:30 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2017/12/15/DOM/index.html",
+    "headline": "DOM",
+    "datePublished": "Fri Dec 15 2017 13:45:42 GMT+0800",
+    "dateModified": "Fri Dec 15 2017 18:30:06 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -280,7 +280,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",JavaScript",
+    "keywords": ",JavaScript,DOM",
     "description": "ONE THE WAY",
 }
 </script>
@@ -346,7 +346,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基于原型链的继承"><span class="post-toc-number">1.</span> <span class="post-toc-text">基于原型链的继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">2.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM-Nodes"><span class="post-toc-number">1.</span> <span class="post-toc-text">DOM Nodes</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#parent、child和sibling"><span class="post-toc-number">2.</span> <span class="post-toc-text">parent、child和sibling</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Node-的接口"><span class="post-toc-number">3.</span> <span class="post-toc-text">Node 的接口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#nodeName-nodeType"><span class="post-toc-number">3.1.1.</span> <span class="post-toc-text">nodeName,nodeType</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#nodeValue"><span class="post-toc-number">3.1.2.</span> <span class="post-toc-text">nodeValue</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#textContent"><span class="post-toc-number">3.1.3.</span> <span class="post-toc-text">textContent</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#nextSibling"><span class="post-toc-number">3.1.4.</span> <span class="post-toc-text">nextSibling</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Node-previousSibling"><span class="post-toc-number">3.1.5.</span> <span class="post-toc-text">Node.previousSibling</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Node-ownerDocument"><span class="post-toc-number">3.1.6.</span> <span class="post-toc-text">Node.ownerDocument</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#parentNode"><span class="post-toc-number">3.1.7.</span> <span class="post-toc-text">parentNode</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Node-parentElement"><span class="post-toc-number">3.1.8.</span> <span class="post-toc-text">Node.parentElement</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Node-childNodes"><span class="post-toc-number">3.1.9.</span> <span class="post-toc-text">Node.childNodes</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Node-firstChild，Node-lastChild"><span class="post-toc-number">3.1.10.</span> <span class="post-toc-text">Node.firstChild，Node.lastChild</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#innerText"><span class="post-toc-number">3.1.11.</span> <span class="post-toc-text">innerText,</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#outerText"><span class="post-toc-number">3.1.12.</span> <span class="post-toc-text">outerText,</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Document-接口"><span class="post-toc-number">4.</span> <span class="post-toc-text">Document 接口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性-1"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法-1"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Element-的接口"><span class="post-toc-number">5.</span> <span class="post-toc-text">Element 的接口</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#属性-2"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方法-2"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">方法</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -378,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                JavaScript原型与原型链
+                DOM
             </p>
         </div>
 
@@ -397,7 +397,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Nico Zhang</strong>
-        <span>12月 13, 2017</span>
+        <span>12月 15, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -419,7 +419,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2klEQVR42u3aQZIiMQwEQP7/6d3rXGCrpGYH3NknYgLaTs9BoZIff275PLCxsbGxsbGxsbE/kv2In5/ff/Y5/9XPv0SbDtZ6tjo2Njb2Hdj5kskmnr0h/1V+iMWesbGxsW/AbovWprQkBzErnNjY2NjYecGYHcHrkpa0K9jY2NjYF7yiLEXJMSWFChsbGxt7Hyq1JecdrcUvZGnY2NjYH8++atD7Pz9/0HwbGxsb+1fZq+uMcTHLS04eYK0uX2JjY2MfxM7HAFeF9UnTMjuIVZaGjY2N/bXs19utg5v1b9tClR8WNjY29qnspIUogpvygk4eYG1GF9jY2Nh3YM9IbRG66orP69WLUAkbGxv7CHYeEm0YbQA021UdKmFjY2Mfwd7E8Xmb0TY2+6YFGxsb+z7sNvRpL+jMqPv2JmpFsLGxsQ9i7yP+PLLPw6Ak+l/Nt7GxsbGPY+dlZtN45Jdv2uHBP/6d2NjY2IeyZxHS/kpNW64uuE6EjY2NfTS7XTLZetuKtKtcMBXBxsbGPoI9o0bL7JuHxViimIpgY2NjH8HOB7SbtuTa42hLIDY2NvYd2Ptwpz2ydpQ7K67Y2NjYZ7P3oXzeilzLWxUwbGxs7EPZm2agHQ9vhg3D2AsbGxv7UHbSHiQBUHJlcwZoC+RwPICNjY19BDs/gs21nvb9bexVFzBsbGzsL2fn0U/bZrSD4VnBW3Vg2NjY2EewZ+1EAstD/NmIoh5XYGNjYx/Kbq/gvK+dyItoezEUGxsb+2z2tSPe9vjacUIeMA3HA9jY2NhfyH7ET96uzApbG13Vo2hsbGzso9lt0dpsPR/NtseBjY2NjT27OtnGTLORw1uyNGxsbOzbs/Ph7n4MnB90ESphY2Nj35I9i5Nm5W1W2N5SwLCxsbG/hN0Od/OLNfn78+g/HwxgY2Nj34HdDnpnh7KPqFYjDWxsbOxD2fd5sLGxsbGxsbGxsT/m+Qs0A7nMzOeobwAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACa0lEQVR42u3aUa6DMAwEwN7/0u8doIKu7SRF1fBVVQgyfMTWxq+/n75eeHh4eHh4eHh4D+O94uvq/vf/r57//v+HhRbXhoeHh3eSl7zmftFXz6k+P3nmh7Xh4eHhHeTdb/rJ/cnTkk2/tzY8PDy8Z/J6W38UIty23Xh4eHi/wUsWlJeWpNXGw8PDexovDwvyTXzVRzmUteDh4eHFvOoB2MnfXzjfw8PDw7vlnQwOemWjvDY8PDy8zbw8dJg0zfMxhXzNeHh4eGd498vNS8Xk4L/a0BcKAx4eHt5mXj5K1SsDvXg3fzseHh7eGV6y0SevzIvBZCj2wwrx8PDwNvPm0eqqIlGNPAopNR4eHt5S3tqGeFWckReVUd3Dw8PDa/HmbfS8va62zoUwAg8PD28Db1UbnRykTRrrQy01Hh4eXouXb/d5W9wMZIslAQ8PD+8Mr3own4Cr/xfGAqpDV3h4eHgbeFEwWmyXeyNc+VsWzJTh4eHhDXi9w6dkdKB6Z68IlScj8PDw8Ma8KiDZpudDANX4Aw8PD+8krxCPxouuFoPq0ECzpcbDw8NbxFt1WFUNXqvh76ju4eHh4S3lVctD9aBr0ihXixAeHh7eGd4rviajBqsa92WjA3h4eHjjA7D8KrwmjiF6zToeHh7et3jVwlAdvaoutPdR8PDw8M7z8i2+F7zuC4jx8PDwvsvbMRCQF4l5DIGHh4f3fF7vc/RC3vsPioeHh/dkXj5O2hvMSlrn+7fg4eHhneTlYUQeIuShxiSqwMPDwzvP6x2A5UdZ1bJRaKD3ne/h4eHhXfB+78LDw8PDw8PDw3vA9Q/2cf1hOIjwrQAAAABJRU5ErkJggg==">
     
 </ul>
 
@@ -433,7 +433,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+        <a class="post_tag-link" href="/tags/DOM/">DOM</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
     </ul>
     
 
@@ -460,7 +460,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JavaScript原型与原型链&url=http://yoursite.com/2017/12/13/JavaScript原型与原型链/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=DOM&url=http://yoursite.com/2017/12/15/DOM/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -469,7 +469,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=JavaScript原型与原型链&url=http://yoursite.com/2017/12/13/JavaScript原型与原型链/index.html&via=Nico Zhang" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=DOM&url=http://yoursite.com/2017/12/15/DOM/index.html&via=Nico Zhang" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -478,7 +478,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/12/13/JavaScript原型与原型链/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/12/15/DOM/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -487,7 +487,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/12/13/JavaScript原型与原型链/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/12/15/DOM/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -511,11 +511,45 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h3 id="基于原型链的继承"><a href="#基于原型链的继承" class="headerlink" title="基于原型链的继承"></a>基于原型链的继承</h3><p>JavaScript 对象是动态的属性“包”（指其自己的属性）。JavaScript 对象有一个指向一个原型对象的链。当试图访问一个对象的属性时，它不仅仅在该对象上搜寻，还会搜寻该对象的原型，以及该对象的原型的原型，依次层层向上搜索，直到找到一个名字匹配的属性或到达原型链的末尾。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 让我们假设我们有一个对象 o, 其有自己的属性 a 和 b：</span></div><div class="line"><span class="comment">// &#123;a: 1, b: 2&#125;</span></div><div class="line"><span class="comment">// o 的原型 o.__proto__有属性 b 和 c：</span></div><div class="line"><span class="comment">// &#123;b: 3, c: 4&#125;</span></div><div class="line"><span class="comment">// 最后, o.__proto__.__proto__ 是 null.</span></div><div class="line"><span class="comment">// 这就是原型链的末尾，即 null，</span></div><div class="line"><span class="comment">// 根据定义，null 没有__proto__.</span></div><div class="line"><span class="comment">// 综上，整个原型链如下: </span></div><div class="line"><span class="comment">// &#123;a:1, b:2&#125; ---&gt; &#123;b:3, c:4&#125; ---&gt; null</span></div><div class="line"></div><div class="line">console.log(o.a); // 1</div><div class="line"><span class="comment">// a是o的自身属性吗？是的，该属性的值为1</span></div><div class="line"></div><div class="line">console.log(o.b); // 2</div><div class="line"><span class="comment">// b是o的自身属性吗？是的，该属性的值为2</span></div><div class="line"><span class="comment">// o.__proto__上还有一个'b'属性,但是它不会被访问到.这种情况称为"属性遮蔽 (property shadowing)".</span></div><div class="line"></div><div class="line">console.log(o.c); // 4</div><div class="line"><span class="comment">// c是o的自身属性吗？不是，那看看o.__proto__上有没有.</span></div><div class="line"><span class="comment">// c是o.__proto__的自身属性吗？是的,该属性的值为4</span></div><div class="line"></div><div class="line">console.log(o.d); // undefined</div><div class="line"><span class="comment">// d是o的自身属性吗？不是,那看看o.__proto__上有没有.</span></div><div class="line"><span class="comment">// d是o.__proto__的自身属性吗？不是，那看看o.__proto__.__proto__上有没有.</span></div><div class="line"><span class="comment">// o.__proto__.__proto__为null，停止搜索，</span></div><div class="line"><span class="comment">// 没有d属性，返回undefined</span></div></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>. 所有对象都有 __proto__</div><div class="line"><span class="number">2</span>. 所有构造函数都有prototype</div><div class="line"><span class="number">3</span>. 对象__proto__===构造函数prototype</div><div class="line"><span class="number">4</span>. 所有函数对象的__proto__===Function.prototype</div><div class="line"><span class="number">5</span>. 函数也是一种对象</div><div class="line"><span class="number">6</span>. 所有函数都有__proto__</div><div class="line"><span class="number">7</span>. 非构造函数有__proto__，没有prototype</div><div class="line"><span class="number">8</span>. 构造函数既有__proto__，也有prototype</div></pre></td></tr></table></figure>
-<p><img src="https://i.loli.net/2017/12/10/5a2d1933681f9.jpg" alt="enter description here"></p>
-
+        <h2 id="DOM-Nodes"><a href="#DOM-Nodes" class="headerlink" title="DOM Nodes"></a>DOM Nodes</h2><ol>
+<li>整个文档是一个文档节点</li>
+<li>每个 HTML 元素是元素节点</li>
+<li>HTML 元素内的文本是文本节点</li>
+<li>每个 HTML 属性是属性节点</li>
+<li>注释是注释节点</li>
+</ol>
+<p><img src="https://i.loli.net/2017/12/15/5a33565525817.png" alt="enter description here"></p>
+<h2 id="parent、child和sibling"><a href="#parent、child和sibling" class="headerlink" title="parent、child和sibling"></a>parent、child和sibling</h2><p>1.节点树中的节点彼此拥有层级关系。</p>
+<ol>
+<li>在节点树中，顶端节点被称为根（root）。</li>
+<li>每个节点都有父节点、除了根（它没有父节点）。</li>
+<li>一个节点可拥有任意数量的子节点。</li>
+<li>同胞是拥有相同父节点的节点。</li>
+</ol>
+<p><img src="https://i.loli.net/2017/12/15/5a335ad47a8ae.png" alt="enter description here"></p>
+<h2 id="Node-的接口"><a href="#Node-的接口" class="headerlink" title="Node 的接口"></a>Node 的接口</h2><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="nodeName-nodeType"><a href="#nodeName-nodeType" class="headerlink" title="nodeName,nodeType"></a>nodeName,nodeType</h4><p>nodeName属性返回节点的名称，nodeType属性返回节点类型的常数值。具体值查看<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/nodeType" target="_blank" rel="external">MDN</a></p>
+<h4 id="nodeValue"><a href="#nodeValue" class="headerlink" title="nodeValue"></a>nodeValue</h4><p>对于文档节点来说, nodeValue返回null. 对于text, comment, 和 CDATA 节点来说, nodeValue返回该节点的文本内容. 对于 attribute 节点来说, 返回该属性的属性值.</p>
+<h4 id="textContent"><a href="#textContent" class="headerlink" title="textContent"></a>textContent</h4><p>Node.textContent属性自动忽略当前节点内部的HTML标签，返回所有文本内容。该属性是可读写的，设置该属性的值，会用一个新的文本节点，替换所有原来的子节点。它的一个好处就是自动对HTML标签转义。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 给定如下HTML:</span></div><div class="line"><span class="comment">//   &lt;div id="divA"&gt;This is &lt;span&gt;some&lt;/span&gt; text&lt;/div&gt;</span></div><div class="line"></div><div class="line"><span class="comment">// 获得文本内容:</span></div><div class="line">var text = document.getElementById("divA").textContent;</div><div class="line"><span class="comment">// |text| is set to "This is some text".</span></div><div class="line"></div><div class="line"><span class="comment">// 设置文本内容:</span></div><div class="line">document.getElementById("divA").textContent = "This is some text";</div><div class="line"><span class="comment">// divA的HTML现在是这样的:</span></div><div class="line"><span class="comment">//   &lt;div id="divA"&gt;This is some text&lt;/div&gt;</span></div><div class="line">document.getElementById('divA').textContent = '&lt;p&gt;GoodBye!&lt;/p&gt;';</div><div class="line"><span class="comment">//divA的HTML现在是这样的</span></div><div class="line"><span class="comment">//  &lt;div id="divA"&gt;&lt;p&gt;GoodBye!t&lt;/p&gt;&lt;/div&gt;</span></div><div class="line"><span class="comment">//会将&lt;p&gt;标签解释为文本，而不会当作标签处理。网页显示是这样的</span></div><div class="line"><span class="comment">//  &lt;p&gt;GoodBye!&lt;/p&gt;</span></div></pre></td></tr></table></figure></p>
+<p>对于Text节点和Comment节点，该属性的值与nodeValue属性相同。其他类型的节点，该属性会将每个子节点的内容连接在一起返回，但是不包括Comment节点。如果一个节点没有子节点，则返回空字符串。<br>document节点和doctype节点的textContent属性为null。读取整个文档的内容使用document.documentElement.textContent。</p>
+<h4 id="nextSibling"><a href="#nextSibling" class="headerlink" title="nextSibling"></a>nextSibling</h4><p>Node.nextSibling属性返回紧跟在当前节点后面的第一个同级节点,是一个只读属性。如果当前节点后面没有同级节点，则返回null。<br>注意：该属性还包括文本节点和评论节点。因此如果当前节点后面有空格或者回车，该属性会返回一个文本节点，内容为空格或者回车。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">div</span> id=<span class="string">"div-01"</span>&gt;Here is div-<span class="number">01</span>&lt;/div&gt;</div><div class="line">&lt;<span class="selector-tag">div</span> id=<span class="string">"div-02"</span>&gt;Here is div-<span class="number">02</span>&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="selector-tag">var</span> el = document.getElementById(<span class="string">'div-01'</span>)<span class="selector-class">.nextSibling</span>,</div><div class="line">    i = 1;</div><div class="line"></div><div class="line">console.log('Siblings of div-01:');</div><div class="line"></div><div class="line">while (el) &#123;</div><div class="line">  console.log(i + '. ' + el.nodeName);</div><div class="line">  el = el.nextSibling;</div><div class="line">  i++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line"><span class="comment">/**************************************************</span></div><div class="line"><span class="comment">  The following is written to the console as it loads:</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">     Siblings of div-01</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">      1. #text</span></div><div class="line"><span class="comment">      2. DIV</span></div><div class="line"><span class="comment">      3. #text</span></div><div class="line"><span class="comment">      4. SCRIPT</span></div><div class="line"><span class="comment">**************************************************/</span></div><div class="line"><span class="comment">/*1为div-01与div-02之间的回车，3为div-02与&lt;script&gt;之间的回车*/</span></div></pre></td></tr></table></figure>
+<h4 id="Node-previousSibling"><a href="#Node-previousSibling" class="headerlink" title="Node.previousSibling"></a>Node.previousSibling</h4><p>返回当前节点的前一个兄弟节点,没有则返回null.<br>如果当前节点后前面有空格或者回车，该属性会返回一个文本节点，内容为空格或者回车。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// &lt;a&gt;&lt;b1 id="b1"/&gt;&lt;b2 id="b2"/&gt;&lt;/a&gt;</span></div><div class="line">alert(document.getElementById("b1").previousSibling); // null</div><div class="line">alert(document.getElementById("b2").previousSibling.id); // "b1"</div></pre></td></tr></table></figure>
+<h4 id="Node-ownerDocument"><a href="#Node-ownerDocument" class="headerlink" title="Node.ownerDocument"></a>Node.ownerDocument</h4><p>Node.ownerDocument属性返回当前节点所在的顶层文档对象，即document对象。document 对象是在实际的HTML文档中的所有子节点所属的主对象,document对象本身的ownerDocument属性，返回null。</p>
+<h4 id="parentNode"><a href="#parentNode" class="headerlink" title="parentNode"></a>parentNode</h4><p>parentNode属性返回当前节点的父节点。一个元素节点的父节点可能是一个元素(Element )节点,也可能是一个文档(Document )节点,或者是个文档碎片(DocumentFragment)节点.</p>
+<p>例子：如何从父节点移除指定节点。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (node.parentNode) &#123;</div><div class="line">  <span class="comment">// 从DOM树中删除node节点,除非它已经被删除了.</span></div><div class="line">  node.parentNode.removeChild(node);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Node-parentElement"><a href="#Node-parentElement" class="headerlink" title="Node.parentElement"></a>Node.parentElement</h4><p>返回当前节点的父元素节点,如果该元素没有父节点,或者父节点不是一个元素节点.则 返回null.<br>例子：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (node.parentElement) &#123;</div><div class="line">  node.parentElement.style.color="red";</div><div class="line">&#125;</div><div class="line"><span class="comment">//设置指定节点的父Element节点的CSS属性。</span></div></pre></td></tr></table></figure>
+<p>在IE浏览器中，只有Element节点才有该属性，其他浏览器则是所有类型的节点都有该属性。</p>
+<h4 id="Node-childNodes"><a href="#Node-childNodes" class="headerlink" title="Node.childNodes"></a>Node.childNodes</h4><p>childNodes属性返回一个伪数组NodeList集合，成员包括当前节点的所有子节点。注意，除了HTML元素节点，该属性返回的还包括Text节点(回车和空格也算)和Comment节点。如果当前节点不包括任何子节点，则返回一个空的NodeList集合。由于NodeList对象是一个动态集合，一旦子节点发生变化，立刻会反映在返回结果之中。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/childNodes" target="_blank" rel="external">详细查看MDN</a></p>
+<h4 id="Node-firstChild，Node-lastChild"><a href="#Node-firstChild，Node-lastChild" class="headerlink" title="Node.firstChild，Node.lastChild"></a>Node.firstChild，Node.lastChild</h4><p>firstChild属性返回当前节点的第一个子节点，如果当前节点没有子节点，则返回null（注意，不是undefined）。<br>在下面的示例中, 提示框将显示 ‘#text’,因为在&lt; p &gt;标签和&lt; span &gt;标签之间,有一个换行符和多个空格充当了一个文本节点.在Gecko中,任意多个的空白符都将导致文本节点的插入,包括一个到多个空格符,换行符,制表符等等.</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">p</span> id=<span class="string">"para-01"</span>&gt;</div><div class="line">  &lt;span&gt;First span&lt;/span&gt;</div><div class="line">&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">  var p01 = document.getElementById('para-01');</div><div class="line">  alert(p01<span class="selector-class">.firstChild</span><span class="selector-class">.nodeName</span>)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>如果从源代码移出对应的空白符,则不会有文本节点被插入,span元素就成为了第一个子节点.下面的代码将弹出 ‘SPAN’.</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">p</span> id=<span class="string">"para-01"</span>&gt;&lt;span&gt;First span&lt;/span&gt;&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">  var p01 = document.getElementById('para-01');</div><div class="line">  alert(p01<span class="selector-class">.firstChild</span><span class="selector-class">.nodeName</span>)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>Node.lastChild属性返回当前节点的最后一个子节点，如果父节点为一个元素节点，则子节点通常为一个元素节点，或一个文本节点，或一个注释节点。如果当前节点没有子节点，则返回null。</p>
+<h4 id="innerText"><a href="#innerText" class="headerlink" title="innerText,"></a>innerText,</h4><h4 id="outerText"><a href="#outerText" class="headerlink" title="outerText,"></a>outerText,</h4><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p>1.appendChild()<br>2.cloneNode()<br>3.contains()<br>4.hasChildNodes()<br>5.insertBefore()<br>6.isEqualNode()<br>7.isSameNode()<br>8.removeChild()<br>9.replaceChild()<br>10.normalize() // 常规化</p>
+<h2 id="Document-接口"><a href="#Document-接口" class="headerlink" title="Document 接口"></a>Document 接口</h2><h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><h2 id="Element-的接口"><a href="#Element-的接口" class="headerlink" title="Element 的接口"></a>Element 的接口</h2><h3 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h3><h3 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h3>
         
     
 
@@ -535,21 +569,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/12/15/DOM/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/12/11/JavaScript里的数据/" id="post_nav-older" class="next-content">
+        <a href="/2017/12/13/JavaScript原型与原型链/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
