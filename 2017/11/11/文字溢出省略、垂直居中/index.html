@@ -235,7 +235,7 @@
 
     
         <meta property="article:published_time" content="Sat Nov 11 2017 15:21:36 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Nov 11 2017 15:21:43 GMT+0800" />
+        <meta property="article:modified_time" content="Sun Dec 31 2017 23:48:20 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2017/11/11/文字溢出省略、垂直居中/index.html",
     "headline": "文字溢出省略、垂直居中",
     "datePublished": "Sat Nov 11 2017 15:21:36 GMT+0800",
-    "dateModified": "Sat Nov 11 2017 15:21:43 GMT+0800",
+    "dateModified": "Sun Dec 31 2017 23:48:20 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -511,10 +511,100 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="一行文本过长变成省略号"><a href="#一行文本过长变成省略号" class="headerlink" title="一行文本过长变成省略号"></a>一行文本过长变成省略号</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">   div&#123;</div><div class="line">   <span class="attribute">white-space</span>:nowrap;   <span class="comment">/*不换行，超出div宽度的文字溢出*/</span></div><div class="line">   <span class="attribute">overflow</span>:hidden;         <span class="comment">/*超出宽度部分自动隐藏*/</span></div><div class="line">   <span class="attribute">text-overflow</span>:ellipsis;   <span class="comment">/*超出部分变成省略号*/</span></div><div class="line">&#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">这里是文本</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h2 id="多行文本超出部分变省略号"><a href="#多行文本超出部分变省略号" class="headerlink" title="多行文本超出部分变省略号"></a>多行文本超出部分变省略号</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">   div&#123;</div><div class="line">  <span class="attribute">display</span>: -webkit-box;</div><div class="line">  -webkit-line-clamp: 3;   /*最多显示三行文本，超出就变省略号*/</div><div class="line">  -webkit-box-orient: vertical;  </div><div class="line">   <span class="attribute">overflow</span>:hidden;</div><div class="line">&#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">多行文本超出</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h2 id="两行文本两端对齐"><a href="#两行文本两端对齐" class="headerlink" title="两行文本两端对齐"></a>两行文本两端对齐</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    span&#123;</div><div class="line">  <span class="attribute">display</span>:inline-block;</div><div class="line">  <span class="attribute">width</span>:<span class="number">4em</span>;</div><div class="line">  <span class="attribute">text-align</span>:justify;   <span class="comment">/*文本换行对齐*/</span></div><div class="line">  <span class="attribute">font-size</span>:<span class="number">20px</span>;</div><div class="line">  <span class="attribute">line-height</span>:<span class="number">20px</span>;</div><div class="line">  <span class="attribute">height</span>:<span class="number">20px</span>;</div><div class="line">  <span class="attribute">overflow</span>:hidden;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">span</span>::after&#123;</div><div class="line">  <span class="attribute">content</span>:<span class="string">''</span>;</div><div class="line">  <span class="attribute">display</span>:inline-block;</div><div class="line">  <span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">&#125;  </div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">  &lt;span&gt;姓名&lt;/span&gt; &lt;br&gt;</div><div class="line">  &lt;span&gt;联系方式&lt;/span&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<h2 id="div垂直居中"><a href="#div垂直居中" class="headerlink" title="div垂直居中"></a>div垂直居中</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">   div&#123;</div><div class="line">    <span class="attribute">line-height</span>:<span class="number">30px</span>;</div><div class="line">    <span class="attribute">padding</span>:<span class="number">5px</span> <span class="number">0</span></div><div class="line">&#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">文字垂直居中</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+        <h2 id="一行文本过长变成省略号"><a href="#一行文本过长变成省略号" class="headerlink" title="一行文本过长变成省略号"></a>一行文本过长变成省略号</h2><pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+   div{
+   white-space:nowrap;   /*不换行，超出div宽度的文字溢出*/
+   overflow:hidden;         /*超出宽度部分自动隐藏*/
+   text-overflow:ellipsis;   /*超出部分变成省略号*/
+}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div&gt;
+这里是文本
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="多行文本超出部分变省略号"><a href="#多行文本超出部分变省略号" class="headerlink" title="多行文本超出部分变省略号"></a>多行文本超出部分变省略号</h2><pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+   div{
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /*最多显示三行文本，超出就变省略号*/
+  -webkit-box-orient: vertical;  
+   overflow:hidden;
+}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div&gt;
+多行文本超出
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="两行文本两端对齐"><a href="#两行文本两端对齐" class="headerlink" title="两行文本两端对齐"></a>两行文本两端对齐</h2><pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+    span{
+  display:inline-block;
+  width:4em;
+  text-align:justify;   /*文本换行对齐*/
+  font-size:20px;
+  line-height:20px;
+  height:20px;
+  overflow:hidden;
+}
+span::after{
+  content:&#39;&#39;;
+  display:inline-block;
+  width:100%;
+}  
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div&gt;
+  &lt;span&gt;姓名&lt;/span&gt; &lt;br&gt;
+  &lt;span&gt;联系方式&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="div垂直居中"><a href="#div垂直居中" class="headerlink" title="div垂直居中"></a>div垂直居中</h2><pre><code class="stylus">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+   div{
+    line-height:30px;
+    padding:5px 0
+}
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div&gt;
+文字垂直居中
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
         
     

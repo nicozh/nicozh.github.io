@@ -235,7 +235,7 @@
 
     
         <meta property="article:published_time" content="Tue Dec 26 2017 23:34:28 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Dec 26 2017 23:42:01 GMT+0800" />
+        <meta property="article:modified_time" content="Sun Dec 31 2017 23:35:09 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2017/12/26/动态REM/index.html",
     "headline": "动态REM",
     "datePublished": "Tue Dec 26 2017 23:34:28 GMT+0800",
-    "dateModified": "Tue Dec 26 2017 23:42:01 GMT+0800",
+    "dateModified": "Sun Dec 31 2017 23:35:09 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -520,18 +520,84 @@
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/length" target="_blank" rel="external">更多单位</a></li>
 </ol>
 <p>下面代码中，p元素的font-size为20px，所以height就为40px。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    p&#123;</div><div class="line">      <span class="attribute">font-size</span>:<span class="number">20px</span>;</div><div class="line">      <span class="attribute">height</span>:<span class="number">2em</span>;</div><div class="line">      <span class="attribute">border</span>:<span class="number">1px</span> solid blue</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;p&gt;你好&lt;/p&gt;     &lt;!-- <span class="attribute">height</span>为<span class="number">40px</span> --&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+    p{
+      font-size:20px;
+      height:2em;
+      border:1px solid blue
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;你好&lt;/p&gt;     &lt;!-- height为40px --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 <p>注：网页的默认font-size为16px，但是在chrome里，可设置最小字号(默认为12px)，当你的font-size比最小字号要小时，则这个font-size就等于最小字号。</p>
 <h3 id="js动态调整REM"><a href="#js动态调整REM" class="headerlink" title="js动态调整REM"></a>js动态调整REM</h3><p>下面代码让rem等于页面的宽度，即1rem = 页面宽</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=<span class="string">"viewport"</span> <span class="attribute">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</div><div class="line"> &lt;script&gt;</div><div class="line">     <span class="selector-tag">var</span> pageWidth = window.innerWidth</div><div class="line">     document.write(<span class="string">'&lt;style&gt;html&#123;font-size:'</span>+pageWidth+<span class="string">'px;&#125;&lt;/style&gt;'</span>)</div><div class="line"> &lt;/script&gt;</div></pre></td></tr></table></figure>
+<pre><code class="html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;
+ &lt;script&gt;
+     var pageWidth = window.innerWidth
+     document.write(&#39;&lt;style&gt;html{font-size:&#39;+pageWidth+&#39;px;}&lt;/style&gt;&#39;)
+ &lt;/script&gt;
+</code></pre>
 <p>下面代码可让4个div根据页面大小自动等比缩放</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">  &lt;meta charset=<span class="string">"utf-8"</span>&gt;</div><div class="line">  &lt;title&gt;JS Bin&lt;/title&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    *&#123;</div><div class="line">  <span class="attribute">margin</span>:<span class="number">0</span>;</div><div class="line">  <span class="attribute">padding</span>:<span class="number">0</span>;</div><div class="line">&#125;</div><div class="line">body&#123;</div><div class="line">  <span class="attribute">font-size</span>:<span class="number">16px</span>;</div><div class="line">&#125;</div><div class="line">.child&#123;</div><div class="line">  <span class="attribute">background</span>:<span class="number">#ddd</span>;</div><div class="line">  <span class="attribute">width</span>:<span class="number">0.4rem</span>;</div><div class="line">  <span class="attribute">height</span>:<span class="number">0.2rem</span>;</div><div class="line">  <span class="attribute">margin</span>:<span class="number">0.05rem</span> <span class="number">0.05rem</span>;</div><div class="line">  <span class="attribute">float</span>:left;</div><div class="line">&#125;</div><div class="line">ckearfix::after&#123;</div><div class="line">  <span class="attribute">content</span>:<span class="string">''</span></div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">clear</span>:both;</div><div class="line">&#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">     <span class="selector-tag">var</span> pageWidth = window.innerWidth</div><div class="line">     document.write(<span class="string">'&lt;style&gt;html&#123;font-size:'</span>+pageWidth+<span class="string">'px;&#125;&lt;/style&gt;'</span>)</div><div class="line"> &lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;<span class="selector-tag">div</span> class=<span class="string">"parent clearfix"</span>&gt;</div><div class="line">    &lt;<span class="selector-tag">div</span> class=<span class="string">"child"</span>&gt;box&lt;/div&gt;</div><div class="line">    &lt;<span class="selector-tag">div</span> class=<span class="string">"child"</span>&gt;box&lt;/div&gt;</div><div class="line">    &lt;<span class="selector-tag">div</span> class=<span class="string">"child"</span>&gt;box&lt;/div&gt;</div><div class="line">    &lt;<span class="selector-tag">div</span> class=<span class="string">"child"</span>&gt;box&lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+    *{
+  margin:0;
+  padding:0;
+}
+body{
+  font-size:16px;
+}
+.child{
+  background:#ddd;
+  width:0.4rem;
+  height:0.2rem;
+  margin:0.05rem 0.05rem;
+  float:left;
+}
+ckearfix::after{
+  content:&#39;&#39;
+  display: block;
+  clear:both;
+}
+  &lt;/style&gt;
+  &lt;script&gt;
+     var pageWidth = window.innerWidth
+     document.write(&#39;&lt;style&gt;html{font-size:&#39;+pageWidth+&#39;px;}&lt;/style&gt;&#39;)
+ &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;parent clearfix&quot;&gt;
+    &lt;div class=&quot;child&quot;&gt;box&lt;/div&gt;
+    &lt;div class=&quot;child&quot;&gt;box&lt;/div&gt;
+    &lt;div class=&quot;child&quot;&gt;box&lt;/div&gt;
+    &lt;div class=&quot;child&quot;&gt;box&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 <p>缩放后</p>
 <p><img src="https://i.loli.net/2017/12/26/5a4263b3a4cd7.png" alt="缩放后"></p>
 <p>缩放前</p>
 <p><img src="https://i.loli.net/2017/12/26/5a4263b3a5215.png" alt="缩放前"></p>
 <p>REM 可以与其他单位同时存在</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">font-size</span>: <span class="number">16px</span>;</div><div class="line"> <span class="attribute">border</span>: <span class="number">1px</span> solid red;</div><div class="line"> <span class="attribute">width</span>: <span class="number">0.5rem</span>;</div></pre></td></tr></table></figure>
+<pre><code class="stylus">font-size: 16px;
+ border: 1px solid red;
+ width: 0.5rem;
+</code></pre>
 <ul>
 <li>最小单位为 1px ,1px 是无法再缩小的， 当需要精细的设置时，就无需等比缩放，直接使用 ‘px’</li>
 <li>可将 1 rem =  pagewidth/10 或者 1 rem =  pagewidth/100，这样可以避免写代码时写小数rem，但是，1 rem 不能小于12px,也就是chrome默认的 font-size。</li>
@@ -552,7 +618,21 @@
 <li>node-sass -wr scss -o css</li>
 </ul>
 <p>在 SCSS 里使用 PX2REM，编辑 scss 文件就会自动得到 css 文件，在 scss 文件里添加如下代码</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">@function px( <span class="variable">$px</span> )&#123;</div><div class="line">  @return $px/$designWidth*10 + rem;</div><div class="line">&#125;</div><div class="line"></div><div class="line">$designWidth : 640; // 640 是设计稿的宽度，你要根据设计稿的宽度填写。</div><div class="line"></div><div class="line">.child&#123;</div><div class="line">  <span class="attribute">width</span>: px(<span class="number">320</span>);</div><div class="line">  <span class="attribute">height</span>: px(<span class="number">160</span>);</div><div class="line">  <span class="attribute">margin</span>: px(<span class="number">40</span>) px(<span class="number">40</span>);</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid red;</div><div class="line">  <span class="attribute">float</span>: left;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.2em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="css">@function px( $px ){
+  @return $px/$designWidth*10 + rem;
+}
+
+$designWidth : 640; // 640 是设计稿的宽度，你要根据设计稿的宽度填写。
+
+.child{
+  width: px(320);
+  height: px(160);
+  margin: px(40) px(40);
+  border: 1px solid red;
+  float: left;
+  font-size: 1.2em;
+}
+</code></pre>
 <p>即可实现 px 自动变 rem</p>
 
         

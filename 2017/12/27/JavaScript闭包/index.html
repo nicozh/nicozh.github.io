@@ -235,7 +235,7 @@
 
     
         <meta property="article:published_time" content="Wed Dec 27 2017 23:33:50 GMT+0800" />
-        <meta property="article:modified_time" content="Wed Dec 27 2017 23:33:51 GMT+0800" />
+        <meta property="article:modified_time" content="Sun Dec 31 2017 23:47:43 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2017/12/27/JavaScript闭包/index.html",
     "headline": "JavaScript闭包（Closure）",
     "datePublished": "Wed Dec 27 2017 23:33:50 GMT+0800",
-    "dateModified": "Wed Dec 27 2017 23:33:51 GMT+0800",
+    "dateModified": "Sun Dec 31 2017 23:47:43 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -515,7 +515,22 @@
 <li>函数和函数内部能访问到的变量总和，就是一个闭包。</li>
 <li>子对象会一级一级地向上寻找所有父对象的变量，所以，父对象的所有变量，对子对象都是可见的，反之则不成立。</li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">function f1()&#123;</div><div class="line"></div><div class="line">　　　　var n=999;</div><div class="line"></div><div class="line">　　　　function f2()&#123;</div><div class="line">　　　　　　alert(n); </div><div class="line">　　　　&#125;</div><div class="line"></div><div class="line">　　　　return f2;</div><div class="line">　　&#125;</div><div class="line"></div><div class="line">　　var result=f1();</div><div class="line"></div><div class="line">　　result(); // 999</div></pre></td></tr></table></figure>
+<pre><code class="javascript">
+function f1(){
+
+　　　　var n=999;
+
+　　　　function f2(){
+　　　　　　alert(n); 
+　　　　}
+
+　　　　return f2;
+　　}
+
+　　var result=f1();
+
+　　result(); // 999
+</code></pre>
 <ul>
 <li>上面代码中，f2函数+变量n 就是闭包</li>
 <li>f2可以读取f1中的局部变量，那么只要把f2作为返回值，我们就可以在f1外部读取他的内部变量n。</li>
