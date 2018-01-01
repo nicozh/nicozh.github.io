@@ -235,7 +235,7 @@
 
     
         <meta property="article:published_time" content="Mon Dec 18 2017 16:47:47 GMT+0800" />
-        <meta property="article:modified_time" content="Sun Dec 31 2017 23:47:50 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Jan 01 2018 13:01:52 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2017/12/18/实现一个jQuery的API/index.html",
     "headline": "实现一个 jQuery 的 API",
     "datePublished": "Mon Dec 18 2017 16:47:47 GMT+0800",
-    "dateModified": "Sun Dec 31 2017 23:47:50 GMT+0800",
+    "dateModified": "Mon Jan 01 2018 13:01:52 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -515,27 +515,64 @@
 <li>判断用户输入参数，</li>
 <li>如果为字符串则遍历所有参数节点，将所有参数节点包装成一个对象</li>
 <li>如果为一个节点，则将这个节点包装成对象</li>
-<li>遍历对象添加类；遍历对象改变textContent<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2>``` javascript<br>&lt;!DOCTYPE html&gt;<br><html><br><head><br><meta charset="utf-8"><br><title>JS Bin</title><br></head><br><body><br> <div id="d1">1</div><br> <div id="d2">2</div><br> <div id="d3">3</div><br> <div id="d4">4</div><br> <div id="d5">5</div><br>&lt;script</body></html></li>
+<li>遍历对象添加类；遍历对象改变textContent<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2></li>
 </ol>
-<p>window.jquery=function(node){<br>    let nodes={}<br>    if(typeof node===”string”){                            //    判断是字符串还节点<br>        let temp=document.querySelectorAll(node)<br>        for(let i=0;i&lt;temp.length;i++){<br>          nodes[i]=temp[i]                          //遍历所有节点添加到nodes对象<br>    }<br>    nodes.length=temp.length<br>    }else if(node instanceof Node){<br>        nodes={<br>        0:node,<br>        length:1<br>    }<br>    }</p>
-<pre><code>//遍历nodes对象添加类
-nodes.addClass=function(classes){
-    var classes=[classes]                   //将字符串初始化为数组对象
-    classes.forEach((value)=&gt;{
-        for(let i=0;i&lt;nodes.length;i++){   //遍历所有节点添加类
-        nodes[i].classList.add(value)
-        }
-    })
-}
-//遍历nodes对象添加text
-nodes.setText=function(value){
-    for(let i=0;i&lt;nodes.length;i++){      //遍历所有节点添加text
-    nodes[i].textContent=value
+<pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id=&quot;d1&quot;&gt;1&lt;/div&gt;
+    &lt;div id=&quot;d2&quot;&gt;2&lt;/div&gt;
+    &lt;div id=&quot;d3&quot;&gt;3&lt;/div&gt;
+    &lt;div id=&quot;d4&quot;&gt;4&lt;/div&gt;
+    &lt;div id=&quot;d5&quot;&gt;5&lt;/div&gt;
+&lt;script&gt;
+window.jquery=function(node){
+    let nodes={}
+    if(typeof node===&quot;string&quot;){                            //    判断是字符串还节点
+        let temp=document.querySelectorAll(node)  
+        for(let i=0;i&lt;temp.length;i++){
+          nodes[i]=temp[i]                          //遍历所有节点添加到nodes对象
     }
+    nodes.length=temp.length
+    }else if(node instanceof Node){
+        nodes={
+        0:node,
+        length:1
+    }
+    }
+
+    //遍历nodes对象添加类
+    nodes.addClass=function(classes){
+        var classes=[classes]                   //将字符串初始化为数组对象
+        classes.forEach((value)=&gt;{
+            for(let i=0;i&lt;nodes.length;i++){   //遍历所有节点添加类
+            nodes[i].classList.add(value)
+            }
+        })
+    }
+    //遍历nodes对象添加text
+    nodes.setText=function(value){
+        for(let i=0;i&lt;nodes.length;i++){      //遍历所有节点添加text
+        nodes[i].textContent=value
+        }
+    }
+    return nodes
 }
-return nodes
-</code></pre><p>}<br>‘)</p>
-<p>window.$ = jquery<br>var $div = $(‘div’)       //输入标签名或者id<br>$div.addClass(‘red’) // 输入要添加的class,例如’red’<br>$div.setText(‘hello world’) // 输入要添加的text,例如’hello world’<br>  <br><br><br>```</p>
+&#39;)
+
+window.$ = jquery
+var $div = $(&#39;div&#39;)       //输入标签名或者id
+$div.addClass(&#39;red&#39;) // 输入要添加的class,例如&#39;red&#39;
+$div.setText(&#39;hello world&#39;) // 输入要添加的text,例如&#39;hello world&#39; 
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
         
     
@@ -664,7 +701,7 @@ return nodes
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
@@ -684,7 +721,7 @@ return nodes
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/web前端/">web前端<span class="sidebar_archives-count">18</span></a>
+                <a class="sidebar_archives-link" href="/categories/web前端/">web前端<span class="sidebar_archives-count">19</span></a>
             </ul>
         </li>
         
