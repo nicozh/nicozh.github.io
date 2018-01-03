@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Nico Zhang">
     <meta name="description" itemprop="description" content="ONE THE WAY">
-    <meta name="keywords" content=",DOM,JavaScript">
+    <meta name="keywords" content=",JavaScript,DOM">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -231,7 +231,7 @@
     <meta property="og:title" content="DOM | Zhang Hong">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="ONE THE WAY">
-    <meta property="og:article:tag" content="DOM"> <meta property="og:article:tag" content="JavaScript"> 
+    <meta property="og:article:tag" content="JavaScript"> <meta property="og:article:tag" content="DOM"> 
 
     
         <meta property="article:published_time" content="Fri Dec 15 2017 13:45:42 GMT+0800" />
@@ -280,7 +280,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",DOM,JavaScript",
+    "keywords": ",JavaScript,DOM",
     "description": "ONE THE WAY",
 }
 </script>
@@ -529,29 +529,103 @@
 <p><img src="https://i.loli.net/2017/12/15/5a335ad47a8ae.png" alt="enter description here"></p>
 <h2 id="Node-的接口"><a href="#Node-的接口" class="headerlink" title="Node 的接口"></a>Node 的接口</h2><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="nodeName-nodeType"><a href="#nodeName-nodeType" class="headerlink" title="nodeName,nodeType"></a>nodeName,nodeType</h4><p>nodeName属性返回节点的名称，nodeType属性返回节点类型的常数值。具体值查看<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/nodeType" target="_blank" rel="external">MDN</a></p>
 <h4 id="Node-nodeValue"><a href="#Node-nodeValue" class="headerlink" title="Node.nodeValue"></a>Node.nodeValue</h4><p>对于文档节点来说, nodeValue返回null. 对于text, comment, 和 CDATA 节点来说, nodeValue返回该节点的文本内容. 对于 attribute 节点来说, 返回该属性的属性值.</p>
-<h4 id="Node-textContent"><a href="#Node-textContent" class="headerlink" title="Node.textContent"></a>Node.textContent</h4><p>Node.textContent属性自动忽略当前节点内部的HTML标签，返回所有文本内容。该属性是可读写的，设置该属性的值，会用一个新的文本节点，替换所有原来的子节点。它的一个好处就是自动对HTML标签转义。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 给定如下HTML:</span></div><div class="line"><span class="comment">//   &lt;div id="divA"&gt;This is &lt;span&gt;some&lt;/span&gt; text&lt;/div&gt;</span></div><div class="line"></div><div class="line"><span class="comment">// 获得文本内容:</span></div><div class="line">var text = document.getElementById("divA").textContent;</div><div class="line"><span class="comment">// |text| is set to "This is some text".</span></div><div class="line"></div><div class="line"><span class="comment">// 设置文本内容:</span></div><div class="line">document.getElementById("divA").textContent = "This is some text";</div><div class="line"><span class="comment">// divA的HTML现在是这样的:</span></div><div class="line"><span class="comment">//   &lt;div id="divA"&gt;This is some text&lt;/div&gt;</span></div><div class="line">document.getElementById('divA').textContent = '&lt;p&gt;GoodBye!&lt;/p&gt;';</div><div class="line"><span class="comment">//divA的HTML现在是这样的</span></div><div class="line"><span class="comment">//  &lt;div id="divA"&gt;&lt;p&gt;GoodBye!t&lt;/p&gt;&lt;/div&gt;</span></div><div class="line"><span class="comment">//会将&lt;p&gt;标签解释为文本，而不会当作标签处理。网页显示是这样的</span></div><div class="line"><span class="comment">//  &lt;p&gt;GoodBye!&lt;/p&gt;</span></div></pre></td></tr></table></figure></p>
+<h4 id="Node-textContent"><a href="#Node-textContent" class="headerlink" title="Node.textContent"></a>Node.textContent</h4><p>Node.textContent属性自动忽略当前节点内部的HTML标签，返回所有文本内容。该属性是可读写的，设置该属性的值，会用一个新的文本节点，替换所有原来的子节点。它的一个好处就是自动对HTML标签转义。</p>
+<pre><code class="stylus">// 给定如下HTML:
+//   &lt;div id=&quot;divA&quot;&gt;This is &lt;span&gt;some&lt;/span&gt; text&lt;/div&gt;
+
+// 获得文本内容:
+var text = document.getElementById(&quot;divA&quot;).textContent;
+// |text| is set to &quot;This is some text&quot;.
+
+// 设置文本内容:
+document.getElementById(&quot;divA&quot;).textContent = &quot;This is some text&quot;;
+// divA的HTML现在是这样的:
+//   &lt;div id=&quot;divA&quot;&gt;This is some text&lt;/div&gt;
+document.getElementById(&#39;divA&#39;).textContent = &#39;&lt;p&gt;GoodBye!&lt;/p&gt;&#39;;
+//divA的HTML现在是这样的
+//  &lt;div id=&quot;divA&quot;&gt;&lt;p&gt;GoodBye!t&lt;/p&gt;&lt;/div&gt;
+//会将&lt;p&gt;标签解释为文本，而不会当作标签处理。网页显示是这样的
+//  &lt;p&gt;GoodBye!&lt;/p&gt;
+</code></pre>
 <p>对于Text节点和Comment节点，该属性的值与nodeValue属性相同。其他类型的节点，该属性会将每个子节点的内容连接在一起返回，但是不包括Comment节点。如果一个节点没有子节点，则返回空字符串。<br>document节点和doctype节点的textContent属性为null。读取整个文档的内容使用document.documentElement.textContent。</p>
 <h4 id="Node-nextSibling"><a href="#Node-nextSibling" class="headerlink" title="Node.nextSibling"></a>Node.nextSibling</h4><p>Node.nextSibling属性返回紧跟在当前节点后面的第一个同级节点,是一个只读属性。如果当前节点后面没有同级节点，则返回null。<br>注意：该属性还包括文本节点和评论节点。因此如果当前节点后面有空格或者回车，该属性会返回一个文本节点，内容为空格或者回车。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">div</span> id=<span class="string">"div-01"</span>&gt;Here is div-<span class="number">01</span>&lt;/div&gt;</div><div class="line">&lt;<span class="selector-tag">div</span> id=<span class="string">"div-02"</span>&gt;Here is div-<span class="number">02</span>&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line"><span class="selector-tag">var</span> el = document.getElementById(<span class="string">'div-01'</span>)<span class="selector-class">.nextSibling</span>,</div><div class="line">    i = 1;</div><div class="line"></div><div class="line">console.log('Siblings of div-01:');</div><div class="line"></div><div class="line">while (el) &#123;</div><div class="line">  console.log(i + '. ' + el.nodeName);</div><div class="line">  el = el.nextSibling;</div><div class="line">  i++;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line"><span class="comment">/**************************************************</span></div><div class="line"><span class="comment">  The following is written to the console as it loads:</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">     Siblings of div-01</span></div><div class="line"><span class="comment"></span></div><div class="line"><span class="comment">      1. #text</span></div><div class="line"><span class="comment">      2. DIV</span></div><div class="line"><span class="comment">      3. #text</span></div><div class="line"><span class="comment">      4. SCRIPT</span></div><div class="line"><span class="comment">**************************************************/</span></div><div class="line"><span class="comment">/*1为div-01与div-02之间的回车，3为div-02与&lt;script&gt;之间的回车*/</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">&lt;div id=&quot;div-01&quot;&gt;Here is div-01&lt;/div&gt;
+&lt;div id=&quot;div-02&quot;&gt;Here is div-02&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+var el = document.getElementById(&#39;div-01&#39;).nextSibling,
+    i = 1;
+
+console.log(&#39;Siblings of div-01:&#39;);
+
+while (el) {
+  console.log(i + &#39;. &#39; + el.nodeName);
+  el = el.nextSibling;
+  i++;
+}
+
+&lt;/script&gt;
+
+/**************************************************
+  The following is written to the console as it loads:
+
+     Siblings of div-01
+
+      1. #text
+      2. DIV
+      3. #text
+      4. SCRIPT
+**************************************************/
+/*1为div-01与div-02之间的回车，3为div-02与&lt;script&gt;之间的回车*/
+</code></pre>
 <h4 id="Node-previousSibling"><a href="#Node-previousSibling" class="headerlink" title="Node.previousSibling"></a>Node.previousSibling</h4><p>返回当前节点的前一个兄弟节点,没有则返回null.<br>如果当前节点后前面有空格或者回车，该属性会返回一个文本节点，内容为空格或者回车。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// &lt;a&gt;&lt;b1 id="b1"/&gt;&lt;b2 id="b2"/&gt;&lt;/a&gt;</span></div><div class="line">alert(document.getElementById("b1").previousSibling); // null</div><div class="line">alert(document.getElementById("b2").previousSibling.id); // "b1"</div></pre></td></tr></table></figure>
+<pre><code class="stylus">// &lt;a&gt;&lt;b1 id=&quot;b1&quot;/&gt;&lt;b2 id=&quot;b2&quot;/&gt;&lt;/a&gt;
+alert(document.getElementById(&quot;b1&quot;).previousSibling); // null
+alert(document.getElementById(&quot;b2&quot;).previousSibling.id); // &quot;b1&quot;
+</code></pre>
 <h4 id="Node-ownerDocument"><a href="#Node-ownerDocument" class="headerlink" title="Node.ownerDocument"></a>Node.ownerDocument</h4><p>Node.ownerDocument属性返回当前节点所在的顶层文档对象，即document对象。document 对象是在实际的HTML文档中的所有子节点所属的主对象,document对象本身的ownerDocument属性，返回null。</p>
 <h4 id="Node-parentNode"><a href="#Node-parentNode" class="headerlink" title="Node.parentNode"></a>Node.parentNode</h4><p>parentNode属性返回当前节点的父节点。一个元素节点的父节点可能是一个元素(Element )节点,也可能是一个文档(Document )节点,或者是个文档碎片(DocumentFragment)节点.</p>
 <p>例子：如何从父节点移除指定节点。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (node.parentNode) &#123;</div><div class="line">  <span class="comment">// 从DOM树中删除node节点,除非它已经被删除了.</span></div><div class="line">  node.parentNode.removeChild(node);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="stylus">if (node.parentNode) {
+  // 从DOM树中删除node节点,除非它已经被删除了.
+  node.parentNode.removeChild(node);
+}
+</code></pre>
 <h4 id="Node-parentElement"><a href="#Node-parentElement" class="headerlink" title="Node.parentElement"></a>Node.parentElement</h4><p>返回当前节点的父元素节点,如果该元素没有父节点,或者父节点不是一个元素节点.则 返回null.<br>例子：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (node.parentElement) &#123;</div><div class="line">  node.parentElement.style.color="red";</div><div class="line">&#125;</div><div class="line"><span class="comment">//设置指定节点的父Element节点的CSS属性。</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">if (node.parentElement) {
+  node.parentElement.style.color=&quot;red&quot;;
+}
+//设置指定节点的父Element节点的CSS属性。
+</code></pre>
 <p>在IE浏览器中，只有Element节点才有该属性，其他浏览器则是所有类型的节点都有该属性。</p>
 <h4 id="Node-childNodes"><a href="#Node-childNodes" class="headerlink" title="Node.childNodes"></a>Node.childNodes</h4><p>childNodes属性返回一个伪数组NodeList集合，成员包括当前节点的所有子节点。注意，除了HTML元素节点，该属性返回的还包括Text节点(回车和空格也算)和Comment节点。如果当前节点不包括任何子节点，则返回一个空的NodeList集合。由于NodeList对象是一个动态集合，一旦子节点发生变化，立刻会反映在返回结果之中。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/childNodes" target="_blank" rel="external">详细查看MDN</a></p>
 <h4 id="Node-firstChild，Node-lastChild"><a href="#Node-firstChild，Node-lastChild" class="headerlink" title="Node.firstChild，Node.lastChild"></a>Node.firstChild，Node.lastChild</h4><p>firstChild属性返回当前节点的第一个子节点，如果当前节点没有子节点，则返回null（注意，不是undefined）。<br>在下面的示例中, 提示框将显示 ‘#text’,因为在&lt; p &gt;标签和&lt; span &gt;标签之间,有一个换行符和多个空格充当了一个文本节点.在Gecko中,任意多个的空白符都将导致文本节点的插入,包括一个到多个空格符,换行符,制表符等等.</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">p</span> id=<span class="string">"para-01"</span>&gt;</div><div class="line">  &lt;span&gt;First span&lt;/span&gt;</div><div class="line">&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">  var p01 = document.getElementById('para-01');</div><div class="line">  alert(p01<span class="selector-class">.firstChild</span><span class="selector-class">.nodeName</span>)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<pre><code class="stylus">&lt;p id=&quot;para-01&quot;&gt;
+  &lt;span&gt;First span&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  var p01 = document.getElementById(&#39;para-01&#39;);
+  alert(p01.firstChild.nodeName)
+&lt;/script&gt;
+</code></pre>
 <p>如果从源代码移出对应的空白符,则不会有文本节点被插入,span元素就成为了第一个子节点.下面的代码将弹出 ‘SPAN’.</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">p</span> id=<span class="string">"para-01"</span>&gt;&lt;span&gt;First span&lt;/span&gt;&lt;/p&gt;</div><div class="line"></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">  var p01 = document.getElementById('para-01');</div><div class="line">  alert(p01<span class="selector-class">.firstChild</span><span class="selector-class">.nodeName</span>)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<pre><code class="stylus">&lt;p id=&quot;para-01&quot;&gt;&lt;span&gt;First span&lt;/span&gt;&lt;/p&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+  var p01 = document.getElementById(&#39;para-01&#39;);
+  alert(p01.firstChild.nodeName)
+&lt;/script&gt;
+</code></pre>
 <p>Node.lastChild属性返回当前节点的最后一个子节点，如果父节点为一个元素节点，则子节点通常为一个元素节点，或一个文本节点，或一个注释节点。如果当前节点没有子节点，则返回null。</p>
 <h4 id="innerText"><a href="#innerText" class="headerlink" title="innerText,"></a>innerText,</h4><h4 id="outerText"><a href="#outerText" class="headerlink" title="outerText,"></a>outerText,</h4><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><h4 id="Node-appendChild"><a href="#Node-appendChild" class="headerlink" title="Node.appendChild()"></a>Node.appendChild()</h4><p>Node.appendChild() 方法将一个节点添加到指定父节点的子节点列表末尾。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 创建一个新的段落p元素,然后添加到body的最尾部</span></div><div class="line">var p = document.createElement("p");</div><div class="line">document.body.appendChild(p);</div></pre></td></tr></table></figure>
+<pre><code class="stylus">// 创建一个新的段落p元素,然后添加到body的最尾部
+var p = document.createElement(&quot;p&quot;);
+document.body.appendChild(p);
+</code></pre>
 <h4 id="Node-cloneNode"><a href="#Node-cloneNode" class="headerlink" title="Node.cloneNode()"></a>Node.cloneNode()</h4><p>语法：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var dupNode = node.cloneNode(deep);</div></pre></td></tr></table></figure>
+<pre><code class="stylus">var dupNode = node.cloneNode(deep);
+</code></pre>
 <ol>
 <li>node:将要被克隆的节点</li>
 <li>dupNode:克隆生成的副本节点</li>
@@ -559,9 +633,15 @@
 </ol>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/cloneNode" target="_blank" rel="external">详细使用方法：MDN</a></p>
 <h4 id="Node-hasChildNodes"><a href="#Node-hasChildNodes" class="headerlink" title="Node.hasChildNodes()"></a>Node.hasChildNodes()</h4><p>hasChildNodes方法返回一个布尔值,表明当前节点是否包含有子节点.<br>例子：如果id为foo的这个元素有子节点,则从dom树中删除它的第一个子节点.</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var foo = document.getElementById("foo");</div><div class="line"></div><div class="line"><span class="keyword">if</span> ( foo.hasChildNodes() ) &#123; </div><div class="line">  foo.removeChild( foo.childNodes[0] );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="stylus">var foo = document.getElementById(&quot;foo&quot;);
+
+if ( foo.hasChildNodes() ) { 
+  foo.removeChild( foo.childNodes[0] );
+}
+</code></pre>
 <h4 id="Node-insertBefore"><a href="#Node-insertBefore" class="headerlink" title="Node.insertBefore()"></a>Node.insertBefore()</h4><p>Node.insertBefore() 方法，在当前节点的某个子节点之前再插入一个子节点。<br>语法：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var insertedElement = parentElement.insertBefore(newElement, referenceElement);</div></pre></td></tr></table></figure>
+<pre><code class="stylus">var insertedElement = parentElement.insertBefore(newElement, referenceElement);
+</code></pre>
 <p>如果referenceElement为null则newElement将被插入到子节点的末尾。如果newElement已经在DOM树中，newElement首先会从DOM树中移除。</p>
 <ol>
 <li>insertedElement 是被插入的节点，即 newElement</li>
@@ -571,7 +651,12 @@
 </ol>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/insertBefore" target="_blank" rel="external">MDN例子</a></p>
 <h4 id="Node-removeChild"><a href="#Node-removeChild" class="headerlink" title="Node.removeChild()"></a>Node.removeChild()</h4><p>Node.removeChild() 方法从DOM中删除一个子节点。返回删除的节点。<br>语法：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">let oldChild = node.removeChild(child);</div><div class="line"></div><div class="line"><span class="comment">//OR</span></div><div class="line"></div><div class="line">element.removeChild(child);</div></pre></td></tr></table></figure>
+<pre><code class="stylus">let oldChild = node.removeChild(child);
+
+//OR
+
+element.removeChild(child);
+</code></pre>
 <ol>
 <li>child 是要移除的那个子节点.</li>
 <li>node 是child的父节点.</li>
@@ -579,7 +664,8 @@
 </ol>
 <p>被移除的这个子节点仍然存在于内存中,只是没有添加到当前文档的DOM树中,因此,你还可以把这个节点重新添加回文档中，但你需要一个变量来保存这个节点的引用（oldChild）。</p>
 <h4 id="Node-replaceChild"><a href="#Node-replaceChild" class="headerlink" title="Node.replaceChild()"></a>Node.replaceChild()</h4><p>Node.replaceChild()方法用指定的节点替换当前节点的一个子节点，并返回被替换掉的节点。<br>语法：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">replacedNode = parentNode.replaceChild(newChild, oldChild);</div></pre></td></tr></table></figure>
+<pre><code class="stylus">replacedNode = parentNode.replaceChild(newChild, oldChild);
+</code></pre>
 <ol>
 <li>newChild 用来替换 oldChild 的新节点。如果该节点已经存在于DOM树中，则它会被从原始位置删除。</li>
 <li>oldChild  被替换掉的原始节点。</li>
@@ -587,40 +673,104 @@
 </ol>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Node/replaceChild" target="_blank" rel="external">例子：MDN</a></p>
 <h4 id="Node-contains"><a href="#Node-contains" class="headerlink" title="Node.contains()"></a>Node.contains()</h4><p>Node.contains()返回的是一个布尔值，来表示传入的节点是否为该节点的后代节点。<br>语法：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node.contains( otherNode )</div></pre></td></tr></table></figure>
+<pre><code class="stylus">node.contains( otherNode )
+</code></pre>
 <ol>
 <li>node 是否包含otherNode节点.</li>
 <li>otherNode 是否是node的后代节点.</li>
 <li>如果 otherNode 是 node 的后代节点或是 node 节点本身.则返回true , 否则返回 false.</li>
 </ol>
 <h4 id="Node-normalize"><a href="#Node-normalize" class="headerlink" title="Node.normalize()"></a>Node.normalize()</h4><p>normailize方法用于清理当前节点内部的所有Text节点。它会去除空的文本节点，并且将毗邻的文本节点合并成一个。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var wrapper = document.createElement("div");</div><div class="line"></div><div class="line">wrapper.appendChild(document.createTextNode("Part 1 "));</div><div class="line">wrapper.appendChild(document.createTextNode("Part 2 "));</div><div class="line"></div><div class="line"><span class="comment">// 这时(规范化之前),wrapper.childNodes.length === 2</span></div><div class="line"><span class="comment">// wrapper.childNodes[0].textContent === "Part 1 "</span></div><div class="line"><span class="comment">// wrapper.childNodes[1].textContent === "Part 2 "</span></div><div class="line"></div><div class="line">wrapper.normalize();</div><div class="line"><span class="comment">// 现在(规范化之后), wrapper.childNodes.length === 1</span></div><div class="line"><span class="comment">// wrapper.childNodes[0].textContent === "Part 1 Part 2"</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">var wrapper = document.createElement(&quot;div&quot;);
+
+wrapper.appendChild(document.createTextNode(&quot;Part 1 &quot;));
+wrapper.appendChild(document.createTextNode(&quot;Part 2 &quot;));
+
+// 这时(规范化之前),wrapper.childNodes.length === 2
+// wrapper.childNodes[0].textContent === &quot;Part 1 &quot;
+// wrapper.childNodes[1].textContent === &quot;Part 2 &quot;
+
+wrapper.normalize();
+// 现在(规范化之后), wrapper.childNodes.length === 1
+// wrapper.childNodes[0].textContent === &quot;Part 1 Part 2&quot;
+</code></pre>
 <h2 id="Document-接口"><a href="#Document-接口" class="headerlink" title="Document 接口"></a>Document 接口</h2><h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><h3 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h3><h4 id="document-querySelector-，document-querySelectorAll"><a href="#document-querySelector-，document-querySelectorAll" class="headerlink" title="document.querySelector()，document.querySelectorAll()"></a>document.querySelector()，document.querySelectorAll()</h4><p>document.querySelector()返回文档中匹配指定的选择器组的第一个元素。element 是一个 element 对象（DOM 元素）。selectors 是一个字符串，包含一个或是多个 CSS 选择器 ，多个则以逗号分隔。<br>例子</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">element = document.querySelector(selectors);</div><div class="line"></div><div class="line"><span class="comment">//返回当前文档中第一个类名为 "myclass" 的元素</span></div><div class="line">var el = document.querySelector(".myclass");</div></pre></td></tr></table></figure>
+<pre><code class="stylus">element = document.querySelector(selectors);
+
+//返回当前文档中第一个类名为 &quot;myclass&quot; 的元素
+var el = document.querySelector(&quot;.myclass&quot;);
+</code></pre>
 <p>注意：如果没有找到匹配元素，则返回 null，如果找到多个匹配元素，则返回第一个匹配到的元素。</p>
 <p>document.querySelectorAll()方法与querySelector用法类似，区别是返回一个NodeList对象，包含所有匹配给定选择器的节点。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//返回所有匹配给定选择器的节点。</span></div><div class="line">elementList = document.querySelectorAll('.myclass');</div><div class="line"></div><div class="line"><span class="comment">//返回class属性是note或alert的div元素。</span></div><div class="line">var matches = document.querySelectorAll('div.note, div.alert');</div></pre></td></tr></table></figure>
+<pre><code class="stylus">//返回所有匹配给定选择器的节点。
+elementList = document.querySelectorAll(&#39;.myclass&#39;);
+
+//返回class属性是note或alert的div元素。
+var matches = document.querySelectorAll(&#39;div.note, div.alert&#39;);
+</code></pre>
 <p>注：它们不支持CSS伪元素和伪类的选择器。querySelectorAll的返回结果不是动态集合，不会实时反映元素节点的变化。</p>
 <h4 id="document-getElementsByTagName"><a href="#document-getElementsByTagName" class="headerlink" title="document.getElementsByTagName()"></a>document.getElementsByTagName()</h4><p>返回一个包括所有给定标签名称的元素的HTML集合。 整个文件结构都会被搜索，包括根节点。返回的 HTML集合是动态的, 它可以自动更新自己来保持和 DOM 树的同步而不用再次调用 document.getElementsByTagName() 。如果没有任何匹配的元素，就返回一个空集。<br>语法：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//elements 是一个动态HTML集合，各个成员的顺序就是它们在文档中出现的顺序。</span></div><div class="line"><span class="comment">//name 是一个代表元素的名称的字符串。特殊字符 "*" 代表了所有元素。</span></div><div class="line">var elements = document.getElementsByTagName(name);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//返回当前文档的所有div元素节点。</span></div><div class="line">var div = document.getElementsByTagName('div');</div></pre></td></tr></table></figure>
+<pre><code class="stylus">//elements 是一个动态HTML集合，各个成员的顺序就是它们在文档中出现的顺序。
+//name 是一个代表元素的名称的字符串。特殊字符 &quot;*&quot; 代表了所有元素。
+var elements = document.getElementsByTagName(name);
+
+
+//返回当前文档的所有div元素节点。
+var div = document.getElementsByTagName(&#39;div&#39;);
+</code></pre>
 <h4 id="document-getElementsByClassName"><a href="#document-getElementsByClassName" class="headerlink" title="document.getElementsByClassName()"></a>document.getElementsByClassName()</h4><p>返回一个类似数组的对象，包含了所有指定 class 名称的子元素。当调用发生在document对象上时, 整个DOM都会被搜索, 包含根节点。你也可以在任意元素上调用getElementsByClassName() 方法，它将返回的是以当前元素为根节点，所有指定class名称的子元素。<br>示例：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取所有 class 为 'test' 的元素:</span></div><div class="line">document.getElementsByClassName('test');</div><div class="line"></div><div class="line"><span class="comment">//获取所有 class 同时包括 'red' 和 'test' 的元素.</span></div><div class="line">document.getElementsByClassName('red test');</div><div class="line"></div><div class="line"><span class="comment">//在id 为'main'的元素的子节点中，获取所有class为'test'的元素</span></div><div class="line">document.getElementById('main').getElementsByClassName('test');</div></pre></td></tr></table></figure>
+<pre><code class="stylus">//获取所有 class 为 &#39;test&#39; 的元素:
+document.getElementsByClassName(&#39;test&#39;);
+
+//获取所有 class 同时包括 &#39;red&#39; 和 &#39;test&#39; 的元素.
+document.getElementsByClassName(&#39;red test&#39;);
+
+//在id 为&#39;main&#39;的元素的子节点中，获取所有class为&#39;test&#39;的元素
+document.getElementById(&#39;main&#39;).getElementsByClassName(&#39;test&#39;);
+</code></pre>
 <h4 id="getElementById"><a href="#getElementById" class="headerlink" title="getElementById()"></a>getElementById()</h4><p>getElementById方法返回匹配指定id属性的元素节点。如果没有发现匹配的节点，则返回null。该方法的参数是大小写敏感的。比如，如果某个节点的id属性是main，那么document.getElementById(‘Main’)将返回null，而不是那个节点。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var elem = document.getElementById('para1');</div></pre></td></tr></table></figure>
+<pre><code class="stylus">var elem = document.getElementById(&#39;para1&#39;);
+</code></pre>
 <p>document.getElementById方法与document.querySelector方法都能获取元素节点，不同之处是document.querySelector方法的参数使用CSS选择器语法，document.getElementById方法的参数是HTML标签元素的id属性。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">document.getElementById(<span class="string">'myElement'</span>)</div><div class="line">document.querySelector(<span class="string">'#myElement'</span>)</div></pre></td></tr></table></figure>
+<pre><code class="stylus">document.getElementById(&#39;myElement&#39;)
+document.querySelector(&#39;#myElement&#39;)
+</code></pre>
 <p>注：这个方法只能在document对象上使用，不能在其他元素节点上使用。</p>
-<h4 id="document-createElement"><a href="#document-createElement" class="headerlink" title="document.createElement()"></a>document.createElement()</h4><p>document.createElement方法用来生成网页元素节点。参数为元素的标签名，是一个字符串。可大写，也可以小写，但不能包含尖括号”&lt;&gt;“<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var newDiv = document.createElement("div");</div></pre></td></tr></table></figure></p>
+<h4 id="document-createElement"><a href="#document-createElement" class="headerlink" title="document.createElement()"></a>document.createElement()</h4><p>document.createElement方法用来生成网页元素节点。参数为元素的标签名，是一个字符串。可大写，也可以小写，但不能包含尖括号”&lt;&gt;“</p>
+<pre><code class="stylus">var newDiv = document.createElement(&quot;div&quot;);
+</code></pre>
 <h4 id="document-createTextNode"><a href="#document-createTextNode" class="headerlink" title="document.createTextNode()"></a>document.createTextNode()</h4><p>创建一个新的文本节点，参数为一个字符串,包含了放在文本节点中的内容.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//新建一个div节点和一个文本节点，然后将文本节点插入div节点。</span></div><div class="line">var newDiv = document.createElement('div');</div><div class="line">var newContent = document.createTextNode('Hello');</div><div class="line">newDiv.appendChild(newContent);</div></pre></td></tr></table></figure>
+<pre><code class="stylus">//新建一个div节点和一个文本节点，然后将文本节点插入div节点。
+var newDiv = document.createElement(&#39;div&#39;);
+var newContent = document.createTextNode(&#39;Hello&#39;);
+newDiv.appendChild(newContent);
+</code></pre>
 <h4 id="document-createAttribute"><a href="#document-createAttribute" class="headerlink" title="document.createAttribute()"></a>document.createAttribute()</h4><p>createAttribute 方法创建并返回一个新的属性节点.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//attribute 是一个属性节点,name 是属性节点的属性名.</span></div><div class="line">attribute = document.createAttribute(name)</div><div class="line"></div><div class="line"></div><div class="line">var node = document.getElementById("div1");</div><div class="line">var a = document.createAttribute("my_attrib");</div><div class="line">a.nodeValue = "属性值";</div><div class="line">node.setAttributeNode(a);</div><div class="line"></div><div class="line"><span class="comment">//等同于</span></div><div class="line"></div><div class="line">var node = document.getElementById("div1");</div><div class="line">node.setAttribute("my_attrib", "属性值");</div></pre></td></tr></table></figure>
+<pre><code class="stylus">//attribute 是一个属性节点,name 是属性节点的属性名.
+attribute = document.createAttribute(name)
+
+
+var node = document.getElementById(&quot;div1&quot;);
+var a = document.createAttribute(&quot;my_attrib&quot;);
+a.nodeValue = &quot;属性值&quot;;
+node.setAttributeNode(a);
+
+//等同于
+
+var node = document.getElementById(&quot;div1&quot;);
+node.setAttribute(&quot;my_attrib&quot;, &quot;属性值&quot;);
+</code></pre>
 <h2 id="Element-的接口"><a href="#Element-的接口" class="headerlink" title="Element 的接口"></a>Element 的接口</h2><h3 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h3><h3 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h3><h4 id="事件相关的方法"><a href="#事件相关的方法" class="headerlink" title="事件相关的方法"></a>事件相关的方法</h4><ol>
 <li>Element.addEventListener()：添加事件的回调函数</li>
 <li>Element.removeEventListener()：移除事件监听函数</li>
 <li>Element.dispatchEvent()：触发事件</li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">element.addEventListener('click', listener, false);</div><div class="line">element.removeEventListener('click', listener, false);</div><div class="line"></div><div class="line">var event = new Event('click');</div><div class="line">element.dispatchEvent(event);</div></pre></td></tr></table></figure>
+<pre><code class="stylus">element.addEventListener(&#39;click&#39;, listener, false);
+element.removeEventListener(&#39;click&#39;, listener, false);
+
+var event = new Event(&#39;click&#39;);
+element.dispatchEvent(event);
+</code></pre>
 
         
     
@@ -749,7 +899,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
@@ -769,7 +919,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/web前端/">web前端<span class="sidebar_archives-count">19</span></a>
+                <a class="sidebar_archives-link" href="/categories/web前端/">web前端<span class="sidebar_archives-count">20</span></a>
             </ul>
         </li>
         

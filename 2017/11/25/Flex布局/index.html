@@ -535,7 +535,42 @@
 </ul>
 <p>min-height 与 min-width 属性初始值将为 0。<br>flex 属性是 flex-grow、flex-shrink 和 flex-basis 属性的简写，描述弹性项目的整体的伸缩性。</p>
 <h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><h2 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p> align-content 属性定义了当作为一个弹性盒子容器的属性时，浏览器如何在容器的侧轴围绕弹性盒子项目分配空间。==该属性对单行弹性盒子模型无效。 #==</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* Positional alignment */</span></div><div class="line"><span class="attribute">align-content</span>: center;     <span class="comment">/* Pack items around the center */</span></div><div class="line"><span class="attribute">align-content</span>: start;      <span class="comment">/* Pack items from the start */</span></div><div class="line"><span class="attribute">align-content</span>: end;        <span class="comment">/* Pack items from the end */</span></div><div class="line"><span class="attribute">align-content</span>: flex-start; <span class="comment">/* Pack flex items from the start */</span></div><div class="line"><span class="attribute">align-content</span>: flex-end;   <span class="comment">/* Pack flex items from the end */</span></div><div class="line"><span class="attribute">align-content</span>: left;       <span class="comment">/* Pack items from the left */</span></div><div class="line"><span class="attribute">align-content</span>: right;      <span class="comment">/* Pack items from the right */</span></div><div class="line"></div><div class="line"><span class="comment">/* Baseline alignment */</span></div><div class="line"><span class="attribute">align-content</span>: baseline;</div><div class="line"><span class="attribute">align-content</span>: first baseline;</div><div class="line"><span class="attribute">align-content</span>: last baseline;</div><div class="line"></div><div class="line"><span class="comment">/* Distributed alignment */</span></div><div class="line"><span class="attribute">align-content</span>: space-between; <span class="comment">/* Distribute items evenly</span></div><div class="line"><span class="comment">                                 The first item is flush with the start,</span></div><div class="line"><span class="comment">                                 the last is flush with the end */</span></div><div class="line"><span class="attribute">align-content</span>: space-around;  <span class="comment">/* Distribute items evenly</span></div><div class="line"><span class="comment">                                 Items have a half-size space</span></div><div class="line"><span class="comment">                                 on either end */</span></div><div class="line"><span class="attribute">align-content</span>: space-evenly;  <span class="comment">/* Distribute items evenly</span></div><div class="line"><span class="comment">                                 Items have equal space around them */</span></div><div class="line"><span class="attribute">align-content</span>: stretch;       <span class="comment">/* Distribute items evently</span></div><div class="line"><span class="comment">                                 Stretch 'auto'-sized items to fit</span></div><div class="line"><span class="comment">                                 the container */</span></div><div class="line"></div><div class="line"><span class="comment">/* Overflow alignment */</span></div><div class="line"><span class="attribute">align-content</span>: safe center;</div><div class="line"><span class="attribute">align-content</span>: unsafe center;</div><div class="line"></div><div class="line"> <span class="comment">/* Global values */</span> </div><div class="line"><span class="attribute">align-content</span>: inherit; </div><div class="line"><span class="attribute">align-content</span>: initial; </div><div class="line"><span class="attribute">align-content</span>: unset;</div></pre></td></tr></table></figure>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><pre><code class="stylus">/* Positional alignment */
+align-content: center;     /* Pack items around the center */
+align-content: start;      /* Pack items from the start */
+align-content: end;        /* Pack items from the end */
+align-content: flex-start; /* Pack flex items from the start */
+align-content: flex-end;   /* Pack flex items from the end */
+align-content: left;       /* Pack items from the left */
+align-content: right;      /* Pack items from the right */
+
+/* Baseline alignment */
+align-content: baseline;
+align-content: first baseline;
+align-content: last baseline;
+
+/* Distributed alignment */
+align-content: space-between; /* Distribute items evenly
+                                 The first item is flush with the start,
+                                 the last is flush with the end */
+align-content: space-around;  /* Distribute items evenly
+                                 Items have a half-size space
+                                 on either end */
+align-content: space-evenly;  /* Distribute items evenly
+                                 Items have equal space around them */
+align-content: stretch;       /* Distribute items evently
+                                 Stretch &#39;auto&#39;-sized items to fit
+                                 the container */
+
+/* Overflow alignment */
+align-content: safe center;
+align-content: unsafe center;
+
+ /* Global values */ 
+align-content: inherit; 
+align-content: initial; 
+align-content: unset;
+</code></pre>
 <h3 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h3><h4 id="flex-start"><a href="#flex-start" class="headerlink" title="flex-start"></a>flex-start</h4><p>所有行从垂直轴起点开始填充。第一行的垂直轴起点边和容器的垂直轴起点边对齐。接下来的每一行紧跟前一行。</p>
 <h4 id="flex-end"><a href="#flex-end" class="headerlink" title="flex-end"></a>flex-end</h4><p>所有行从垂直轴末尾开始填充。最后一行的垂直轴终点和容器的垂直轴终点对齐。同时所有后续行与前一个对齐。</p>
 <h4 id="center"><a href="#center" class="headerlink" title="center"></a>center</h4><p>所有行朝向容器的中心填充。每行互相紧挨，相对于容器居中对齐。容器的垂直轴起点边和第一行的距离相等于容器的垂直轴终点边和最后一行的距离。</p>
@@ -543,14 +578,47 @@
 <h4 id="space-around"><a href="#space-around" class="headerlink" title="space-around"></a>space-around</h4><p>所有行在容器中平均分布，相邻两行间距相等。容器的垂直轴起点边和终点边分别与第一行和最后一行的距离是相邻两行间距的一半。</p>
 <h4 id="stretch"><a href="#stretch" class="headerlink" title="stretch"></a>stretch</h4><p>拉伸所有行来填满剩余空间。剩余空间平均的分配给每一行</p>
 <h2 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>align-items 属性以与justify-content相同的方式在侧轴方向上将当前行上的弹性元素对齐。==与align-content属性的区别在于它指定了当前Flex容器的行中的项目的对齐方式，而align-content则指定了行自身的对齐方式。==</p>
-<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* Basic keywords */</span></div><div class="line"><span class="attribute">align-items</span>: normal;</div><div class="line"><span class="attribute">align-items</span>: stretch;</div><div class="line"></div><div class="line"><span class="comment">/* Positional alignment */</span></div><div class="line"><span class="attribute">align-items</span>: center; <span class="comment">/* Pack items around the center */</span></div><div class="line"><span class="attribute">align-items</span>: start; <span class="comment">/* Pack items from the start */</span></div><div class="line"><span class="attribute">align-items</span>: end; <span class="comment">/* Pack items from the end */</span></div><div class="line"><span class="attribute">align-items</span>: flex-start; <span class="comment">/* Pack flex items from the start */</span></div><div class="line"><span class="attribute">align-items</span>: flex-end; <span class="comment">/* Pack flex items from the end */</span></div><div class="line"><span class="attribute">align-items</span>: self-start;</div><div class="line"><span class="attribute">align-items</span>: self-end;</div><div class="line"><span class="attribute">align-items</span>: left; <span class="comment">/* Pack items from the left */</span></div><div class="line"><span class="attribute">align-items</span>: right; <span class="comment">/* Pack items from the right */</span></div><div class="line"></div><div class="line">/* Baseline alignment */ justify-items: baseline;</div><div class="line"><span class="attribute">align-items</span>: first baseline;</div><div class="line"><span class="attribute">align-items</span>: last baseline; <span class="comment">/* Overflow alignment (for positional alignment only) */</span></div><div class="line"><span class="attribute">align-items</span>: safe center;</div><div class="line"><span class="attribute">align-items</span>: unsafe center;</div><div class="line"></div><div class="line"><span class="comment">/* Global values */</span></div><div class="line"><span class="attribute">align-items</span>: inherit;</div><div class="line"><span class="attribute">align-items</span>: initial;</div><div class="line"><span class="attribute">align-items</span>: unset;</div></pre></td></tr></table></figure>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><pre><code class="stylus">/* Basic keywords */
+align-items: normal;
+align-items: stretch;
+
+/* Positional alignment */
+align-items: center; /* Pack items around the center */
+align-items: start; /* Pack items from the start */
+align-items: end; /* Pack items from the end */
+align-items: flex-start; /* Pack flex items from the start */
+align-items: flex-end; /* Pack flex items from the end */
+align-items: self-start;
+align-items: self-end;
+align-items: left; /* Pack items from the left */
+align-items: right; /* Pack items from the right */
+
+/* Baseline alignment */ justify-items: baseline;
+align-items: first baseline;
+align-items: last baseline; /* Overflow alignment (for positional alignment only) */
+align-items: safe center;
+align-items: unsafe center;
+
+/* Global values */
+align-items: inherit;
+align-items: initial;
+align-items: unset;
+</code></pre>
 <h3 id="取值-1"><a href="#取值-1" class="headerlink" title="取值"></a>取值</h3><h4 id="flex-start-1"><a href="#flex-start-1" class="headerlink" title="flex-start"></a>flex-start</h4><p>元素向侧轴起点对齐。</p>
 <h4 id="flex-end-1"><a href="#flex-end-1" class="headerlink" title="flex-end"></a>flex-end</h4><p>元素向侧轴终点对齐。</p>
 <h4 id="center-1"><a href="#center-1" class="headerlink" title="center"></a>center</h4><p>元素在侧轴居中。如果元素在侧轴上的高度高于其容器，那么在两个方向上溢出距离相同。</p>
 <h4 id="baseline，first-baseline，last-baseline"><a href="#baseline，first-baseline，last-baseline" class="headerlink" title="baseline，first baseline，last baseline"></a>baseline，first baseline，last baseline</h4><p>所有元素向基线对齐。侧轴起点到元素基线距离最大的元素将会于侧轴起点对齐以确定基线。</p>
 <h4 id="stretch-1"><a href="#stretch-1" class="headerlink" title="stretch"></a>stretch</h4><p>弹性元素被在侧轴方向被拉伸到与容器相同的高度或宽度。</p>
 <h2 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h2><h3 id="概述-2"><a href="#概述-2" class="headerlink" title="概述"></a>概述</h3><p>align-self 会对齐当前 flex 行中的 flex 元素，并覆盖 align-items 的值. 如果任何 flex 元素的侧轴方向 margin 值设置为 auto，则会忽略 align-self。</p>
-<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">align-self</span>: auto</div><div class="line"><span class="attribute">align-self</span>: flex-start</div><div class="line"><span class="attribute">align-self</span>: flex-end</div><div class="line"><span class="attribute">align-self</span>: center</div><div class="line"><span class="attribute">align-self</span>: baseline</div><div class="line"><span class="attribute">align-self</span>: stretch</div><div class="line"></div><div class="line"><span class="attribute">align-self</span>: inherit</div></pre></td></tr></table></figure>
+<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><pre><code class="stylus">align-self: auto
+align-self: flex-start
+align-self: flex-end
+align-self: center
+align-self: baseline
+align-self: stretch
+
+align-self: inherit
+</code></pre>
 <h3 id="取值-2"><a href="#取值-2" class="headerlink" title="取值"></a>取值</h3><h4 id="auto"><a href="#auto" class="headerlink" title="auto"></a>auto</h4><p>设置为父元素的 align-items 值，如果该元素没有父元素的话，就设置为 stretch。</p>
 <h4 id="flex-start-2"><a href="#flex-start-2" class="headerlink" title="flex-start"></a>flex-start</h4><p>flex 元素会对齐到 cross-axis 的首端。</p>
 <h4 id="flex-end-2"><a href="#flex-end-2" class="headerlink" title="flex-end"></a>flex-end</h4><p>flex 元素会对齐到 cross-axis 的尾端。</p>
@@ -558,7 +626,23 @@
 <h4 id="baseline"><a href="#baseline" class="headerlink" title="baseline"></a>baseline</h4><p>所有的 flex 元素会沿着基线对齐，The item with the largest distance between its cross-start margin edge and its baseline is flushed with the cross-start edge of the line。</p>
 <h4 id="stretch-2"><a href="#stretch-2" class="headerlink" title="stretch"></a>stretch</h4><p>flex 元素将会基于容器的宽和高，按照自身 margin box 的 cross-size 拉伸。</p>
 <h2 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h2><h3 id="概述-3"><a href="#概述-3" class="headerlink" title="概述"></a>概述</h3><p>flex-direction 属性指定了内部元素是如何在 flex 容器中布局的，定义了主轴的方向(正方向或反方向)。</p>
-<h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* The direction text is laid out in a line */</span></div><div class="line"><span class="attribute">flex-direction</span>: row;</div><div class="line"></div><div class="line"><span class="comment">/* Like &lt;row&gt;, but reversed */</span></div><div class="line"><span class="attribute">flex-direction</span>: row-reverse;</div><div class="line"></div><div class="line"><span class="comment">/* The direction in which lines of text are stacked */</span></div><div class="line"><span class="attribute">flex-direction</span>: column;</div><div class="line"></div><div class="line"><span class="comment">/* Like &lt;column&gt;, but reversed */</span></div><div class="line"><span class="attribute">flex-direction</span>: column-reverse;</div><div class="line"></div><div class="line"><span class="comment">/* Global values */</span></div><div class="line"><span class="attribute">flex-direction</span>: inherit;</div><div class="line"><span class="attribute">flex-direction</span>: initial;</div><div class="line"><span class="attribute">flex-direction</span>: unset;</div></pre></td></tr></table></figure>
+<h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><pre><code class="stylus">/* The direction text is laid out in a line */
+flex-direction: row;
+
+/* Like &lt;row&gt;, but reversed */
+flex-direction: row-reverse;
+
+/* The direction in which lines of text are stacked */
+flex-direction: column;
+
+/* Like &lt;column&gt;, but reversed */
+flex-direction: column-reverse;
+
+/* Global values */
+flex-direction: inherit;
+flex-direction: initial;
+flex-direction: unset;
+</code></pre>
 <p>==注意==：值 row 和 row-reverse 受 flex 容器的方向性的影响。 如果它的 dir 属性是 ltr，row 表示从左到右定向的水平轴，而 row-reverse 表示从右到左; 如果 dir 属性是 rtl，row 表示从右到左定向的轴，而 row-reverse 表示从左到右。</p>
 <h3 id="取值-3"><a href="#取值-3" class="headerlink" title="取值"></a>取值</h3><h4 id="row"><a href="#row" class="headerlink" title="row"></a>row</h4><p>flex容器的主轴被定义为与文本方向相同。 主轴起点和主轴终点与内容方向相同。</p>
 <h4 id="row-reverse"><a href="#row-reverse" class="headerlink" title="row-reverse"></a>row-reverse</h4><p>表现和row相同，但是置换了主轴起点和主轴终点</p>
@@ -568,12 +652,53 @@
 <h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><p>这个属性有两个值，两个值以空格隔开。</p>
 <h3 id="取值-4"><a href="#取值-4" class="headerlink" title="取值"></a>取值</h3><p>取值详见flex-direction 和 flex-wrap</p>
 <h2 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h2><h3 id="概述-5"><a href="#概述-5" class="headerlink" title="概述"></a>概述</h3><p>flex-wrap 指定 flex 元素单行显示还是多行显示 。如果允许换行，这个属性允许你控制行的堆叠方向。</p>
-<h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">flex-wrap</span>: nowrap;</div><div class="line"><span class="attribute">flex-wrap</span>: wrap;</div><div class="line"><span class="attribute">flex-wrap</span>: wrap-reverse;</div><div class="line"></div><div class="line"><span class="comment">/* Global values */</span></div><div class="line"><span class="attribute">flex-wrap</span>: inherit;</div><div class="line"><span class="attribute">flex-wrap</span>: initial;</div><div class="line"><span class="attribute">flex-wrap</span>: unset;</div></pre></td></tr></table></figure>
+<h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><pre><code class="stylus">flex-wrap: nowrap;
+flex-wrap: wrap;
+flex-wrap: wrap-reverse;
+
+/* Global values */
+flex-wrap: inherit;
+flex-wrap: initial;
+flex-wrap: unset;
+</code></pre>
 <h3 id="取值-5"><a href="#取值-5" class="headerlink" title="取值"></a>取值</h3><h4 id="nowrap"><a href="#nowrap" class="headerlink" title="nowrap"></a>nowrap</h4><p>flex 的元素被摆放到到一行，这可能导致溢出 flex 容器。 cross-start  会根据 flex-direction 的值 相当于 start 或 before。</p>
 <h4 id="wrap"><a href="#wrap" class="headerlink" title="wrap"></a>wrap</h4><p>flex 元素 被打断到多个行中。cross-start 会根据 flex-direction 的值选择等于start 或before。cross-end 为确定的 cross-start 的另一端。</p>
 <h4 id="wrap-reverse"><a href="#wrap-reverse" class="headerlink" title="wrap-reverse"></a>wrap-reverse</h4><p>和 wrap 的行为一样，但是 cross-start 和 cross-end 互换。</p>
 <h2 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h2><h3 id="概述-6"><a href="#概述-6" class="headerlink" title="概述"></a>概述</h3><p>justify-content 属性定义了浏览器如何分配顺着父容器主轴的弹性元素之间及其周围的空间。</p>
-<h3 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* Positional alignment */</span></div><div class="line"><span class="attribute">justify-content</span>: center;     <span class="comment">/* 居中排列 */</span></div><div class="line"><span class="attribute">justify-content</span>: start;      <span class="comment">/* Pack items from the start */</span></div><div class="line"><span class="attribute">justify-content</span>: end;        <span class="comment">/* Pack items from the end */</span></div><div class="line"><span class="attribute">justify-content</span>: flex-start; <span class="comment">/* 从行首起始位置开始排列 */</span></div><div class="line"><span class="attribute">justify-content</span>: flex-end;   <span class="comment">/* 从行尾位置开始排列 */</span></div><div class="line"><span class="attribute">justify-content</span>: left;       <span class="comment">/* Pack items from the left */</span></div><div class="line"><span class="attribute">justify-content</span>: right;      <span class="comment">/* Pack items from the right */</span></div><div class="line"></div><div class="line"><span class="comment">/* Baseline alignment */</span></div><div class="line"><span class="attribute">justify-content</span>: baseline;</div><div class="line"><span class="attribute">justify-content</span>: first baseline;</div><div class="line"><span class="attribute">justify-content</span>: last baseline;</div><div class="line"></div><div class="line"><span class="comment">/* Distributed alignment */</span></div><div class="line"><span class="attribute">justify-content</span>: space-between;  <span class="comment">/* 均匀排列每个元素</span></div><div class="line"><span class="comment">                                   首个元素放置于起点，末尾元素放置于终点 */</span></div><div class="line"><span class="attribute">justify-content</span>: space-around;  <span class="comment">/* 均匀排列每个元素</span></div><div class="line"><span class="comment">                                   每个元素周围分配相同的空间 */</span></div><div class="line"><span class="attribute">justify-content</span>: space-evenly;  <span class="comment">/* Distribute items evenly</span></div><div class="line"><span class="comment">                                   Items have equal space around them */</span></div><div class="line"><span class="attribute">justify-content</span>: stretch;       <span class="comment">/* Distribute items evenly</span></div><div class="line"><span class="comment">                                   Stretch 'auto'-sized items to fit</span></div><div class="line"><span class="comment">                                   the container */</span></div><div class="line"></div><div class="line"><span class="comment">/* Overflow alignment */</span></div><div class="line"><span class="attribute">justify-content</span>: safe center;</div><div class="line"><span class="attribute">justify-content</span>: unsafe center;</div><div class="line"></div><div class="line"><span class="comment">/* Global values */</span></div><div class="line"><span class="attribute">justify-content</span>: inherit;</div><div class="line"><span class="attribute">justify-content</span>: initial;</div><div class="line"><span class="attribute">justify-content</span>: unset;</div></pre></td></tr></table></figure>
+<h3 id="语法-6"><a href="#语法-6" class="headerlink" title="语法"></a>语法</h3><pre><code class="stylus">/* Positional alignment */
+justify-content: center;     /* 居中排列 */
+justify-content: start;      /* Pack items from the start */
+justify-content: end;        /* Pack items from the end */
+justify-content: flex-start; /* 从行首起始位置开始排列 */
+justify-content: flex-end;   /* 从行尾位置开始排列 */
+justify-content: left;       /* Pack items from the left */
+justify-content: right;      /* Pack items from the right */
+
+/* Baseline alignment */
+justify-content: baseline;
+justify-content: first baseline;
+justify-content: last baseline;
+
+/* Distributed alignment */
+justify-content: space-between;  /* 均匀排列每个元素
+                                   首个元素放置于起点，末尾元素放置于终点 */
+justify-content: space-around;  /* 均匀排列每个元素
+                                   每个元素周围分配相同的空间 */
+justify-content: space-evenly;  /* Distribute items evenly
+                                   Items have equal space around them */
+justify-content: stretch;       /* Distribute items evenly
+                                   Stretch &#39;auto&#39;-sized items to fit
+                                   the container */
+
+/* Overflow alignment */
+justify-content: safe center;
+justify-content: unsafe center;
+
+/* Global values */
+justify-content: inherit;
+justify-content: initial;
+justify-content: unset;
+</code></pre>
 <p>当 length 属性和自动外边距属性（margin: auto）生效之后，对齐已经完成了。也就是说，如果存在至少一个弹性元素，而且这个元素的 flex-grow 属性不等于 0，那么对齐方式不会生效，就像没有多余空间的情况。 </p>
 <h3 id="取值-6"><a href="#取值-6" class="headerlink" title="取值"></a>取值</h3><h4 id="start"><a href="#start" class="headerlink" title="start"></a>start</h4><p>从行首开始排列。每行第一个元素与行首对齐，同时所有后续的元素与前一个对齐。(话说翻译居然不用审核？)</p>
 <h4 id="flex-start-3"><a href="#flex-start-3" class="headerlink" title="flex-start"></a>flex-start</h4><p>从行首开始排列。每行第一个弹性元素与行首对齐，同时所有后续的弹性元素与前一个对齐。</p>
@@ -582,7 +707,15 @@
 <h4 id="space-between-1"><a href="#space-between-1" class="headerlink" title="space-between"></a>space-between</h4><p>在每行上均匀分配弹性元素。相邻元素间距离相同。每行第一个元素与行首对齐，每行最后一个元素与行尾对齐。</p>
 <h4 id="space-around-1"><a href="#space-around-1" class="headerlink" title="space-around"></a>space-around</h4><p>在每行上均匀分配弹性元素。相邻元素间距离相同。每行第一个元素到行首的距离和每行最后一个元素到行尾的距离将会是相邻元素之间距离的一半。</p>
 <h2 id="order"><a href="#order" class="headerlink" title="order"></a>order</h2><h3 id="概述-7"><a href="#概述-7" class="headerlink" title="概述"></a>概述</h3><p>rder 属性规定了弹性容器中的可伸缩项目在布局时的顺序。元素按照 order 属性的值的增序进行布局。拥有相同 order 属性值的元素按照它们在源代码中出现的顺序进行布局。</p>
-<h3 id="语法-7"><a href="#语法-7" class="headerlink" title="语法"></a>语法</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* Numerical value including negative numbers */</span></div><div class="line"><span class="attribute">order</span>: <span class="number">5</span>;</div><div class="line"><span class="attribute">order</span>: -<span class="number">5</span>;</div><div class="line"></div><div class="line"><span class="comment">/* Global values */</span></div><div class="line"><span class="attribute">order</span>: inherit;</div><div class="line"><span class="attribute">order</span>: initial;</div><div class="line"><span class="attribute">order</span>: unset;</div></pre></td></tr></table></figure>
+<h3 id="语法-7"><a href="#语法-7" class="headerlink" title="语法"></a>语法</h3><pre><code class="stylus">/* Numerical value including negative numbers */
+order: 5;
+order: -5;
+
+/* Global values */
+order: inherit;
+order: initial;
+order: unset;
+</code></pre>
 <h3 id="取值-7"><a href="#取值-7" class="headerlink" title="取值"></a>取值</h3><p>默认0，可以设置正数或负数</p>
 <p><strong>参考：</strong><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" target="_blank" rel="external">MDN</a><br><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">阮一峰flex布局教程</a></p>
 
@@ -713,7 +846,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
@@ -733,7 +866,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/web前端/">web前端<span class="sidebar_archives-count">19</span></a>
+                <a class="sidebar_archives-link" href="/categories/web前端/">web前端<span class="sidebar_archives-count">20</span></a>
             </ul>
         </li>
         

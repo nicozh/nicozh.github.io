@@ -513,23 +513,103 @@
     
         <h2 id="Array-对象"><a href="#Array-对象" class="headerlink" title="Array 对象"></a>Array 对象</h2><p>Array 对象用于在单个的变量中存储多个值，是用于构造数组的全局对象;</p>
 <h2 id="数组的-API"><a href="#数组的-API" class="headerlink" title="数组的 API"></a>数组的 API</h2><h3 id="Array-prototype-concat"><a href="#Array-prototype-concat" class="headerlink" title="Array.prototype.concat"></a>Array.prototype.concat</h3><p>concat() 方法用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var arr1 = ['a', 'b', 'c'];</div><div class="line">var arr2 = ['d', 'e', 'f'];</div><div class="line"></div><div class="line">var arr3 = arr1.concat(arr2);</div><div class="line"></div><div class="line"><span class="comment">// arr3 is a new array [ "a", "b", "c", "d", "e", "f" ]</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">var arr1 = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+var arr2 = [&#39;d&#39;, &#39;e&#39;, &#39;f&#39;];
+
+var arr3 = arr1.concat(arr2);
+
+// arr3 is a new array [ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot; ]
+</code></pre>
 <p>以下代码将三个数组合并为一个新数组：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">var</span> num1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</div><div class="line">    num2 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>],</div><div class="line">    num3 = [7, 8, 9];</div><div class="line"></div><div class="line">var nums = num1.concat(num2, num3);</div><div class="line"></div><div class="line">console.log(nums); </div><div class="line"><span class="comment">// results in [1, 2, 3, 4, 5, 6, 7, 8, 9]</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">var num1 = [1, 2, 3],
+    num2 = [4, 5, 6],
+    num3 = [7, 8, 9];
+
+var nums = num1.concat(num2, num3);
+
+console.log(nums); 
+// results in [1, 2, 3, 4, 5, 6, 7, 8, 9]
+</code></pre>
 <p>以下代码将三个值连接到数组：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var alpha = ['a', 'b', 'c'];</div><div class="line"></div><div class="line">var alphaNumeric = alpha.concat(1, [2, 3]);</div><div class="line"></div><div class="line">console.log(alphaNumeric); </div><div class="line"><span class="comment">// results in ['a', 'b', 'c', 1, 2, 3]</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">var alpha = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+
+var alphaNumeric = alpha.concat(1, [2, 3]);
+
+console.log(alphaNumeric); 
+// results in [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, 1, 2, 3]
+</code></pre>
 <p>以下代码合并数组并保留引用：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var num1 = [[1]];</div><div class="line">var num2 = [2, [3]];</div><div class="line"></div><div class="line">var nums = num1.concat(num2);</div><div class="line"></div><div class="line">console.log(nums);</div><div class="line"><span class="comment">// results in [[1], 2, [3]]</span></div><div class="line"></div><div class="line"><span class="comment">// modify the first element of num1</span></div><div class="line">num1[0].push(4);</div><div class="line"></div><div class="line">console.log(nums);</div><div class="line"><span class="comment">// results in [[1, 4], 2, [3]]</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">var num1 = [[1]];
+var num2 = [2, [3]];
+
+var nums = num1.concat(num2);
+
+console.log(nums);
+// results in [[1], 2, [3]]
+
+// modify the first element of num1
+num1[0].push(4);
+
+console.log(nums);
+// results in [[1, 4], 2, [3]]
+</code></pre>
 <h3 id="Array-prototype-filter"><a href="#Array-prototype-filter" class="headerlink" title="Array.prototype.filter()"></a>Array.prototype.filter()</h3><p>ffilter方法的参数是一个函数，所有数组成员依次执行该函数，返回结果为true的成员组成一个新数组返回。该方法不会改变原数组。</p>
-<p>下面代码返回所有大于3的值<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>].<span class="attribute">filter</span>(function (elem) &#123;</div><div class="line">  return (elem &gt; 3);</div><div class="line">&#125;)</div><div class="line"><span class="comment">// [4, 5]</span></div></pre></td></tr></table></figure></p>
-<p>上面代码返回数组里面所有布尔值为true的成员<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr = [0, 1, 'a', false];</div><div class="line"></div><div class="line">arr.<span class="attribute">filter</span>(Boolean)</div><div class="line"><span class="comment">// [1, "a"]</span></div></pre></td></tr></table></figure></p>
+<p>下面代码返回所有大于3的值</p>
+<pre><code class="stylus">[1, 2, 3, 4, 5].filter(function (elem) {
+  return (elem &gt; 3);
+})
+// [4, 5]
+</code></pre>
+<p>上面代码返回数组里面所有布尔值为true的成员</p>
+<pre><code class="stylus">var arr = [0, 1, &#39;a&#39;, false];
+
+arr.filter(Boolean)
+// [1, &quot;a&quot;]
+</code></pre>
 <p>filter方法的参数函数可以接受三个参数，第一个参数是当前数组成员的值，这是必需的，后两个参数是可选的，分别是当前数组成员的位置和整个数组。</p>
-<p>下面代码返回<strong>偶数位置</strong>的成员组成的新数组。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>].<span class="attribute">filter</span>(function (elem, index, arr) &#123;</div><div class="line">  return index % 2 === 0;</div><div class="line">&#125;);</div><div class="line"><span class="comment">// [1, 3, 5]</span></div></pre></td></tr></table></figure></p>
+<p>下面代码返回<strong>偶数位置</strong>的成员组成的新数组。</p>
+<pre><code class="stylus">[1, 2, 3, 4, 5].filter(function (elem, index, arr) {
+  return index % 2 === 0;
+});
+// [1, 3, 5]
+</code></pre>
 <p>filter方法还可以接受第二个参数，指定测试函数所在的上下文对象（即this对象）。</p>
-<p>下面代码中，测试函数myFilter内部有this对象，它可以被filter方法的第二个参数绑定。下例中，myFilter的this绑定了Obj对象的实例，返回大于3的成员。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">var</span> Obj = function () &#123;</div><div class="line">  this.MAX = 3;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="selector-tag">var</span> myFilter = function (item) &#123;</div><div class="line">  <span class="keyword">if</span> (item &gt; this.MAX) &#123;</div><div class="line">    return true;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var arr = [2, 8, 3, 4, 1, 3, 2, 9];</div><div class="line">arr.<span class="attribute">filter</span>(myFilter, new Obj())</div><div class="line"><span class="comment">// [8, 4, 9]</span></div></pre></td></tr></table></figure></p>
+<p>下面代码中，测试函数myFilter内部有this对象，它可以被filter方法的第二个参数绑定。下例中，myFilter的this绑定了Obj对象的实例，返回大于3的成员。</p>
+<pre><code class="stylus">var Obj = function () {
+  this.MAX = 3;
+};
+
+var myFilter = function (item) {
+  if (item &gt; this.MAX) {
+    return true;
+  }
+};
+
+var arr = [2, 8, 3, 4, 1, 3, 2, 9];
+arr.filter(myFilter, new Obj())
+// [8, 4, 9]
+</code></pre>
 <h3 id="Array-prototype-sort"><a href="#Array-prototype-sort" class="headerlink" title="Array.prototype.sort()"></a>Array.prototype.sort()</h3><p>sort() 方法在适当的位置对数组的元素进行排序，并返回数组。 sort 排序不一定是稳定的。默认排序顺序是根据字符串Unicode码点。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var fruit = ['cherries', 'apples', 'bananas'];</div><div class="line">fruit.sort(); </div><div class="line"><span class="comment">// ['apples', 'bananas', 'cherries']</span></div><div class="line"></div><div class="line">var scores = [1, 10, 21, 2]; </div><div class="line">scores.sort(); </div><div class="line"><span class="comment">// [1, 10, 2, 21]</span></div><div class="line"><span class="comment">// 注意10在2之前,</span></div><div class="line"><span class="comment">// 因为在 Unicode 指针顺序中"10"在"2"之前</span></div><div class="line"></div><div class="line">var things = ['word', 'Word', '1 Word', '2 Words'];</div><div class="line">things.sort(); </div><div class="line"><span class="comment">// ['1 Word', '2 Words', 'Word', 'word']</span></div><div class="line"><span class="comment">// 在Unicode中, 数字在大写字母之前,</span></div><div class="line"><span class="comment">// 大写字母在小写字母之前.</span></div></pre></td></tr></table></figure>
-<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">arr.sort() </div><div class="line"></div><div class="line">arr.sort(compareFunction)</div></pre></td></tr></table></figure>
+<pre><code class="stylus">var fruit = [&#39;cherries&#39;, &#39;apples&#39;, &#39;bananas&#39;];
+fruit.sort(); 
+// [&#39;apples&#39;, &#39;bananas&#39;, &#39;cherries&#39;]
+
+var scores = [1, 10, 21, 2]; 
+scores.sort(); 
+// [1, 10, 2, 21]
+// 注意10在2之前,
+// 因为在 Unicode 指针顺序中&quot;10&quot;在&quot;2&quot;之前
+
+var things = [&#39;word&#39;, &#39;Word&#39;, &#39;1 Word&#39;, &#39;2 Words&#39;];
+things.sort(); 
+// [&#39;1 Word&#39;, &#39;2 Words&#39;, &#39;Word&#39;, &#39;word&#39;]
+// 在Unicode中, 数字在大写字母之前,
+// 大写字母在小写字母之前.
+</code></pre>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><pre><code class="stylus">arr.sort() 
+
+arr.sort(compareFunction)
+</code></pre>
 <h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><p>compareFunction<br>可选。用来指定按某种顺序进行排列的函数。如果省略，元素按照转换为的字符串的诸个字符的Unicode位点进行排序。</p>
 <h5 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h5><p>返回排序后的数组。原数组已经被排序后的数组代替。</p>
 <h4 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h4><p>如果没有指明 compareFunction ，那么元素会按照转换为的字符串的诸个字符的Unicode位点进行排序。例如 “Banana” 会被排列到 “cherry” 之前。数字比大小时，9 出现在 80 之前，但这里比较时数字会先被转换为字符串，所以 “80” 比 “9” 要靠前。</p>
@@ -540,36 +620,215 @@
 <li>如果 compareFunction(a, b) 大于 0 ， b 会被排列到 a 之前。</li>
 <li>compareFunction(a, b) 必须总是对相同的输入返回相同的比较结果，否则排序的结果将是不确定的。<br>所以，比较函数格式如下：</li>
 </ul>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function compare(<span class="selector-tag">a</span>, b) &#123;</div><div class="line">  <span class="keyword">if</span> (<span class="selector-tag">a</span> is less than <span class="selector-tag">b</span> by some ordering criterion) &#123;</div><div class="line">    return -1;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (<span class="selector-tag">a</span> is greater than <span class="selector-tag">b</span> by the ordering criterion) &#123;</div><div class="line">    return 1;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// a must be equal to b</span></div><div class="line">  return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="stylus">function compare(a, b) {
+  if (a is less than b by some ordering criterion) {
+    return -1;
+  }
+  if (a is greater than b by the ordering criterion) {
+    return 1;
+  }
+  // a must be equal to b
+  return 0;
+}
+</code></pre>
 <p>希望比较数字而非字符串，比较函数可以简单的以 a 减 b，如下的函数将会将数组升序排列</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function compareNumbers(<span class="selector-tag">a</span>, b) &#123;</div><div class="line">  return a - b;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code class="stylus">function compareNumbers(a, b) {
+  return a - b;
+}
+</code></pre>
 <p>sort 方法可以使用 函数表达式 方便地书写：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var numbers = [4, 2, 5, 1, 3];</div><div class="line">numbers.sort(function(<span class="selector-tag">a</span>, b) &#123;</div><div class="line">  return a - b;</div><div class="line">&#125;);</div><div class="line">console.log(numbers);</div><div class="line"></div><div class="line"><span class="comment">// [1, 2, 3, 4, 5]</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">var numbers = [4, 2, 5, 1, 3];
+numbers.sort(function(a, b) {
+  return a - b;
+});
+console.log(numbers);
+
+// [1, 2, 3, 4, 5]
+</code></pre>
 <p>对象可以按照某个属性排序：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">var</span> items = [</div><div class="line">  &#123; name: <span class="string">'Edward'</span>, value: <span class="number">21</span> &#125;,</div><div class="line">  &#123; name: <span class="string">'Sharpe'</span>, value: <span class="number">37</span> &#125;,</div><div class="line">  &#123; name: <span class="string">'And'</span>, value: <span class="number">45</span> &#125;,</div><div class="line">  &#123; name: <span class="string">'The'</span>, value: -<span class="number">12</span> &#125;,</div><div class="line">  &#123; name: <span class="string">'Magnetic'</span> &#125;,</div><div class="line">  &#123; name: <span class="string">'Zeros'</span>, value: <span class="number">37</span> &#125;</div><div class="line">];</div><div class="line"></div><div class="line">items.sort(function (<span class="selector-tag">a</span>, b) &#123;</div><div class="line">  <span class="keyword">if</span> (<span class="selector-tag">a</span><span class="selector-class">.value</span> &gt; <span class="selector-tag">b</span>.value) &#123;</div><div class="line">    return 1;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (<span class="selector-tag">a</span><span class="selector-class">.value</span> &lt; <span class="selector-tag">b</span>.value) &#123;</div><div class="line">    return -1;</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// a 必须等于 b</span></div><div class="line">  return 0;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<pre><code class="stylus">var items = [
+  { name: &#39;Edward&#39;, value: 21 },
+  { name: &#39;Sharpe&#39;, value: 37 },
+  { name: &#39;And&#39;, value: 45 },
+  { name: &#39;The&#39;, value: -12 },
+  { name: &#39;Magnetic&#39; },
+  { name: &#39;Zeros&#39;, value: 37 }
+];
+
+items.sort(function (a, b) {
+  if (a.value &gt; b.value) {
+    return 1;
+  }
+  if (a.value &lt; b.value) {
+    return -1;
+  }
+  // a 必须等于 b
+  return 0;
+});
+</code></pre>
 <h3 id="Array-prototype-map"><a href="#Array-prototype-map" class="headerlink" title="Array.prototype.map"></a>Array.prototype.map</h3><p>map方法对数组的所有成员依次调用一个函数，根据函数结果返回一个新数组。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// ES6</span></div><div class="line">let numbers = [1, 5, 10, 15];</div><div class="line">let doubles = numbers.map( x =&gt; x ** 2);</div><div class="line"></div><div class="line"><span class="comment">// doubles is now [1, 25, 100, 225]</span></div><div class="line"><span class="comment">// numbers is still [1, 5, 10, 15]</span></div><div class="line"></div><div class="line"></div><div class="line">const numbers = [2, 4, 8, 10];</div><div class="line">let halves = numbers.map(x =&gt; x / 2);</div><div class="line"></div><div class="line">let numbers = [1, 4, 9];</div><div class="line">let roots = numbers.map(Math.sqrt);</div><div class="line"><span class="comment">// roots is now [1, 2, 3]</span></div><div class="line"><span class="comment">// numbers is still [1, 4, 9]</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">// ES6
+let numbers = [1, 5, 10, 15];
+let doubles = numbers.map( x =&gt; x ** 2);
+
+// doubles is now [1, 25, 100, 225]
+// numbers is still [1, 5, 10, 15]
+
+
+const numbers = [2, 4, 8, 10];
+let halves = numbers.map(x =&gt; x / 2);
+
+let numbers = [1, 4, 9];
+let roots = numbers.map(Math.sqrt);
+// roots is now [1, 2, 3]
+// numbers is still [1, 4, 9]
+</code></pre>
 <p>map方法接受一个函数作为参数。该函数调用时，map方法会将其传入三个参数，分别是当前成员、当前位置和数组本身。</p>
-<p>下面代码中，map方法的回调函数的三个参数之中，elem为当前成员的值，index为当前成员的位置，arr为原数组（[1, 2, 3]）。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].map(function(elem, index, arr) &#123;</div><div class="line">  return elem * index;</div><div class="line">&#125;);</div><div class="line"><span class="comment">// [0, 2, 6]</span></div></pre></td></tr></table></figure></p>
+<p>下面代码中，map方法的回调函数的三个参数之中，elem为当前成员的值，index为当前成员的位置，arr为原数组（[1, 2, 3]）。</p>
+<pre><code class="stylus">[1, 2, 3].map(function(elem, index, arr) {
+  return elem * index;
+});
+// [0, 2, 6]
+</code></pre>
 <p>map方法不仅可以用于数组，还可以用于字符串，用来遍历字符串的每个字符。但是，不能直接使用，而要通过函数的call方法间接使用，或者先将字符串转为数组，然后使用。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">var</span> upper = function (x) &#123;</div><div class="line">  return x.toUpperCase();</div><div class="line">&#125;;</div><div class="line"></div><div class="line">[]<span class="selector-class">.map</span><span class="selector-class">.call</span>(<span class="string">'abc'</span>, upper)</div><div class="line"><span class="comment">// [ 'A', 'B', 'C' ]</span></div><div class="line"></div><div class="line"><span class="comment">// 或者</span></div><div class="line"><span class="string">'abc'</span>.split(<span class="string">''</span>).map(upper)</div><div class="line"><span class="comment">// [ 'A', 'B', 'C' ]</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">var upper = function (x) {
+  return x.toUpperCase();
+};
+
+[].map.call(&#39;abc&#39;, upper)
+// [ &#39;A&#39;, &#39;B&#39;, &#39;C&#39; ]
+
+// 或者
+&#39;abc&#39;.split(&#39;&#39;).map(upper)
+// [ &#39;A&#39;, &#39;B&#39;, &#39;C&#39; ]
+</code></pre>
 <p>map方法还可以接受第二个参数，表示回调函数执行时this所指向的对象。</p>
-<p>下面代码通过map方法的第二个参数，将回调函数内部的this对象，指向arr数组。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var arr = ['a', 'b', 'c'];</div><div class="line"></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>].map(function(e)&#123;</div><div class="line">  return this[e];</div><div class="line">&#125;, arr)</div><div class="line"><span class="comment">// ['b', 'c']</span></div></pre></td></tr></table></figure></p>
+<p>下面代码通过map方法的第二个参数，将回调函数内部的this对象，指向arr数组。</p>
+<pre><code class="stylus">var arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+
+[1, 2].map(function(e){
+  return this[e];
+}, arr)
+// [&#39;b&#39;, &#39;c&#39;]
+</code></pre>
 <p>如果数组有空位，map方法的回调函数在这个位置不会执行，会跳过数组的空位。</p>
-<p>下面代码中，map方法不会跳过undefined和null，但是会跳过空位。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var f = function(n)&#123; return n + 1 &#125;;</div><div class="line"></div><div class="line">[<span class="number">1</span>, undefined, <span class="number">2</span>].map(f) <span class="comment">// [2, NaN, 3]</span></div><div class="line">[<span class="number">1</span>, null, <span class="number">2</span>].map(f) <span class="comment">// [2, 1, 3]</span></div><div class="line">[<span class="number">1</span>, , <span class="number">2</span>].map(f) <span class="comment">// [2, , 3]</span></div></pre></td></tr></table></figure></p>
+<p>下面代码中，map方法不会跳过undefined和null，但是会跳过空位。</p>
+<pre><code class="stylus">var f = function(n){ return n + 1 };
+
+[1, undefined, 2].map(f) // [2, NaN, 3]
+[1, null, 2].map(f) // [2, 1, 3]
+[1, , 2].map(f) // [2, , 3]
+</code></pre>
 <p>下面代码中，map方法根本没有执行，直接返回了Array(2)生成的空数组。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">Array</span><span class="params">(<span class="number">2</span>)</span></span>.map(function ()&#123;</div><div class="line">  console.log('enter...');</div><div class="line">  return 1;</div><div class="line">&#125;)</div><div class="line"><span class="comment">// [, ,]</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">Array(2).map(function (){
+  console.log(&#39;enter...&#39;);
+  return 1;
+})
+// [, ,]
+</code></pre>
 <h3 id="Array-prototype-forEach"><a href="#Array-prototype-forEach" class="headerlink" title="Array.prototype.forEach"></a>Array.prototype.forEach</h3><p>forEach方法与map方法很相似，也是遍历数组的所有成员，执行某种操作，但是forEach方法一般不返回值，只用来操作数据。如果需要有返回值，一般使用map方法。</p>
 <p>forEach方法的参数与map方法一致，也是一个函数，数组的所有成员会依次执行该函数。它接受三个参数，分别是当前位置的值、当前位置的编号和整个数组。</p>
-<p>下面代码中，forEach遍历数组不是为了得到返回值，而是为了在屏幕输出内容，所以应该使用forEach方法，而不是map方法，虽然后者也可以实现同样目的。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function log(element, index, array) &#123;</div><div class="line">  console.log('[' + index + '] = ' + element);</div><div class="line">&#125;</div><div class="line"></div><div class="line">[2, 5, 9].forEach(log);</div><div class="line"><span class="comment">// [0] = 2</span></div><div class="line"><span class="comment">// [1] = 5</span></div><div class="line"><span class="comment">// [2] = 9</span></div></pre></td></tr></table></figure></p>
-<p>forEach方法也可以接受第二个参数，用来绑定回调函数的this关键字。<br>下面代码中，空数组out是forEach方法的第二个参数，结果，回调函数内部的this关键字就指向out。这个参数对于多层this非常有用，因为多层this通常指向是不一致的。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var out = [];</div><div class="line"></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].forEach(function(elem) &#123;</div><div class="line">  this.push(elem * elem);</div><div class="line">&#125;, out);</div><div class="line"></div><div class="line">out <span class="comment">// [1, 4, 9]</span></div></pre></td></tr></table></figure></p>
+<p>下面代码中，forEach遍历数组不是为了得到返回值，而是为了在屏幕输出内容，所以应该使用forEach方法，而不是map方法，虽然后者也可以实现同样目的。</p>
+<pre><code class="stylus">function log(element, index, array) {
+  console.log(&#39;[&#39; + index + &#39;] = &#39; + element);
+}
+
+[2, 5, 9].forEach(log);
+// [0] = 2
+// [1] = 5
+// [2] = 9
+</code></pre>
+<p>forEach方法也可以接受第二个参数，用来绑定回调函数的this关键字。<br>下面代码中，空数组out是forEach方法的第二个参数，结果，回调函数内部的this关键字就指向out。这个参数对于多层this非常有用，因为多层this通常指向是不一致的。</p>
+<pre><code class="stylus">var out = [];
+
+[1, 2, 3].forEach(function(elem) {
+  this.push(elem * elem);
+}, out);
+
+out // [1, 4, 9]
+</code></pre>
 <p>下面代码中，obj.print方法有两层this，它们的指向是不一致的。外层的this.times指向obj对象，内层的this.name指向顶层对象window（详细解释参见《面向对象编程》一章）。这显然是违背原意的，解决方法就是使用forEach方法的第二个参数固定this。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">var</span> obj = &#123;</div><div class="line">  name: <span class="string">'张三'</span>,</div><div class="line">  times: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</div><div class="line">  print: function () &#123;</div><div class="line">    this<span class="selector-class">.times</span><span class="selector-class">.forEach</span>(function (n) &#123;</div><div class="line">      console.log(this.name);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">obj.print()</div><div class="line"><span class="comment">// 没有任何输出</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//固定this</span></div><div class="line"><span class="selector-tag">var</span> obj = &#123;</div><div class="line">  name: <span class="string">'张三'</span>,</div><div class="line">  times: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</div><div class="line">  print: function () &#123;</div><div class="line">    this<span class="selector-class">.times</span><span class="selector-class">.forEach</span>(function (n) &#123;</div><div class="line">      console.log(this.name);</div><div class="line">    &#125;, this);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">obj.print()</div><div class="line"><span class="comment">// 张三</span></div><div class="line"><span class="comment">// 张三</span></div><div class="line"><span class="comment">// 张三</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">var obj = {
+  name: &#39;张三&#39;,
+  times: [1, 2, 3],
+  print: function () {
+    this.times.forEach(function (n) {
+      console.log(this.name);
+    });
+  }
+};
+
+obj.print()
+// 没有任何输出
+
+
+//固定this
+var obj = {
+  name: &#39;张三&#39;,
+  times: [1, 2, 3],
+  print: function () {
+    this.times.forEach(function (n) {
+      console.log(this.name);
+    }, this);
+  }
+};
+
+obj.print()
+// 张三
+// 张三
+// 张三
+</code></pre>
 <p>forEach方法无法中断执行，总是会将所有成员遍历完。如果希望符合某种条件时，就中断遍历，要使用for循环。</p>
-<p>下面代码中，执行到数组的第二个成员时，就会中断执行。forEach方法做不到这一点。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var arr = [1, 2, 3];</div><div class="line"></div><div class="line">for (var i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">  if (arr[i] === 2) break;</div><div class="line">  console.log(arr[i]);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 2</span></div></pre></td></tr></table></figure></p>
-<p>forEach方法会跳过数组的空位。<br>下面代码中，forEach方法不会跳过undefined和null，但会跳过空位。<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">var</span> log = function (n) &#123;</div><div class="line"> console.log(n + 1);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">[<span class="number">1</span>, undefined, <span class="number">2</span>].forEach(log)</div><div class="line"><span class="comment">// 2</span></div><div class="line"><span class="comment">// NaN</span></div><div class="line"><span class="comment">// 3</span></div><div class="line"></div><div class="line">[<span class="number">1</span>, null, <span class="number">2</span>].forEach(log)</div><div class="line"><span class="comment">// 2</span></div><div class="line"><span class="comment">// 1</span></div><div class="line"><span class="comment">// 3</span></div><div class="line"></div><div class="line">[<span class="number">1</span>, , <span class="number">2</span>].forEach(log)</div><div class="line"><span class="comment">// 2</span></div><div class="line"><span class="comment">// 3</span></div></pre></td></tr></table></figure></p>
+<p>下面代码中，执行到数组的第二个成员时，就会中断执行。forEach方法做不到这一点。</p>
+<pre><code class="stylus">var arr = [1, 2, 3];
+
+for (var i = 0; i &lt; arr.length; i++) {
+  if (arr[i] === 2) break;
+  console.log(arr[i]);
+}
+// 2
+</code></pre>
+<p>forEach方法会跳过数组的空位。<br>下面代码中，forEach方法不会跳过undefined和null，但会跳过空位。</p>
+<pre><code class="stylus">var log = function (n) {
+ console.log(n + 1);
+};
+
+[1, undefined, 2].forEach(log)
+// 2
+// NaN
+// 3
+
+[1, null, 2].forEach(log)
+// 2
+// 1
+// 3
+
+[1, , 2].forEach(log)
+// 2
+// 3
+</code></pre>
 <p>forEach方法也可以用于类似数组的对象和字符串。<br>下面代码中，obj是一个类似数组的对象，forEach方法可以遍历它的数字键。forEach方法也可以遍历字符串。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">var</span> obj = &#123;</div><div class="line">  <span class="number">0</span>: <span class="number">1</span>,</div><div class="line">  <span class="selector-tag">a</span>: <span class="string">'hello'</span>,</div><div class="line">  length: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">Array<span class="selector-class">.prototype</span><span class="selector-class">.forEach</span><span class="selector-class">.call</span>(obj, function (elem, i) &#123;</div><div class="line">  console.log( i + ':' + elem);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 0:1</span></div><div class="line"></div><div class="line">var str = 'hello';</div><div class="line">Array<span class="selector-class">.prototype</span><span class="selector-class">.forEach</span><span class="selector-class">.call</span>(str, function (elem, i) &#123;</div><div class="line">  console.log( i + ':' + elem);</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 0:h</span></div><div class="line"><span class="comment">// 1:e</span></div><div class="line"><span class="comment">// 2:l</span></div><div class="line"><span class="comment">// 3:l</span></div><div class="line"><span class="comment">// 4:o</span></div></pre></td></tr></table></figure>
+<pre><code class="stylus">var obj = {
+  0: 1,
+  a: &#39;hello&#39;,
+  length: 1
+}
+
+Array.prototype.forEach.call(obj, function (elem, i) {
+  console.log( i + &#39;:&#39; + elem);
+});
+// 0:1
+
+var str = &#39;hello&#39;;
+Array.prototype.forEach.call(str, function (elem, i) {
+  console.log( i + &#39;:&#39; + elem);
+});
+// 0:h
+// 1:e
+// 2:l
+// 3:l
+// 4:o
+</code></pre>
 
         
     
@@ -698,7 +957,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
@@ -718,7 +977,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/web前端/">web前端<span class="sidebar_archives-count">19</span></a>
+                <a class="sidebar_archives-link" href="/categories/web前端/">web前端<span class="sidebar_archives-count">20</span></a>
             </ul>
         </li>
         
