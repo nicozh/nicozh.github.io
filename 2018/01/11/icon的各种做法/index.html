@@ -39,7 +39,7 @@
     
     <title>
         
-            HTML5标签列表 | 
+            icon 的各种做法 | 
         
         Zhang Hong
     </title>
@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Nico Zhang">
     <meta name="description" itemprop="description" content="ONE THE WAY">
-    <meta name="keywords" content=",HTML">
+    <meta name="keywords" content=",CSS,HTML">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -228,18 +228,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="HTML5标签列表 | Zhang Hong">
+    <meta property="og:title" content="icon 的各种做法 | Zhang Hong">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="ONE THE WAY">
-    <meta property="og:article:tag" content="HTML"> 
+    <meta property="og:article:tag" content="CSS"> <meta property="og:article:tag" content="HTML"> 
 
     
-        <meta property="article:published_time" content="Sun Oct 15 2017 22:32:09 GMT+0800" />
-        <meta property="article:modified_time" content="Wed Dec 20 2017 19:02:24 GMT+0800" />
+        <meta property="article:published_time" content="Thu Jan 11 2018 19:03:35 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Jan 11 2018 19:03:53 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="HTML5标签列表 | Zhang Hong">
+    <meta name="twitter:title" content="icon 的各种做法 | Zhang Hong">
     <meta name="twitter:description" content="ONE THE WAY">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/10/15/HTML5标签/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/01/11/icon的各种做法/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2017/10/15/HTML5标签/index.html",
-    "headline": "HTML5标签列表",
-    "datePublished": "Sun Oct 15 2017 22:32:09 GMT+0800",
-    "dateModified": "Wed Dec 20 2017 19:02:24 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/01/11/icon的各种做法/index.html",
+    "headline": "icon 的各种做法",
+    "datePublished": "Thu Jan 11 2018 19:03:35 GMT+0800",
+    "dateModified": "Thu Jan 11 2018 19:03:53 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -280,7 +280,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",HTML",
+    "keywords": ",CSS,HTML",
     "description": "ONE THE WAY",
 }
 </script>
@@ -346,7 +346,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#根元素"><span class="post-toc-number">1.</span> <span class="post-toc-text">根元素</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文档元数据"><span class="post-toc-number">2.</span> <span class="post-toc-text">文档元数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#脚本"><span class="post-toc-number">3.</span> <span class="post-toc-text">脚本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#章节"><span class="post-toc-number">4.</span> <span class="post-toc-text">章节</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#组织内容"><span class="post-toc-number">5.</span> <span class="post-toc-text">组织内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文字形式"><span class="post-toc-number">6.</span> <span class="post-toc-text">文字形式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#编辑"><span class="post-toc-number">7.</span> <span class="post-toc-text">编辑</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#嵌入内容"><span class="post-toc-number">8.</span> <span class="post-toc-text">嵌入内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#表格"><span class="post-toc-number">9.</span> <span class="post-toc-text">表格</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#表单"><span class="post-toc-number">10.</span> <span class="post-toc-text">表单</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#交互元素"><span class="post-toc-number">11.</span> <span class="post-toc-text">交互元素</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#img法"><span class="post-toc-number">1.</span> <span class="post-toc-text">img法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#background法"><span class="post-toc-number">2.</span> <span class="post-toc-text">background法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#css-image-sprites"><span class="post-toc-number">3.</span> <span class="post-toc-text">css image sprites</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#iconfont-HTML形式"><span class="post-toc-number">4.</span> <span class="post-toc-text">iconfont-HTML形式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#iconfont-css形式"><span class="post-toc-number">5.</span> <span class="post-toc-text">iconfont-css形式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SVG-icon-推荐"><span class="post-toc-number">6.</span> <span class="post-toc-text">SVG icon(推荐)</span></a></li></ol>
     </ul>
     
 
@@ -378,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                HTML5标签列表
+                icon 的各种做法
             </p>
         </div>
 
@@ -397,7 +397,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Nico Zhang</strong>
-        <span>10月 15, 2017</span>
+        <span>1月 11, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -419,7 +419,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACW0lEQVR42u3aUW7CMBAEUO5/6fYAVcPM2jERevlCRRg/I9nb8b5+vvp54eHh4eHh4eHhPYz3ip/rT/1997+/XI+2YW54eHh4R3hvttr4i5NJJ+MvzQ0PDw/vIO+/6Sav242+PUKSueHh4eE9n9du68ly4OHh4X0rLw8XrsdvDwk8PDy8p/GSf/jzkjoZ5zqw+EDWgoeHhxfz8kum86+P3u/h4eHhBby6pSm41mqn3h4Gb2aIh4eHdzMv34hn7PywycOLN4uLh4eHd4RXfHjUYrVSTNfHEh4eHt4R3nrk2m7lybvJfPDw8PA+xUuu5K9bB2YlddtYsOHcw8PDw1vmJQ0B+Rfno7WBSNG4gIeHh3czrz0SZtdg7dRny4qHh4f3KV4y0fbSKwGsl+94eHh4Z3hFqRqU0ck4K6XzLWEEHh4e3oiXfP3e5WjbC4qwAw8PD+8IL2+9yrf+GePGkhoPDw9vaxgxK513NU5F4eyunjI8PDy8ZV47RFL45gX0SktWHUbg4eHhbW1XnV10tddaK6Ftcfzg4eHhHeG1QcB6BNyW13h4eHhP4628bgvxvJRvAws8PDy8z/JmhfWs9aoOavHw8PAexlvZ+lfK4lmwi4eHh3eeN2uZqsvcErnS7IWHh4d3N6/djtvGgpWYeFhw4+Hh4R3hJYfB7PpqWzibLxweHh7eQV470bz4bi/DVpYDDw8P78m8WRGcB74tGA8PD+87eLODZFZ24+Hh4Z3nJWHEbFFWGPUy4eHh4R3htRHA5iI4Xr7kh8HDw8O7m/d9Dx4eHh4eHh4e3gOeX065kGx/wCxSAAAAAElFTkSuQmCC">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZElEQVR42u3aS27DMAwFwNz/0u22QGHnPf3qBqNV4DiWRwEkguTr66PHCw8PDw8PDw8P72G8Vzzuf3U52cW3+W/rd8PDw8M7wnuz1f645/dDr660jPz6/T14eHh4J3lXG27yuvmV+zuTea/uwcPDw3syb+y1Vi0rHh4e3v/i5cFu8vx8Fjw8PLxn8maSBe09Y2H69lwLHh4eXszLi0znPx+t7+Hh4eEFvHbMp2K/Ng88PDy83byx1oGxotf9YbOq2QsPDw9vNy8v889gkie3gXVx7uHh4eEt5eVFprFt/T69mzeq5i2weHh4eLt5bUFrLFBu07Izy4eHh4e3m9eW8BN23nbQltyihDIeHh7eZl7yiCSFOnYwJEucHzx4eHh4Z3h5yiBfgjah0C7Zm78EDw8PbzNvbMvOA99Vh1A+Lx4eHt5u3liLwPwx0LZ5FaUyPDw8vM28PIAeaylYFYIXfwYeHh7eZl7+0GQrz0PzthEBDw8P72m8sSaqPCGbFP7b59dZajw8PLxFvGTrX7XR52mLmUQJHh4e3m5eu+22xarFxa3kyMHDw8M7wmuD3RwwcwAkiQk8PDy8v+W1Rfqx0LxtNcjDazw8PLyTvHxrzlMSM60JY4E+Hh4e3hleO9YmLO5D+Twcx8PDwzvJG9uOx140T+y2yQs8PDy887yZFENLag8MPDw8vCfz8hJ+UjybYeSpkCikxsPDw3sAr51+jNTOiIeHh/d83nyqN28pKK7j4eHhHeS1yYi2TSpfrHZB8fDw8M7z2hRAW9rPQ+o2PYGHh4d3nvd5Aw8PDw8PDw8P7wHjG9NQqm40c2UmAAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -433,7 +433,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/HTML/">HTML</a>
+        <a class="post_tag-link" href="/tags/CSS/">CSS</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/HTML/">HTML</a>
     </ul>
     
 
@@ -460,7 +460,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=HTML5标签列表&url=http://yoursite.com/2017/10/15/HTML5标签/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=icon 的各种做法&url=http://yoursite.com/2018/01/11/icon的各种做法/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -469,7 +469,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=HTML5标签列表&url=http://yoursite.com/2017/10/15/HTML5标签/index.html&via=Nico Zhang" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=icon 的各种做法&url=http://yoursite.com/2018/01/11/icon的各种做法/index.html&via=Nico Zhang" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -478,7 +478,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/10/15/HTML5标签/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/01/11/icon的各种做法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -487,7 +487,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/10/15/HTML5标签/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/01/11/icon的各种做法/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -511,123 +511,157 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="根元素"><a href="#根元素" class="headerlink" title="根元素"></a>根元素</h2><pre><code class="stylus">Element    Description
-&lt;html&gt;    代表 HTML 或 XHTML 文档的根。其他所有元素必须是这个元素的子节点。
+        <h2 id="img法"><a href="#img法" class="headerlink" title="img法"></a>img法</h2><p>可以自适应宽高，图片会默认保持比例。只需设置一下width或者height就能等比改变图标大小。不能同时设置图标宽高，如果同时设置，图标会变形。</p>
+<pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+    .icons&gt;img{
+      margin:0 25px;
+      width:50px
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;icons&quot; style=&quot;text-align:center;&quot;&gt;
+    &lt;img src=&quot;./qq.png&quot; alt=&quot;QQ&quot;&gt;
+    &lt;img src=&quot;./weibo.png&quot; alt=&quot;微博&quot;&gt;
+    &lt;img src=&quot;./weixin.png&quot; alt=&quot;微信&quot;&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
-<h2 id="文档元数据"><a href="#文档元数据" class="headerlink" title="文档元数据"></a>文档元数据</h2><pre><code class="stylus">Element    Description
-&lt;head&gt;    代表关于文档元数据的一个集合，包括脚本或样式表的链接或内容。
-&lt;title&gt;       定义文档的标题，将显示在浏览器的标题栏或标签页上。该元素只能包含文本，包含的标签不会被解释。
-&lt;base&gt;    定义页面上相对 URL 的基准 URL。
-&lt;link&gt;      用于链接外部的 CSS 到该文档。
-&lt;meta&gt; 定义其他 HTML 元素无法描述的元数据。
-&lt;style&gt;    用于内联 CSS。
+<h2 id="background法"><a href="#background法" class="headerlink" title="background法"></a>background法</h2><p>图标不会因为改变div的宽、高改变而变形，但是图标可能不居中。</p>
+<pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+    .icons&gt;.icon{
+      margin:5px 25px;
+      display: inline-block;
+      width:100px;
+      height:100px;
+      border:1px solid red;
+      background:#ccc url(./qq.png) no-repeat 0 0;      /* no-repeat,图片不重复 */
+    }
+    .icons&gt;.icon.qq{
+      background-image:url(./qq.png)      
+    }
+    .icons&gt;.icon.weibo{
+      background-image:url(./weibo.png)      
+    }
+    .icons&gt;.icon.weixin{
+      background-image:url(./weixin.png)      
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;icons&quot; style=&quot;text-align:center;&quot;&gt;
+    &lt;div class=&quot;icon qq&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;icon weibo&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;icon weixin&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
-<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><pre><code class="stylus">Element    Description
-&lt;script&gt;    定义一个内联脚本或链接到外部脚本。脚本语言是 JavaScript。
-&lt;noscript&gt;    定义当浏览器不支持脚本时显示的替代文字。
-&lt;template&gt; 这个元素在 HTML5 中加入    通过 JavaScript 在运行时实例化内容的容器。
+<h2 id="css-image-sprites"><a href="#css-image-sprites" class="headerlink" title="css image sprites"></a>css image sprites</h2><p>background 合一法——精灵图(雪碧图)</p>
+<p>css sprites generator:</p>
+<ol>
+<li><a href="http://css.spritegen.com/" target="_blank" rel="external">http://css.spritegen.com/</a>  </li>
+<li><a href="https://www.toptal.com/developers/css/sprite-generator" target="_blank" rel="external">https://www.toptal.com/developers/css/sprite-generator</a></li>
+</ol>
+<h2 id="iconfont-HTML形式"><a href="#iconfont-HTML形式" class="headerlink" title="iconfont-HTML形式"></a>iconfont-HTML形式</h2><p>方法：<a href="http://www.iconfont.cn" target="_blank" rel="external">http://www.iconfont.cn</a></p>
+<pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+   @font-face {
+    font-family: &#39;iconfont&#39;;  /* project id 538915 */
+    src: url(&#39;//at.alicdn.com/t/font_538915_q4dnam3g7xkr19k9.eot&#39;);
+    src: url(&#39;//at.alicdn.com/t/font_538915_q4dnam3g7xkr19k9.eot?#iefix&#39;)           format(&#39;embedded-opentype&#39;),
+    url(&#39;//at.alicdn.com/t/font_538915_q4dnam3g7xkr19k9.woff&#39;) format(&#39;woff&#39;),
+    url(&#39;//at.alicdn.com/t/font_538915_q4dnam3g7xkr19k9.ttf&#39;) format(&#39;truetype&#39;),
+    url(&#39;//at.alicdn.com/t/font_538915_q4dnam3g7xkr19k9.svg#iconfont&#39;)             format(&#39;svg&#39;);
+}    
+    /* 下面为iconfont-css方法 */
+    .icons{
+       font-size:35px;
+    }
+    .icons::before{
+      content:&#39;\e627\e601\e674\e67f&#39;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div style=&quot;font-family:iconfont&quot;&gt;
+    &lt;div style=&quot;font-size:35px&quot;&gt;&amp;#xe627;&amp;#xe601;&amp;#xe674;&amp;#xe67f;&lt;/div&gt;    &lt;!-- iconfont-html --&gt;
+    &lt;div class=&quot;icons&quot;&gt;&lt;/div&gt;    &lt;!-- 此处为iconfont-css --&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
-<h2 id="章节"><a href="#章节" class="headerlink" title="章节"></a>章节</h2><pre><code class="stylus">Element    Description
-&lt;body&gt;    代表 HTML 文档的内容。在文档中只能有一个 &lt;body&gt; 元素。
-&lt;section&gt; 这个元素在 HTML5 中加入    定义文档中的一个章节。
-&lt;nav&gt; 这个元素在 HTML5 中加入    定义只包含导航链接的章节。
-&lt;article&gt; 这个元素在 HTML5 中加入    定义可以独立于内容其余部分的完整独立内容块。
-&lt;aside&gt; 这个元素在 HTML5 中加入    定义和页面内容关联度较低的内容——如果被删除，剩下的内容仍然很合理。
-&lt;h1&gt;,&lt;h2&gt;,&lt;h3&gt;,&lt;h4&gt;,&lt;h5&gt;,&lt;h6&gt;    标题元素实现了六层文档标题，&lt;h1&gt; 是最大的标题，&lt;h6&gt; 是最小的标题。标题元素简要地描述章节的主题。
-&lt;header&gt; 这个元素在 HTML5 中加入    定义页面或章节的头部。它经常包含 logo、页面标题和导航性的目录。
-&lt;footer&gt; 这个元素在 HTML5 中加入    定义页面或章节的尾部。它经常包含版权信息、法律信息链接和反馈建议用的地址。
-&lt;address&gt;    定义包含联系信息的一个章节。
-&lt;main&gt;这个元素在 HTML5 中加入    定义文档中主要或重要的内容。
+<p><img src="https://i.loli.net/2018/01/11/5a5722b0c3fa5.png" alt="icon-font-1"></p>
+<p><img src="https://i.loli.net/2018/01/11/5a572bd8b2d7c.png" alt="icon-font-2"></p>
+<h2 id="iconfont-css形式"><a href="#iconfont-css形式" class="headerlink" title="iconfont-css形式"></a>iconfont-css形式</h2><pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;//at.alicdn.com/t/font_538915_q4dnam3g7xkr19k9.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;span class=&quot;iconfont icon-qq&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;iconfont icon-github&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;iconfont icon-weibo&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;iconfont icon-weixin&quot;&gt;&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
-<h2 id="组织内容"><a href="#组织内容" class="headerlink" title="组织内容"></a>组织内容</h2><pre><code class="stylus">Element    Description
-&lt;p&gt;        定义一个段落。
-&lt;hr&gt;    代表章节、文章或其他长内容中段落之间的分隔符。
-&lt;pre&gt;    代表其内容已经预先排版过，格式应当保留 。
-&lt;blockquote&gt;    代表引用自其他来源的内容。
-&lt;ol&gt;    定义一个有序列表。
-&lt;ul&gt;    定义一个无序列表。
-&lt;li&gt;    定义列表中的一个列表项。
-&lt;dl&gt;    定义一个定义列表（一系列术语和其定义）。
-&lt;dt&gt;    代表一个由下一个 &lt;dd&gt; 定义的术语。
-&lt;dd&gt;    代表出现在它之前术语的定义。
-&lt;figure&gt; 这个元素在 HTML5 中加入    代表一个和文档有关的图例。
-&lt;figcaption&gt; 这个元素在 HTML5 中加入    代表一个图例的说明。
-&lt;div&gt;    代表一个通用的容器，没有特殊含义。
+<p><img src="https://i.loli.net/2018/01/11/5a57304a9fe69.png" alt="icon-font-3"></p>
+<h2 id="SVG-icon-推荐"><a href="#SVG-icon-推荐" class="headerlink" title="SVG icon(推荐)"></a>SVG icon(推荐)</h2><pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;script src=&quot;//at.alicdn.com/t/font_538915_q4dnam3g7xkr19k9.js&quot;&gt;&lt;/script&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    .icon {
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;use xlink:href=&quot;#icon-qq&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+  &lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;use xlink:href=&quot;#icon-github&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+  &lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;use xlink:href=&quot;#icon-weibo&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+  &lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;use xlink:href=&quot;#icon-weixin&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
-<h2 id="文字形式"><a href="#文字形式" class="headerlink" title="文字形式"></a>文字形式</h2><pre><code class="stylus">Element    Description
-&lt;p&gt;        定义一个段落。
-&lt;hr&gt;    代表章节、文章或其他长内容中段落之间的分隔符。
-&lt;pre&gt;    代表其内容已经预先排版过，格式应当保留 。
-&lt;blockquote&gt;    代表引用自其他来源的内容。
-&lt;ol&gt;    定义一个有序列表。
-&lt;ul&gt;    定义一个无序列表。
-&lt;li&gt;    定义列表中的一个列表项。
-&lt;dl&gt;    定义一个定义列表（一系列术语和其定义）。
-&lt;dt&gt;    代表一个由下一个 &lt;dd&gt; 定义的术语。
-&lt;dd&gt;    代表出现在它之前术语的定义。
-&lt;figure&gt; 这个元素在 HTML5 中加入    代表一个和文档有关的图例。
-&lt;figcaption&gt; 这个元素在 HTML5 中加入    代表一个图例的说明。
-&lt;div&gt;    代表一个通用的容器，没有特殊含义。
-</code></pre>
-<h2 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h2><pre><code class="stylus">Element    Description
-&lt;ins&gt;    定义增加 到文档的内容。
-&lt;del&gt;    定义从文档移除 的内容。
-</code></pre>
-<h2 id="嵌入内容"><a href="#嵌入内容" class="headerlink" title="嵌入内容"></a>嵌入内容</h2><pre><code class="stylus">Element    Description
-&lt;img&gt;    代表一张图片 。
-&lt;iframe&gt;    代表一个内联的框架 。
-&lt;embed&gt; 这个元素在 HTML5 中加入    代表一个嵌入 的外部资源，如应用程序或交互内容。
-&lt;object&gt;    代表一个外部资源 ，如图片、HTML 子文档、插件等。
-&lt;param&gt;    代表 &lt;object&gt; 元素所指定的插件的参数 。
-&lt;video&gt; 这个元素在 HTML5 中加入    代表一段视频 及其视频文件和字幕，并提供了播放视频的用户界面。
-&lt;audio&gt; 这个元素在 HTML5 中加入    代表一段声音 ，或音频流 。
-&lt;source&gt; 这个元素在 HTML5 中加入    为 &lt;video&gt; 或 &lt;audio&gt; 这类媒体元素指定媒体源 。
-&lt;track&gt; 这个元素在 HTML5 中加入    为 &lt;video&gt; 或 &lt;audio&gt; 这类媒体元素指定文本轨道（字幕） 。
-&lt;canvas&gt; 这个元素在 HTML5 中加入    代表位图区域 ，可以通过脚本在它上面实时呈现图形，如图表、游戏绘图等。
-&lt;map&gt;    与 &lt;area&gt; 元素共同定义图像映射 区域。
-&lt;area&gt;    与 &lt;map&gt; 元素共同定义图像映射 区域。
-&lt;svg&gt; 这个元素在 HTML5 中加入    定义一个嵌入式矢量图 。
-&lt;math&gt; 这个元素在 HTML5 中加入    定义一段数学公式 。
-</code></pre>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><pre><code class="stylus">Element    Description
-&lt;table&gt;    定义多维数据 。
-&lt;caption&gt;    代表表格的标题 。
-&lt;colgroup&gt;    代表表格中一组单列或多列 。
-&lt;col&gt;    代表表格中的列 。
-&lt;tbody&gt;    代表表格中一块具体数据 （表格主体）。
-&lt;thead&gt;    代表表格中一块列标签 （表头）。
-&lt;tfoot&gt;    代表表格中一块列摘要 （表尾）。
-&lt;tr&gt;    代表表格中的行 。
-&lt;td&gt;    代表表格中的单元格 。
-&lt;th&gt;    代表表格中的头部单元格 。
-</code></pre>
-<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><pre><code class="stylus">Element    Description
-&lt;form&gt;    代表一个表单 ，由控件组成。
-&lt;fieldset&gt;    代表控件组 。
-&lt;legend&gt;    代表 &lt;fieldset&gt; 控件组的标题 。
-&lt;label&gt;    代表表单控件的标题 。
-&lt;input&gt;    代表允许用户编辑数据的数据区 （文本框、单选框、复选框等）。
-&lt;button&gt;    代表按钮 。
-&lt;select&gt;    代表下拉框 。
-&lt;datalist&gt; 这个元素在 HTML5 中加入    代表提供给其他控件的一组预定义选项 。
-&lt;optgroup&gt;    代表一个选项分组 。
-&lt;option&gt;    代表一个 &lt;select&gt; 元素或 &lt;datalist&gt; 元素中的一个选项
-&lt;textarea&gt;    代表多行文本框 。
-&lt;keygen&gt; 这个元素在 HTML5 中加入    代表一个密钥对生成器 控件。
-&lt;output&gt; 这个元素在 HTML5 中加入    代表计算值 。
-&lt;progress&gt; 这个元素在 HTML5 中加入    代表进度条 。
-&lt;meter&gt; 这个元素在 HTML5 中加入    代表滑动条 。
-</code></pre>
-<h2 id="交互元素"><a href="#交互元素" class="headerlink" title="交互元素"></a>交互元素</h2><pre><code class="stylus">
-Element    Description
-&lt;details&gt; 这个元素在 HTML5 中加入    代表一个用户可以(点击)获取额外信息或控件的小部件 。
-&lt;summary&gt; 这个元素在 HTML5 中加入    代表 &lt;details&gt; 元素的综述 或标题 。
-&lt;menuitem&gt; 这个元素在 HTML5 中加入    代表一个用户可以点击的菜单项。
-&lt;menu&gt; 这个元素在 HTML5 中加入    代表菜单。
-</code></pre>
-<blockquote>
-<p>Blockquote  <a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5/HTML5_element_list" target="_blank" rel="external">MDN</a></p>
-</blockquote>
+<p><img src="https://i.loli.net/2018/01/11/5a5737c326d7b.png" alt="enter description here"></p>
+<p><a href="http://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d8cf4382a&amp;helptype=code" target="_blank" rel="external">使用帮助</a></p>
 
         
     
@@ -648,21 +682,13 @@ Element    Description
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/10/19/HTML标签详解1/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/10/13/HTTP入门/" id="post_nav-older" class="next-content">
+        <a href="/2018/01/10/AJAX/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
