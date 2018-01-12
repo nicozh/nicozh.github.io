@@ -235,7 +235,7 @@
 
     
         <meta property="article:published_time" content="Wed Jan 10 2018 23:25:44 GMT+0800" />
-        <meta property="article:modified_time" content="Wed Jan 10 2018 23:25:44 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Jan 12 2018 23:05:01 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/01/10/AJAX/index.html",
     "headline": "AJAX",
     "datePublished": "Wed Jan 10 2018 23:25:44 GMT+0800",
-    "dateModified": "Wed Jan 10 2018 23:25:44 GMT+0800",
+    "dateModified": "Fri Jan 12 2018 23:05:01 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -524,7 +524,11 @@
 <li>服务器返回 XML 格式的字符串</li>
 <li>JS 解析 XML，并更新局部页面</li>
 </ol>
-<h2 id="如何使用-XMLHttpRequest"><a href="#如何使用-XMLHttpRequest" class="headerlink" title="如何使用 XMLHttpRequest"></a>如何使用 XMLHttpRequest</h2><p>前端代码</p>
+<h2 id="如何使用-XMLHttpRequest"><a href="#如何使用-XMLHttpRequest" class="headerlink" title="如何使用 XMLHttpRequest"></a>如何使用 XMLHttpRequest</h2><ol>
+<li>JS 可以设置任意请求 header<br> 第一部分 request.open(‘get’, ‘/xxx’)<br> 第二部分 request.setHeader(‘content-type’,’x-www-form-urlencoded’)<br> 第四部分 request.send(‘a=1&amp;b=2’)</li>
+<li>JS 可以获取任意响应 header<br> 第一部分 request.status / request.statusText<br> 第二部分 request.getResponseHeader() / request.getAllResponseHeaders()<br> 第四部分 request.responseText</li>
+</ol>
+<p>前端代码</p>
 <pre><code class="javascript">
 myButton.addEventListener(&#39;click&#39;, (e)=&gt;{
   let request = new XMLHttpRequest()
