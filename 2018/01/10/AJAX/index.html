@@ -235,7 +235,7 @@
 
     
         <meta property="article:published_time" content="Wed Jan 10 2018 23:25:44 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Jan 12 2018 23:05:01 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Jan 13 2018 22:55:36 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/01/10/AJAX/index.html",
     "headline": "AJAX",
     "datePublished": "Wed Jan 10 2018 23:25:44 GMT+0800",
-    "dateModified": "Fri Jan 12 2018 23:05:01 GMT+0800",
+    "dateModified": "Sat Jan 13 2018 22:55:36 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -346,7 +346,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何发请求"><span class="post-toc-number">1.</span> <span class="post-toc-text">如何发请求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AJAX"><span class="post-toc-number">2.</span> <span class="post-toc-text">AJAX</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何使用-XMLHttpRequest"><span class="post-toc-number">3.</span> <span class="post-toc-text">如何使用 XMLHttpRequest</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同源策略"><span class="post-toc-number">4.</span> <span class="post-toc-text">同源策略</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何发请求"><span class="post-toc-number">1.</span> <span class="post-toc-text">如何发请求</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AJAX"><span class="post-toc-number">2.</span> <span class="post-toc-text">AJAX</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#如何使用-XMLHttpRequest"><span class="post-toc-number">3.</span> <span class="post-toc-text">如何使用 XMLHttpRequest</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#封装AJAX"><span class="post-toc-number">4.</span> <span class="post-toc-text">封装AJAX</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#同源策略"><span class="post-toc-number">5.</span> <span class="post-toc-text">同源策略</span></a></li></ol>
     </ul>
     
 
@@ -577,6 +577,49 @@ else if(path===&#39;/xxx&#39;){
     }
     `)
     response.end()
+</code></pre>
+<h2 id="封装AJAX"><a href="#封装AJAX" class="headerlink" title="封装AJAX"></a>封装AJAX</h2><pre><code class="javascript">
+window.jQuery.ajax = function({url, method, body, successFn, failFn, headers}){
+  let request = new XMLHttpRequest()
+  request.open(method, url) // 配置request
+  for(let key in headers) {
+    let value = headers[key]
+    request.setRequestHeader(key, value)
+  }
+  request.onreadystatechange = ()=&gt;{
+    if(request.readyState === 4){
+      if(request.status &gt;= 200 &amp;&amp; request.status &lt; 300){
+        successFn.call(undefined, request.responseText)
+      }else if(request.status &gt;= 400){
+        failFn.call(undefined, request)
+      }
+    }
+  }
+  request.send(body)
+}
+
+function f1(responseText){}
+function f2(responseText){}
+
+myButton.addEventListener(&#39;click&#39;, (e)=&gt;{
+  window.jQuery.ajax({
+    url: &#39;/xxx&#39;,
+    method: &#39;get&#39;,
+    headers: {
+      &#39;content-type&#39;:&#39;application/x-www-form-urlencoded&#39;,
+      &#39;name&#39;: &#39;taylor&#39;
+    },
+    successFn: (x)=&gt;{
+      f1.call(undefined,x)
+      f2.call(undefined,x)
+    },
+    failFn: (x)=&gt;{
+      console.log(x)
+      console.log(x.status)
+      console.log(x.responseText)
+    }
+  })
+})
 </code></pre>
 <h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><ol>
 <li>只有协议、域名、端口一样才能发AJAX</li>
