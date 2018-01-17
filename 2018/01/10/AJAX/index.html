@@ -235,7 +235,7 @@
 
     
         <meta property="article:published_time" content="Wed Jan 10 2018 23:25:44 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Jan 15 2018 17:42:06 GMT+0800" />
+        <meta property="article:modified_time" content="Wed Jan 17 2018 23:59:21 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/01/10/AJAX/index.html",
     "headline": "AJAX",
     "datePublished": "Wed Jan 10 2018 23:25:44 GMT+0800",
-    "dateModified": "Mon Jan 15 2018 17:42:06 GMT+0800",
+    "dateModified": "Wed Jan 17 2018 23:59:21 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -584,7 +584,7 @@ window.jQuery.ajax = function (method,url,body,successFn,failFn){
   request.open(method, url)
   request.onreadystatechange = ()=&gt;{
     if(request.readyState === 4){
-      if(request.status &gt;= 200 &amp;&amp; request.status &lt; 300){
+      if(request.status &gt;= 200&amp;&amp;request.status &lt; 300){
         successFn.call(undefined,request.responseText)
       }else if(request.status &gt;= 400){
         failFn.call(undefined,request.status)
@@ -623,7 +623,7 @@ window.jQuery.ajax = function (options){
   }
   request.onreadystatechange = ()=&gt;{
     if(request.readyState === 4){
-      if(request.status &gt;= 200 &amp;&amp; request.status &lt; 300){
+      if(request.status &gt;= 200&amp;&amp;request.status &lt; 300){
         successFn.call(undefined,request.responseText)
       }else if(request.status &gt;= 400){
         failFn.call(undefined,request.status)
@@ -658,7 +658,7 @@ window.jQuery.ajax = function({url, method, body, successFn, failFn, headers}){
   }
   request.onreadystatechange = ()=&gt;{
     if(request.readyState === 4){
-      if(request.status &gt;= 200 &amp;&amp; request.status &lt; 300){
+      if(request.status &gt;= 200&amp;&amp;request.status &lt; 300){
         successFn.call(undefined, request.responseText)
       }else if(request.status &gt;= 400){
         failFn.call(undefined, request)
