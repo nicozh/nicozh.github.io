@@ -100,6 +100,11 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/vibrant-ink.min.css?e5E/qqGcGveS7VTH4M896w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
 
     
 
@@ -235,7 +240,7 @@
 
     
         <meta property="article:published_time" content="Wed Jan 03 2018 23:40:12 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Jan 06 2018 16:23:29 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Jan 23 2018 23:41:34 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +267,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/01/03/DOM事件模型/index.html",
     "headline": "DOM事件模型",
     "datePublished": "Wed Jan 03 2018 23:40:12 GMT+0800",
-    "dateModified": "Sat Jan 06 2018 16:23:29 GMT+0800",
+    "dateModified": "Tue Jan 23 2018 23:41:34 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -346,7 +351,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#addEventListener"><span class="post-toc-number">1.</span> <span class="post-toc-text">addEventListener()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事件冒泡与事件捕获"><span class="post-toc-number">2.</span> <span class="post-toc-text">事件冒泡与事件捕获</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#addEventListener"><span class="post-toc-number">1.</span> <span class="post-toc-text">addEventListener()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#事件冒泡与事件捕获"><span class="post-toc-number">2.</span> <span class="post-toc-text">事件冒泡与事件捕获</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#event-target与event-currentTarget的区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">event.target与event.currentTarget的区别</span></a></li></ol>
     </ul>
     
 
@@ -512,12 +517,10 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h2 id="addEventListener"><a href="#addEventListener" class="headerlink" title="addEventListener()"></a>addEventListener()</h2><p>addEventListener方法用于在当前节点或对象上，定义一个特定事件的监听函数。</p>
-<pre><code class="javascript">
-target.addEventListener(type, listener[, useCapture]);
+<pre><code class="javascript">target.addEventListener(type, listener[, useCapture]);
 </code></pre>
 <p>type：事件名称，大小写敏感。<br>listener：监听函数。事件发生时，会调用该监听函数。<br>useCapture：布尔值(监听函数是否在捕获阶段触发。默认为false,监听函数只在冒泡阶段被触发)</p>
-<pre><code class="javascript">
-function f1(){
+<pre><code class="javascript">function f1(){
   console.log(1)
 }
 
@@ -528,8 +531,7 @@ button.addEventListener(&#39;click&#39;,f1,false)
 </code></pre>
 <p>上面代码为button元素节点，绑定click事件的监听函数f1，该函数只在冒泡阶段触发。</p>
 <p>addEventListener方法可以为当前对象的同一个事件，添加多个监听函数,先添加的先触发。如果为同一个事件多次添加同一个监听函数，该函数只会执行一次，多余的添加将自动被去除（不必使用removeEventListener方法手动去除）。</p>
-<pre><code class="javascript">
-function f1(){
+<pre><code class="javascript">function f1(){
   console.log(1)
 }
 function f2(){
@@ -544,8 +546,7 @@ button.addEventListener(&#39;click&#39;,f2,false)
 //1   2
 </code></pre>
 <p>如果要向监听函数传递参数，须用匿名函数包装一下监听函数。</p>
-<pre><code class="javascript">
-function f1(x){
+<pre><code class="javascript">function f1(x){
   console.log(x)
 }
 
@@ -555,9 +556,7 @@ button.addEventListener(&#39;click&#39;,function(){f1(6)},false)
 //         6
 </code></pre>
 <p>让事件函数只触发一次</p>
-<pre><code class="javascript">
-
-function f1(){
+<pre><code class="javascript">function f1(){
   console.log(1)
   button.removeEventListener(&#39;click&#39;,f1)
 }
@@ -568,8 +567,7 @@ button.addEventListener(&#39;click&#39;,f1,false)
 // 1        触发一次后不会再触发
 </code></pre>
 <h2 id="事件冒泡与事件捕获"><a href="#事件冒泡与事件捕获" class="headerlink" title="事件冒泡与事件捕获"></a>事件冒泡与事件捕获</h2><p>如果第三个参数为false，就是在冒泡阶段触发；如果为true,就是在捕获阶段触发。</p>
-<pre><code class="html">
-&lt;!DOCTYPE html&gt;
+<pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
   &lt;meta charset=&quot;utf-8&quot;&gt;
@@ -599,6 +597,33 @@ p.addEventListener(&#39;click&#39;,f2,false)
 g.addEventListener(&#39;click&#39;,f3,false)
 
 &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="event-target与event-currentTarget的区别"><a href="#event-target与event-currentTarget的区别" class="headerlink" title="event.target与event.currentTarget的区别"></a>event.target与event.currentTarget的区别</h2><p>event.target 指向触发事件监听的对象，即事件最初发生的节点<br>event.currentTarget 指向添加监听事件的对象,即正在执行的监听函数所绑定的那个节点</p>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;ul&gt;
+    &lt;li&gt;1&lt;/li&gt;
+    &lt;li&gt;2&lt;/li&gt;
+    &lt;li&gt;3&lt;/li&gt;
+    &lt;li&gt;4&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;script&gt;
+    let ul = document.querySelector(&#39;ul&#39;)
+    ul.addEventListener(&#39;click&#39;,function(e){
+       let Li1 = e.target  
+       let Li2 = e.currentTarget
+        console.log(Li1)   //  被点击的li
+        console.log(Li2)   // ul
+        console.log(Li1===Li2)  // false
+    })
+  &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -786,7 +811,7 @@ g.addEventListener(&#39;click&#39;,f3,false)
         
     
         <li>
-            <a href="timeline" title="时间轴">
+            <a href="/timeline/" title="时间轴">
                 
                     <i class="material-icons sidebar-material-icons">timeline</i>
                 
@@ -1035,10 +1060,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
-    
-        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?Pki5+pzkluqu53g+ouMWpA==", true)</script>
-    
 
 
 <!-- Window Load -->
@@ -1050,10 +1077,13 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
-        
-        
-        HanabiBrowser.start('pre code',true);
     
 </script>
 
