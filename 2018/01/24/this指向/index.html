@@ -240,7 +240,7 @@
 
     
         <meta property="article:published_time" content="Wed Jan 24 2018 23:41:52 GMT+0800" />
-        <meta property="article:modified_time" content="Wed Jan 24 2018 23:41:52 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Jan 25 2018 23:46:54 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -267,7 +267,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/01/24/this指向/index.html",
     "headline": "javascript中this的指向",
     "datePublished": "Wed Jan 24 2018 23:41:52 GMT+0800",
-    "dateModified": "Wed Jan 24 2018 23:41:52 GMT+0800",
+    "dateModified": "Thu Jan 25 2018 23:46:54 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -351,7 +351,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#普通函数调用"><span class="post-toc-number">1.</span> <span class="post-toc-text">普通函数调用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作为对象方法调用"><span class="post-toc-number">2.</span> <span class="post-toc-text">作为对象方法调用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作为构造函数来调用"><span class="post-toc-number">3.</span> <span class="post-toc-text">作为构造函数来调用</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#普通函数调用"><span class="post-toc-number">1.</span> <span class="post-toc-text">普通函数调用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作为对象方法调用"><span class="post-toc-number">2.</span> <span class="post-toc-text">作为对象方法调用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作为构造函数来调用"><span class="post-toc-number">3.</span> <span class="post-toc-text">作为构造函数来调用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DOM对象绑定事件"><span class="post-toc-number">4.</span> <span class="post-toc-text">DOM对象绑定事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#call、apply、bind改变函数中this的指向"><span class="post-toc-number">5.</span> <span class="post-toc-text">call、apply、bind改变函数中this的指向</span></a></li></ol>
     </ul>
     
 
@@ -517,16 +517,27 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>this的指向只有在函数执行的时候才能确定，实际上this的最终指向就是那个调用它的对象</p>
-<h3 id="普通函数调用"><a href="#普通函数调用" class="headerlink" title="普通函数调用"></a>普通函数调用</h3><pre><code class="javascript">var a=&quot;jack&quot;;
-function f1(){
+<h3 id="普通函数调用"><a href="#普通函数调用" class="headerlink" title="普通函数调用"></a>普通函数调用</h3><p>在这段代码中f1函数作为普通函数调用，实际上fn1是作为全局对象window的一个方法来进行调用的,即window.f1();<br>所以这个地方是window对象调用了fn1方法,那么fn1函数当中的this即指window,同时window还拥有了另外一个属性a,值为’jack’</p>
+<pre><code class="javascript">var a=&quot;jack&quot;;
+function fn1(){
    console.log(this);
    console.log(this.a)
 }
 
  f1();  //输出  window     &#39;jack&#39;
 </code></pre>
-<p>在这段代码中f1函数作为普通函数调用，实际上f1是作为全局对象window的一个方法来进行调用的,即window.f1();<br>所以这个地方是window对象调用了person方法,那么person函数当中的this即指window,同时window还拥有了另外一个属性a,值为’jack</p>
-<h3 id="作为对象方法调用"><a href="#作为对象方法调用" class="headerlink" title="作为对象方法调用"></a>作为对象方法调用</h3><pre><code class="javascript">var obj={
+<p>函数嵌套产生的内部函数的this不是其父函数，仍然是全局对象window</p>
+<pre><code class="javascript">function fn1(){
+    function fn2(){
+        console.log(this);
+    }
+    fn2();
+}
+
+fn1();     //window
+</code></pre>
+<h3 id="作为对象方法调用"><a href="#作为对象方法调用" class="headerlink" title="作为对象方法调用"></a>作为对象方法调用</h3><p>函数b作为对象obj的方法调用，所以的this指向obj</p>
+<pre><code class="javascript">var obj={
      var a=&#39;jack&#39;;
      b:function(){
             console.log(this.a);
@@ -535,7 +546,7 @@ function f1(){
 
   obj.b();     //&#39;jack&#39;
 </code></pre>
-<p>函数b作为对象obj的方法调用，所以的this指向obj</p>
+<p>将obj.b方法赋给全局变量c,也就相当于执行的是window.c(),所以this指向window</p>
 <pre><code class="javascript">var a=&#39;frank&#39;
 var obj={
      a:&#39;jack&#39;,
@@ -546,7 +557,6 @@ var obj={
  var c= obj.b;   
  c()                    //    &#39;frank&#39;&#39;
 </code></pre>
-<p>上面代码将obj.b方法赋给全局变量c,也就相当于执行的是window.c(),所以this指向window</p>
 <h3 id="作为构造函数来调用"><a href="#作为构造函数来调用" class="headerlink" title="作为构造函数来调用"></a>作为构造函数来调用</h3><p>构造函数中的this，指的是实例对象。</p>
 <pre><code class="javascript">var obj = function (p) {
   this.p = p;
@@ -554,6 +564,17 @@ var obj={
 var o = new obj(&#39;Hello&#39;);
 o.p         // &quot;Hello&quot;
 </code></pre>
+<h3 id="DOM对象绑定事件"><a href="#DOM对象绑定事件" class="headerlink" title="DOM对象绑定事件"></a>DOM对象绑定事件</h3><p>在事件处理程序中this代表事件源DOM对象</p>
+<pre><code class="javascript">document.addEventListener(&#39;click&#39;, function(e){
+    console.log(this);    //document
+    var _document = this;
+    setTimeout(function(){
+        console.log(this);        //window
+        console.log(_document);        //document
+    }, 200);
+}, false);
+</code></pre>
+<h3 id="call、apply、bind改变函数中this的指向"><a href="#call、apply、bind改变函数中this的指向" class="headerlink" title="call、apply、bind改变函数中this的指向"></a>call、apply、bind改变函数中this的指向</h3><p><a href="http://gogoing.me/2017/12/28/this/" target="_blank" rel="external">查看链接</a></p>
 
         
     
