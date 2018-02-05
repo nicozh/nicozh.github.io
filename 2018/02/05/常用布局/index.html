@@ -39,7 +39,7 @@
     
     <title>
         
-            JavaScript里的数据 | 
+            常用布局 | 
         
         Zhang Hong
     </title>
@@ -51,7 +51,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Nico Zhang">
     <meta name="description" itemprop="description" content="ONE THE WAY">
-    <meta name="keywords" content=",JavaScript">
+    <meta name="keywords" content=",CSS">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -233,18 +233,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="JavaScript里的数据 | Zhang Hong">
+    <meta property="og:title" content="常用布局 | Zhang Hong">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="ONE THE WAY">
-    <meta property="og:article:tag" content="JavaScript"> 
+    <meta property="og:article:tag" content="CSS"> 
 
     
-        <meta property="article:published_time" content="Mon Dec 11 2017 22:25:43 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Jan 01 2018 12:17:54 GMT+0800" />
+        <meta property="article:published_time" content="Mon Feb 05 2018 23:55:16 GMT+0800" />
+        <meta property="article:modified_time" content="Mon Feb 05 2018 23:55:16 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="JavaScript里的数据 | Zhang Hong">
+    <meta name="twitter:title" content="常用布局 | Zhang Hong">
     <meta name="twitter:description" content="ONE THE WAY">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -252,7 +252,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/12/11/JavaScript里的数据/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/02/05/常用布局/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -264,10 +264,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2017/12/11/JavaScript里的数据/index.html",
-    "headline": "JavaScript里的数据",
-    "datePublished": "Mon Dec 11 2017 22:25:43 GMT+0800",
-    "dateModified": "Mon Jan 01 2018 12:17:54 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/02/05/常用布局/index.html",
+    "headline": "常用布局",
+    "datePublished": "Mon Feb 05 2018 23:55:16 GMT+0800",
+    "dateModified": "Mon Feb 05 2018 23:55:16 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -285,7 +285,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",JavaScript",
+    "keywords": ",CSS",
     "description": "ONE THE WAY",
 }
 </script>
@@ -351,7 +351,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#概述"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">概述</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#typeof操作符"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">typeof操作符</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#number"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">number</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#string"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">string</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#boolean"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">boolean</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#undefined-和-null"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">undefined 和 null</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#object"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">object</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类型转换"><span class="post-toc-number">2.</span> <span class="post-toc-text">类型转换</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#任意类型转字符串"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">任意类型转字符串</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#任意类型转数字"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">任意类型转数字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#任意类型转布尔"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">任意类型转布尔</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#深拷贝和浅拷贝"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">深拷贝和浅拷贝</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#float布局"><span class="post-toc-number">1.</span> <span class="post-toc-text">float布局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#flex布局"><span class="post-toc-number">2.</span> <span class="post-toc-text">flex布局</span></a></li></ol>
     </ul>
     
 
@@ -383,7 +383,7 @@
         
     
             <p class="article-headline-p">
-                JavaScript里的数据
+                常用布局
             </p>
         </div>
 
@@ -402,7 +402,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Nico Zhang</strong>
-        <span>12月 11, 2017</span>
+        <span>2月 05, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -424,7 +424,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC4ElEQVR42u3aQXIbMQwEQP//08k1h3g9A8iJTPaeVC6Zy6YOKGD48evK5wMbGxsbGxsbGxv7Ldkf8fPn9z/7nK/w/JcvAOWesbGxsW9gJ695/pxsKz+sfA/JnrGxsbHvYbdF65n6vH5+oH8BlHvGxsbGxn5+8Wf49vtfNBJxCcTGxsbGbgvYc2PQjpNmbQk2NjY2djug2TQSyXHM9vONszRsbGzst2e/Kuj9l5/fKN/GxsbG/q/s2ZNvIo9+8yBhuGdsbGzsQ9mfDYn2JW02Zsoj5HzAhI2NjX0D+1WB62zA1B5K8lNFBQwbGxv7AvYmoN0Xwk1ssCpg2NjY2D+K3QaoycWd9shmg6TnCBkbGxv7NvZqWBO8Pl8/YbRtEjY2NvbZ7GSQlG93ttosHs4DBmxsbOyz2e1FnDYAaGPd2U9SxwPY2NjYB7GTspGPjfIod3YBaDOQwsbGxj6VPRskvWosNQuAZ/EGNjY29qns2RBncwR5ANBGyPUsDRsbG/sI9n6olB/BMKBdxAbY2NjY97A3jHag3+I/gifaGzY2NvaV7PxKTbLObOg/CzOiVgQbGxv7CHZyFeZVrUt7uEmJGhYwbGxs7KPZydKbYpaPnPKxUVREsbGxsY9m5wFtG7W2jKTIzQ4aGxsb+1T2c0uQj5zaFZLGI9lbctzY2NjYZ7NnG21fuSlCs4s+RQeGjY2NfSh7UzbaeCCPlttyiI2NjX0POyk2eQvRDqqSp/1JsLGxsW9mJ4WnvRbZtjTJuCq/6IONjY19NntTSGZlbFbe8r9jY2Nj38Zui0E7GMqHU5urlqs7p9jY2NhHsDdFqw0S8hXywxoWMGxsbOzj2JumYt+65N/PDwUbGxsbu6W2V3Pa1iWPHL6xgGFjY2P/cHb7v22ovDlobGxsbOyk2CTlJ/9O/pa8WH7LLA0bGxv77dlt0LsZPM2u6czaG2xsbOwb2Pc82NjY2NjY2NjY2G/z/AY9BElLqyIdegAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACWElEQVR42u3aUXYCIQwF0Nn/pu0CrPYFQjp67nz1WGS4fEBMcj2++rnw8PDw8PDw8PBuxrvi55eJnv77avzzmPfz7KwNDw8Pb4b3x1EbLDfflPzti2vDw8PDG+S9WlwyJrkA3s/2foZkbXh4eHh35iXXRn5J7GwrHh4e3ifyutjVwB0PDw/vDrzkB3+Suq0C8i07nmvBw8PDi3l5kWn+79H6Hh4eHl7AK7c0FZe1lsBta7rCw8PDO8BbawKoFrd2UrTlpDAeHh7eYd5amjVvq+pqKchLa3h4eHgzvCqmN0VbHVMogOHh4eEd5nWVr6pp2Xw7FkNqPDw8vMO85NrID/dkiV2pYTw8PLxJXjWwzo/v/Yuh/DkeHh7eCC8pd+WvSZIL+YbmFxUeHh7eDG+nEWotvVudIQ/98fDw8CZ5a1dC75hqG0GUjMDDw8Mb4eXLTV6/1QRQTGfg4eHh3YFXDbvX2g66GrDw8PDwZni9Kd21I36/eIaHh4c3yas2Sz2CJ9mgJEDPrys8PDy8+/DyF699txo6R8E6Hh4e3jgvCYjzFMNaE1WeFilfDHh4eHjHeCcujJ0xW60DeHh4eId5XUd2lZ1/ty2Ni4eHh9dUAEtStF3p3Xy2ttYBPDw8vG3e2hFcbZNaC8SrKV08PDy8Sd7+ZVA94nvLaXh4eHj/xes6oJMUbVfTFR4eHt6n8Pbx1cC6EO7j4eHh3Z631p5VDbULRTs8PDy8QV6SjNhpz0pIDWU2PDw8vBFeNQWQtAJUx+wkjvHw8PAmed/34OHh4eHh4eHh3eD5AXnmr1t10bR/AAAAAElFTkSuQmCC">
     
 </ul>
 
@@ -438,7 +438,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+        <a class="post_tag-link" href="/tags/CSS/">CSS</a>
     </ul>
     
 
@@ -465,7 +465,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JavaScript里的数据&url=http://yoursite.com/2017/12/11/JavaScript里的数据/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=常用布局&url=http://yoursite.com/2018/02/05/常用布局/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -474,7 +474,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=JavaScript里的数据&url=http://yoursite.com/2017/12/11/JavaScript里的数据/index.html&via=Nico Zhang" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=常用布局&url=http://yoursite.com/2018/02/05/常用布局/index.html&via=Nico Zhang" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -483,7 +483,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/12/11/JavaScript里的数据/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/02/05/常用布局/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -492,7 +492,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2017/12/11/JavaScript里的数据/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/02/05/常用布局/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -516,163 +516,28 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><ol>
-<li>最新的 ECMAScript 标准定义了 7 种数据类型：number，string，boolean， symbol，undefined，null，object（注：没有function类型和array类型）</li>
-<li>通常将数值、字符串、布尔值称为原始类型的值，也就是基本的数据类型。将对象称为合成类型的值，因为一个对象往往是多个原始类型的值的合成。而undefined和null，一般将它们看成两个特殊值。</li>
-</ol>
-<h4 id="typeof操作符"><a href="#typeof操作符" class="headerlink" title="typeof操作符"></a>typeof操作符</h4><table>
-<thead>
-<tr>
-<th>xxx 的类型</th>
-<th>number</th>
-<th>string</th>
-<th>boolean</th>
-<th>symbol</th>
-<th>null</th>
-<th>undefined</th>
-<th>object</th>
-<th>function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>typeof xxx</td>
-<td>‘number’</td>
-<td>‘string’</td>
-<td>‘boolean’</td>
-<td>‘symbol’</td>
-<td>‘object’</td>
-<td>‘undefined’</td>
-<td>‘object’</td>
-<td>‘function’</td>
-</tr>
-</tbody>
-</table>
-<p>==注：function并不是一个类型==</p>
-<h4 id="number"><a href="#number" class="headerlink" title="number"></a>number</h4><ul>
-<li>整数和小数：1 1.1 .1</li>
-<li>科学记数法：1.23e2</li>
-<li>二进制：0b11</li>
-<li>八进制：011（后来 ES5 添加了 0o11 语法）</li>
-<li>十六进制：0x11</li>
-</ul>
-<h4 id="string"><a href="#string" class="headerlink" title="string"></a>string</h4><ol>
-<li>空字符串：’’</li>
-<li>多行字符串 </li>
-</ol>
-<pre><code class="javascript">  var s = &#39;12345&#39; +
-              &#39;67890&#39; // 无回车符号
-  或
-  var s = `12345
-  67890` // 含回车符号
-</code></pre>
-<h4 id="boolean"><a href="#boolean" class="headerlink" title="boolean"></a>boolean</h4><ol>
-<li>只有两个值：true 和 false</li>
-<li>a &amp;&amp; b 在 a 和 b 都为 true 时，取值为 true；否则为 false</li>
-<li>a || b 在 a 和 b 都为 false 时，取值为 false；否则为 true</li>
-</ol>
-<h4 id="undefined-和-null"><a href="#undefined-和-null" class="headerlink" title="undefined 和 null"></a>undefined 和 null</h4><p>都表示没有值，至于 JS 为什么有两个表示「没有值」的东西</p>
+        <h2 id="float布局"><a href="#float布局" class="headerlink" title="float布局"></a>float布局</h2><p>适用最广，支持IE5</p>
 <ol>
-<li>（规范）如果一个变量没有被赋值，那么这个变量的值就是 undefiend</li>
-<li>（习俗）如果你想表示一个还没赋值的对象，就用 null。如果你想表示一个还没赋值的字符串/数字/布尔/symbol，就用 undefined（但是实际上你直接 var xxx 一下就行了，不用写 var xxx = undefined）</li>
+<li>儿子全加 float: left （right）</li>
+<li>老子加 .clearfix</li>
 </ol>
-<h4 id="object"><a href="#object" class="headerlink" title="object"></a>object</h4><ol>
-<li>object 就是上面几种基本类型（无序地）组合在一起</li>
-<li>object 的 key 一律是字符串，不存在其他类型的 key</li>
-<li>object[‘’] 是合法的</li>
-<li>object[‘key’] 可以写作 object.key</li>
-<li>注意 object.key 与 object[key] 不同</li>
-<li>delete object[‘key’]</li>
-<li>‘key’ in object</li>
-<li>object 里面可以有 object</li>
+<pre><code class="css">.clearfix:after{
+    content: &#39;&#39;;
+    display: block;
+    clear: both;
+}
+
+/* 兼容IE6，加上下面 */
+.clearfix{
+    zoom: 1;
+}
+</code></pre>
+<p>如果宽度不够，负 margin</p>
+<p><a href="http://js.jirengu.com/qosogaraya/1/edit?html,css,output" target="_blank" rel="external">例子</a></p>
+<h2 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h2><ol>
+<li>老子加 display: flex</li>
+<li>老子加 justify-content: space-between;</li>
 </ol>
-<pre><code class="javascript">var person = {
-      name: &#39;taylor&#39;, 
-      &#39;child&#39;: {
-          name: &#39;jack&#39;
-      },  // 最后这个逗号可有可无
-  }
-</code></pre>
-<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h4 id="任意类型转字符串"><a href="#任意类型转字符串" class="headerlink" title="任意类型转字符串"></a>任意类型转字符串</h4><ul>
-<li>String(x）</li>
-</ul>
-<p><img src="https://i.loli.net/2017/12/11/5a2e88754f672.png" alt="方法1：String(x)"></p>
-<ul>
-<li>x+’’</li>
-</ul>
-<p><img src="https://i.loli.net/2017/12/11/5a2e88c415588.png" alt="方法2：x+&#39;&#39;"></p>
-<ul>
-<li>x.toString</li>
-</ul>
-<p><img src="https://i.loli.net/2017/12/11/5a2e88c41c3b7.png" alt="方法3: x.toString()"></p>
-<h4 id="任意类型转数字"><a href="#任意类型转数字" class="headerlink" title="任意类型转数字"></a>任意类型转数字</h4><ol>
-<li>Number(x)</li>
-<li>parseInt(x, 10) </li>
-<li>parseFloat(x)</li>
-<li>x - 0</li>
-<li>+x</li>
-</ol>
-<pre><code class="stylus">
-// 数值：转换后还是原来的值
-Number(324) // 324
-
-// 字符串：如果可以被解析为数值，则转换为相应的数值
-Number(&#39;324&#39;) // 324
-
-// 字符串：如果不可以被解析为数值，返回NaN
-Number(&#39;324abc&#39;) // NaN
-
-// 空字符串转为0
-Number(&#39;&#39;) // 0
-
-// 布尔值：true 转成1，false 转成0
-Number(true) // 1
-Number(false) // 0
-
-// undefined：转成 NaN
-Number(undefined) // NaN
-
-// null：转成0
-Number(null) // 0
-
-//Number方法的参数是对象时，将返回NaN，除非是包含单个数值的数组。
-Number({a: 1}) // NaN
-Number([1, 2, 3]) // NaN
-Number([5]) // 5
-
-//实用的方法
-+&#39;1&#39;    //1
-+&#39;{}&#39;    //NaN
-&#39;1&#39;-0    //1
-</code></pre>
-<h4 id="任意类型转布尔"><a href="#任意类型转布尔" class="headerlink" title="任意类型转布尔"></a>任意类型转布尔</h4><ol>
-<li>Boolean(x)</li>
-<li>!!x</li>
-<li>除了以下五个值的转换结果为false，其他的值全部为true。</li>
-<li>五个false值： undefined，null，0，NaN，’’（空字符串）</li>
-</ol>
-<h4 id="深拷贝和浅拷贝"><a href="#深拷贝和浅拷贝" class="headerlink" title="深拷贝和浅拷贝"></a>深拷贝和浅拷贝</h4><ul>
-<li>对于简单类型的数据来说，赋值就是深拷贝。</li>
-</ul>
-<pre><code class="javascript">var a = 1
-var b = a
-b = 2     //改变 b，a 不受 b 的影响，
-那么这就是是一个深拷贝
-</code></pre>
-<ul>
-<li>对于复杂类型的数据（对象）来说，才要区分浅拷贝和深拷贝。</li>
-</ul>
-<pre><code class="javascript">var a = {name: &#39;nina&#39;}
-var b = a
-b.name = &#39;b&#39;
-a.name === &#39;b&#39; // true
-//
-</code></pre>
-<ul>
-<li>. 数据区分为 Stack（栈内存） 和 Heap（堆内存）</li>
-<li>. 简单类型的数据直接存在 Stack 里</li>
-<li>. 复杂类型的数据是把 Heap 地址存在 Stack 里</li>
-</ul>
 
         
     
@@ -693,21 +558,13 @@ a.name === &#39;b&#39; // true
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/12/13/JavaScript原型与原型链/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/12/09/函数/" id="post_nav-older" class="next-content">
+        <a href="/2018/01/24/this指向/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
