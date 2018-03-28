@@ -240,7 +240,7 @@
 
     
         <meta property="article:published_time" content="Mon Feb 05 2018 23:55:16 GMT+0800" />
-        <meta property="article:modified_time" content="Mon Feb 19 2018 22:11:17 GMT+0800" />
+        <meta property="article:modified_time" content="Wed Mar 28 2018 23:15:12 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -267,7 +267,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/02/05/常用布局/index.html",
     "headline": "常用布局",
     "datePublished": "Mon Feb 05 2018 23:55:16 GMT+0800",
-    "dateModified": "Mon Feb 19 2018 22:11:17 GMT+0800",
+    "dateModified": "Wed Mar 28 2018 23:15:12 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Nico Zhang",
@@ -351,7 +351,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#float布局"><span class="post-toc-number">1.</span> <span class="post-toc-text">float布局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#float平均布局"><span class="post-toc-number">2.</span> <span class="post-toc-text">float平均布局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#flex布局"><span class="post-toc-number">3.</span> <span class="post-toc-text">flex布局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BFC"><span class="post-toc-number">4.</span> <span class="post-toc-text">BFC</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#float布局"><span class="post-toc-number">1.</span> <span class="post-toc-text">float布局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#float平均布局"><span class="post-toc-number">2.</span> <span class="post-toc-text">float平均布局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#flex布局"><span class="post-toc-number">3.</span> <span class="post-toc-text">flex布局</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BFC"><span class="post-toc-number">4.</span> <span class="post-toc-text">BFC</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#垂直居中"><span class="post-toc-number">5.</span> <span class="post-toc-text">垂直居中</span></a></li></ol>
     </ul>
     
 
@@ -541,6 +541,138 @@
 <li>用 float + div 做左右自适应布局</li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="external">MDN对BFC的描述</a></li>
 </ol>
+<h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><ol>
+<li>absolute + margin auto</li>
+</ol>
+<pre><code class="html">  &lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;child&quot;&gt;
+    文字文字
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<pre><code class="css">.parent{
+  height: 600px;
+  border: 1px solid red;
+  position: relative;
+}
+.child{
+  border: 1px solid green;
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+</code></pre>
+<ol>
+<li>flex居中</li>
+</ol>
+<pre><code class="html"> &lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;child&quot;&gt;
+     文字文字
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<pre><code class="css">   .parent{
+  height: 600px;
+  border: 3px solid red;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.child{
+  border: 3px solid green;
+  width: 300px;
+}
+</code></pre>
+<ol>
+<li>absolute+负margin</li>
+</ol>
+<pre><code class="html"> &lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;child&quot;&gt;
+      文字文字
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<pre><code class="css">.parent{
+  height: 600px;
+  border: 1px solid red;
+  position: relative;
+}
+.child{
+  border: 1px solid green;
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -150px;
+  height: 100px;
+  margin-top: -50px;
+}
+</code></pre>
+<ol>
+<li>absolute + translate</li>
+</ol>
+<pre><code class="html"> &lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;child&quot;&gt;
+      文字文字
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<pre><code class="css">.parent{
+  height: 600px;
+  border: 1px solid red;
+  position: relative;
+}
+.child{
+  border: 1px solid green;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+</code></pre>
+<ol>
+<li>伪元素 + inline-block</li>
+</ol>
+<pre><code class="html">&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;child&quot;&gt;
+      文字文字
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+<pre><code class="css">.parent{
+  border: 3px solid red;
+  height: 600px;
+  text-align: center;
+}
+
+.child{
+  border: 3px solid black;
+  display: inline-block;
+  width: 300px;
+  vertical-align: middle;
+}
+
+.parent:before{
+  content:&#39;&#39;;
+  outline: 3px solid red;
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.parent:after{
+  content:&#39;&#39;;
+  outline: 3px solid red;
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+</code></pre>
 
         
     
